@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is the official GitHub repository personal website. This website will be a personal and professional showcase for me, Kevin Heyland, focusing on software development, project management, and a passion for technology and design.
+This is the official GitHub repository of my website. This website will be a personal and professional showcase for me, focusing on software development, project management, and a passion for technology and design.
 
 ## Overview
 
