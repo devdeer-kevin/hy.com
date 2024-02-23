@@ -1,8 +1,8 @@
-# Welcome to kevinheyland.com
+# Welcome 👋🏻
 
 ## Introduction
 
-Welcome to the official GitHub repository for kevinheyland.com. This website will be a personal and professional showcase for me, Kevin Heyland, focusing on software development, project management, and a passion for technology and design.
+This is the official GitHub repository personal website. This website will be a personal and professional showcase for me, Kevin Heyland, focusing on software development, project management, and a passion for technology and design.
 
 ## Overview
 
@@ -21,7 +21,7 @@ To run this website locally, please follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/[yourgithubusername]/kevinheyland.com.git
+git clone https://github.com/[yourgithubusername]/hy.com.git
 ```
 
 2. Navigate to the directory:
@@ -62,6 +62,6 @@ I am open to contributions and suggestions that can help improve this website. W
 
 ## Contact
 
-Feel free to reach out for collaborations, questions, or just to say hi. You can contact me directly through my website's contact form at [kevinheyland.com](https://kevinheyland.com/contact).
+Feel free to reach out for collaborations, questions, or just to say hi. You can contact me directly through my website's contact form at [mail@kevinheyland.com](mailto:mail@kevinheyland.com).
 
 Let's connect and create something amazing!
