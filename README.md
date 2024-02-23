@@ -12,7 +12,7 @@ In addition, this platform will offer insights into my consulting work in busine
 
 ## Features
 
-- **Placeholder** Just a link to my corporate website for now.
+-   **Placeholder:** Just a link to my corporate website for now.
 
 ## Local Development
 
