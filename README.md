@@ -6,7 +6,7 @@ This is the official GitHub repository personal website. This website will be a 
 
 ## Overview
 
-kevinheyland.com will serve as a portfolio and blog where I, Kevin, share my expertise in agile project management, software development using modern web technologies like Node, React, Next.js, and Azure Cloud, as well as insights into UX design and cloud application development.
+This website will serve as a portfolio and blog where I, Kevin, share my expertise in agile project management, software development using modern web technologies like Node, React, Next.js, and Azure Cloud, as well as insights into UX design and cloud application development.
 
 In addition, this platform will offer insights into my consulting work in business analytics, IT, and enterprise solutions.
 
