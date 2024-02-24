@@ -1,6 +1,6 @@
 export default function Home() {
     return (
-        <main className="center flex min-h-screen flex-col items-center p-24">
+        <main className="center flex min-h-screen flex-col items-center lg:p-24 p-8">
             <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
                 <div>
                     <h2 className="text-sm text-lime-400">Code, Creativity, & Change: Navigating the Digital Frontier</h2>
