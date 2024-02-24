@@ -3,16 +3,12 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+    @apply bg-gradient-to-b from-slate-900 to-slate-800;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
+        @apply bg-gradient-to-b from-slate-900 to-slate-800;
     }
 }
 
@@ -25,4 +21,8 @@ body {
     .text-balance {
         text-wrap: balance;
     }
+}
+
+p {
+    @apply py-4 text-lg leading-relaxed text-slate-300;
 }
