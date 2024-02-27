@@ -40,9 +40,9 @@ export default function Home() {
                         <p>
                             Beyond my professional accomplishments, {"I've"} dedicated a portion of my time to voluntary work, underscoring my commitment to contributing positively
                             to the wider community. This engagement has not only allowed me to give back but has also enriched my own perspective, improving my capabilities in
-                            leadership, empathy, and problem-solving. Whether {"it's"} through leveraging my expertise in technology to support non-profit organizations, planning
-                            and organizing inspiring excursions for school kids or advocating for their parents{"'"} interests to the city administration, my voluntary work remains
-                            a vital aspect of my personal and professional identity. This diverse engagement drives me to foster a culture of innovation, inclusiveness, and social
+                            leadership, empathy, and problem-solving. Whether {"it's"} through leveraging my expertise in technology to support non-profit organizations, advocating
+                            for parents{"'"} interests to the city administration or planning and organizing inspiring excursions for school kids, my voluntary work remains a vital
+                            aspect of my personal and professional identity. This diverse engagement drives me to foster a culture of innovation, inclusiveness, and social
                             responsibility.
                         </p>
                     </div>
