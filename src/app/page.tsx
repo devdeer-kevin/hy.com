@@ -11,7 +11,10 @@ export default function Home() {
             <div className="p-8 lg:p-24">
                 <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
                     <div>
-                        <h2 className="text-sm text-lime-400">Code, Creativity, & Change: Navigating the Digital Frontier</h2>
+                        <h2 className="text-6xl text-lime-400">TL;DR</h2>
+                    </div>
+                    <div>
+                        <h3 className="text-sm text-lime-400">Code, Creativity, & Change: Navigating the Digital Frontier</h3>
                         <p>
                             With a solid foundation in Agile methodology through my certification with the Scrum Alliance, I blend versatile professional experience with
                             specialized expertise in Agile project management and software development. Starting in retail, where I underwent a remarkable transition from a
@@ -33,7 +36,7 @@ export default function Home() {
                         </p>
                     </div>
                     <div>
-                        <h2 className="text-sm text-lime-400">Code, Communication & Compassion: A Commitment to Community</h2>
+                        <h3 className="text-sm text-lime-400">Code, Communication & Compassion: A Commitment to Community</h3>
                         <p>
                             Beyond my professional accomplishments, {"I've"} dedicated a portion of my time to voluntary work, underscoring my commitment to contributing positively
                             to the wider community. This engagement has not only allowed me to give back but has also enriched my own perspective, improving my capabilities in
