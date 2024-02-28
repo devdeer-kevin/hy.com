@@ -14,7 +14,7 @@ export default function Home() {
                         <h2 className="text-6xl text-lime-400">TL;DR</h2>
                     </div>
                     <div>
-                        <h3 className="text-sm text-lime-400">Code, Creativity, & Change: Navigating the Digital Frontier</h3>
+                        <h3 className="text-sm text-lime-400">Code, Creativity & Change: Navigating the Digital Frontier</h3>
                         <p>
                             With a solid foundation in Agile methodology through my certification with the Scrum Alliance, I blend versatile professional experience with
                             specialized expertise in Agile project management and software development. Starting in retail, where I underwent a remarkable transition from a
