@@ -32,21 +32,32 @@ export default function Home() {
                         </div>
                     </div>
                     <div>
+                        <h2 className="text-3xl text-pink-400">{'//'} For those who want the full story</h2>
                         <p>
                             Starting in retail, where I underwent a remarkable transition from a temporary worker to a Marketing Manager, my path led me through various strategic
                             positions in the fields of digital marketing and entrepreneurship. As a Senior Digital Marketing Engineer, I directed significant digital transformation
                             projects at a leading technology company. I demonstrated my entrepreneurial skills as the founder of an online marketing agency and as the CMO of a
-                            startup, where we created groundbreaking visual 3D content. As a Senior UX Designer, I laid the groundwork for top-notch user experiences, before, as a
-                            certified Scrum Product Owner and Team Lead, using agile practices to forge effective backlogs that deliver valuable product increments for clients
-                            ranging from mid-sized businesses to large corporations across various industries. In my current role as Head of Operations, I integrate my passion for
-                            artificial intelligence, sustainable development practices, and diversity into our operational processes and consulting services. Additionally, I shared
-                            my extensive knowledge in the area of agile software development as a co-host of a specialist podcast.
+                            startup, where we created groundbreaking visual 3D content.
                         </p>
                         <p>
-                            This combination of practical professional experience and continuous education allows me to blend operational efficiency with technical innovation,
-                            consistently delivering high-quality results. My career path reflects my relentless drive to evolve, expand my expertise, and implement innovative
-                            solutions in a rapidly changing digital world.
+                            As a Senior UX Designer, I laid the groundwork for top-notch user experiences. Then, as a certified Scrum Product Owner and Team Lead, I utilized agile
+                            practices to forge effective backlogs. These efforts delivered valuable product increments for clients ranging from mid-sized businesses to large
+                            corporations across various industries.
                         </p>
+                        <p>
+                            In my current role as Head of Operations, I integrate my passion for artificial intelligence, sustainable development practices, and diversity into our
+                            operational processes and consulting services. Drawing upon my extensive background in software development, I actively contribute to front-end
+                            development, ensuring our solutions not only align with our operational excellence but also embody cutting-edge user experience. Additionally,
+                            leveraging the principles of agile project management, I co-hosted and developed a podcast by applying these principles, demonstrating how agile
+                            methodologies can be effectively utilized beyond traditional software development projects.
+                        </p>
+                        <div className="border-l-8 border-pink-400 pl-4 rounded-sm">
+                            <p>
+                                This combination of practical professional experience and continuous education allows me to blend operational efficiency with technical innovation,
+                                consistently delivering high-quality results. My career path reflects my relentless drive to evolve, expand my expertise, and implement innovative
+                                solutions in a rapidly changing digital world.
+                            </p>
+                        </div>
                     </div>
                     <div>
                         <h3 className="text-sm text-lime-400">Code, Communication & Compassion: A Commitment to Community</h3>
