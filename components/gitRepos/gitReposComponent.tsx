@@ -39,7 +39,6 @@ const GitReposComponent: FunctionComponent = () => {
     useEffect(() => {
         fetchData()
     }, [])
-
     return (
         <div className="grid gap-4 rounded-md p-4 bg-indigo-900 shadow-lg">
             <h2 className="text-3xl text-pink-400">{'//'} Explore My Latest GitHub Ventures</h2>
@@ -56,7 +55,7 @@ const GitReposComponent: FunctionComponent = () => {
                 ) : (
                     <>
                         {repos.map((project: string[]) => (
-                            <div key={project[1]}>
+                            <div className="py-2" key={project[1]}>
                                 <div className="flex flex-row gap-2">
                                     <div>
                                         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-lime-400">
@@ -67,7 +66,13 @@ const GitReposComponent: FunctionComponent = () => {
                                         <h3 className="underline cursor-pointer text-lg font-mono text-lime-400">{project[0].toLowerCase()}</h3>
                                     </Link>
                                 </div>
-                                <p className="text-sm font-mono">Last push: {project[1]}</p>
+                                <div className="">
+                                    {new Date(project[1]).toLocaleDateString('en-GB') === new Date().toLocaleDateString('en-GB') ? (
+                                        <p className="text-sm font-mono p-1">Last push: Today</p>
+                                    ) : (
+                                        <p className="text-sm font-mono p-1">Last push: {new Date(project[1]).toLocaleDateString('en-GB')}</p>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </>
