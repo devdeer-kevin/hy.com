@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Logo from '../../public/HY_LOGO218.png'
+import Photo from '../../public/kevinheyland_bw.jpg'
 import Link from 'next/link'
 import GitReposComponent from '../../components/gitRepos'
 
@@ -10,26 +11,36 @@ export default function Home() {
                 <Image loading="eager" src={Logo} alt="logo" width={100} height={100} />
             </nav>
             <div className="p-8 lg:p-24">
-                <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-10 font-mono">
-                    <div>
-                        <h2 className="text-6xl text-pink-400">TL;DR</h2>
+                <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
+                    <div className="grid xl:grid-flow-col lg:grid-flow-row gap-8">
+                        <div>
+                            <div className="flex flex-col">
+                                <Image className="rounded-sm shadow-xl border-b-8 border-pink-400" loading="eager" alt="Kevin Heyland" src={Photo} width={400} height={100} />
+                                <Link className="text-indigo-700 text-sm pt-1" target="_blank" href="https://www.giovannagahrns.com">
+                                    {'>>'} Photography by Giovanna Gahrns
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="grid grid-flow-row">
+                            <h2 className="text-6xl text-pink-400 font-bold pb-6">TL;DR</h2>
+                            <h3 className="text-sm text-lime-400">Code, Creativity & Change: Navigating the Digital Frontier</h3>
+                            <p>
+                                With a solid foundation in Agile methodology through my certification with the Scrum Alliance and a robust educational background with a Bachelor of
+                                Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in Agile project
+                                management and software development.
+                            </p>
+                        </div>
                     </div>
                     <div>
-                        <h3 className="text-sm text-lime-400">Code, Creativity & Change: Navigating the Digital Frontier</h3>
                         <p>
-                            With a solid foundation in Agile methodology through my certification with the Scrum Alliance and a robust educational background with a Bachelor of
-                            Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in Agile project
-                            management and software development. Starting in retail, where I underwent a remarkable transition from a temporary worker to a Marketing Manager, my
-                            path led me through various strategic positions in the fields of digital marketing and entrepreneurship. As a Senior Digital Marketing Engineer, I
-                            directed significant digital transformation projects at a leading technology company. I demonstrated my entrepreneurial skills as the founder of an
-                            online marketing agency and as the CMO of a startup, where we created groundbreaking visual 3D content.
-                        </p>
-                        <p>
-                            As a Senior UX Designer, I laid the groundwork for top-notch user experiences, before, as a certified Scrum Product Owner and Team Lead, using agile
-                            practices to forge effective backlogs that deliver valuable product increments for clients ranging from mid-sized businesses to large corporations
-                            across various industries. In my current role as Head of Operations, I integrate my passion for artificial intelligence, sustainable development
-                            practices, and diversity into our operational processes and consulting services. Additionally, I shared my extensive knowledge in the area of agile
-                            software development as a co-host of a specialist podcast.
+                            Starting in retail, where I underwent a remarkable transition from a temporary worker to a Marketing Manager, my path led me through various strategic
+                            positions in the fields of digital marketing and entrepreneurship. As a Senior Digital Marketing Engineer, I directed significant digital transformation
+                            projects at a leading technology company. I demonstrated my entrepreneurial skills as the founder of an online marketing agency and as the CMO of a
+                            startup, where we created groundbreaking visual 3D content. As a Senior UX Designer, I laid the groundwork for top-notch user experiences, before, as a
+                            certified Scrum Product Owner and Team Lead, using agile practices to forge effective backlogs that deliver valuable product increments for clients
+                            ranging from mid-sized businesses to large corporations across various industries. In my current role as Head of Operations, I integrate my passion for
+                            artificial intelligence, sustainable development practices, and diversity into our operational processes and consulting services. Additionally, I shared
+                            my extensive knowledge in the area of agile software development as a co-host of a specialist podcast.
                         </p>
                         <p>
                             This combination of practical professional experience and continuous education allows me to blend operational efficiency with technical innovation,
