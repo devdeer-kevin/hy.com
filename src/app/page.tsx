@@ -17,11 +17,12 @@ export default function Home() {
                     <div>
                         <h3 className="text-sm text-lime-400">Code, Creativity & Change: Navigating the Digital Frontier</h3>
                         <p>
-                            With a solid foundation in Agile methodology through my certification with the Scrum Alliance, I blend versatile professional experience with
-                            specialized expertise in Agile project management and software development. Starting in retail, where I underwent a remarkable transition from a
-                            temporary worker to a Marketing Manager, my path led me through various strategic positions in the fields of digital marketing and entrepreneurship. As
-                            a Senior Digital Marketing Engineer, I directed significant digital transformation projects at a leading technology company. I demonstrated my
-                            entrepreneurial skills as the founder of an online marketing agency and as the CMO of a startup, where we created groundbreaking visual 3D content.
+                            With a solid foundation in Agile methodology through my certification with the Scrum Alliance and a robust educational background with a Bachelor of
+                            Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in Agile project
+                            management and software development. Starting in retail, where I underwent a remarkable transition from a temporary worker to a Marketing Manager, my
+                            path led me through various strategic positions in the fields of digital marketing and entrepreneurship. As a Senior Digital Marketing Engineer, I
+                            directed significant digital transformation projects at a leading technology company. I demonstrated my entrepreneurial skills as the founder of an
+                            online marketing agency and as the CMO of a startup, where we created groundbreaking visual 3D content.
                         </p>
                         <p>
                             As a Senior UX Designer, I laid the groundwork for top-notch user experiences, before, as a certified Scrum Product Owner and Team Lead, using agile
