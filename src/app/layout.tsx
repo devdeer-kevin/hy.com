@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-    title: 'Kevin Heyland',
-    description: 'Whitness the simplicity of Next.js and Tailwind CSS',
+    title: 'Kevin Heyland, B.Sc.',
+    description: 'Code, Creativity & Change: Navigating the Digital Frontier',
+    robots: 'index, follow',
 }
 
 export default function RootLayout({
