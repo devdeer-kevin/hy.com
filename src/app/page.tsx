@@ -25,8 +25,8 @@ export default function Home() {
                             <h2 className="text-6xl text-pink-400 font-bold pb-6">TL;DR</h2>
                             <h3 className="text-sm text-lime-400">Code, Creativity & Change: Navigating the Digital Frontier</h3>
                             <p>
-                                With a solid foundation in Agile methodology through my certification with the Scrum Alliance and a robust educational background with a Bachelor of
-                                Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in Agile project
+                                With a solid foundation in Agile methodology through my certifications with the Scrum Alliance and a robust educational background with a Bachelor
+                                of Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in Agile project
                                 management and software development.
                             </p>
                         </div>
