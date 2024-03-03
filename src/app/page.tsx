@@ -17,7 +17,7 @@ export default function Home() {
                             <div className="flex flex-col">
                                 <Image className="rounded-sm shadow-xl border-b-8 border-pink-400" loading="eager" alt="Kevin Heyland" src={Photo} width={400} height={100} />
                                 <Link className="text-indigo-700 text-sm pt-1" target="_blank" href="https://www.giovannagahrns.com">
-                                    {'>>'} Photography by Giovanna Gahrns
+                                    {'>>'} Photography by Giovanna Veronica Gahrns
                                 </Link>
                             </div>
                         </div>
