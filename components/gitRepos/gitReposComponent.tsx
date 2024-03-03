@@ -41,9 +41,9 @@ const GitReposComponent: FunctionComponent = () => {
     }, [])
 
     return (
-        <div className="grid gap-4">
-            <h2 className="text-3xl text-pink-400">Explore My Latest GitHub Ventures</h2>
-            <div className="grid grid-flow-row md:grid-flow-col py-4">
+        <div className="grid gap-4 rounded-md p-4 bg-indigo-900 shadow-lg">
+            <h2 className="text-3xl text-pink-400">{'//'} Explore My Latest GitHub Ventures</h2>
+            <div className="grid grid-flow-row md:grid-flow-col pt-4">
                 {isLoading ? (
                     <div className="flex gap-3">
                         <div className="w-7 h-7">
