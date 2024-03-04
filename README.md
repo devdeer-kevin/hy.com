@@ -13,6 +13,7 @@ In addition, this platform will offer insights into my consulting work in busine
 ## Features
 
 -   **Placeholder:** Just a link to my corporate website for now.
+-   **GitHub API Integration:** Get real-time updates on my newest projects.
 
 ## Local Development
 
