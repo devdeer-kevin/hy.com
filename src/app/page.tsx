@@ -32,7 +32,8 @@ export default function Home() {
                         </div>
                     </div>
                     <div>
-                        <h2 className="text-3xl text-pink-400">{'//'} For those who want the full story</h2>
+                        <h2 className="text-3xl text-pink-400 pb-6">{'//'} For those who want the full story</h2>
+                        <h3 className="text-sm text-lime-400">From Storefronts to Software: A Story of Transformation and Technology</h3>
                         <p>
                             Starting in retail, where I underwent a remarkable transition from a temporary worker to a Marketing Manager, my path led me through various strategic
                             positions in the fields of digital marketing and entrepreneurship. As a Senior Digital Marketing Engineer, I directed significant digital transformation
