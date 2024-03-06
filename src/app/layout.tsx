@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import NavigationTopComponent from '../../components/navigationTop'
 
 export const metadata: Metadata = {
-    title: 'Kevin Heyland, B.Sc.',
+    title: 'Kevin Heyland',
     description: 'Code, Creativity & Change: Navigating the Digital Frontier',
     robots: 'index, follow',
 }
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body className="flex min-h-screen w-full flex-col items-center justify-center">
+                <NavigationTopComponent />
+                {children}
+            </body>
         </html>
     )
 }

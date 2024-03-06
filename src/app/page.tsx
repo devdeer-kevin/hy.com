@@ -1,15 +1,11 @@
 import Image from 'next/image'
-import Logo from '../../public/HY_LOGO218.png'
 import Photo from '../../public/kevinheyland_bw.jpg'
 import Link from 'next/link'
 import GitReposComponent from '../../components/gitRepos'
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen w-full flex-col items-center justify-center">
-            <nav className="flex w-full justify-between">
-                <Image loading="eager" src={Logo} alt="logo" width={100} height={100} />
-            </nav>
+        <>
             <div className="p-8 lg:p-24">
                 <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
                     <div className="grid xl:grid-flow-col lg:grid-flow-row gap-8">
@@ -88,6 +84,6 @@ export default function Home() {
                     </Link>
                 </div>
             </footer>
-        </main>
+        </>
     )
 }
