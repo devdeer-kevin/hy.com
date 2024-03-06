@@ -15,6 +15,7 @@ interface IRepo {
  * Fetches data from the GitHub API server side and displays the repository name, last push date, and a link to the repository.
  */
 export default async function GitReposComponent() {
+    // Force dynamic rendering, which will result in rendering at request time.
     const dynamic = 'force-dynamic'
     // Fetches the latest repositories from the GitHub API.
     const response = await fetch('https://api.github.com/users/devdeer-kevin/repos')
