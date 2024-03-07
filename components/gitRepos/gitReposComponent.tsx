@@ -1,4 +1,3 @@
-import { revalidatePath } from 'next/cache'
 import Link from 'next/link'
 
 /**
@@ -25,9 +24,6 @@ export default async function GitReposComponent() {
         .map((repo: IRepo) => [repo.name, repo.pushed_at, repo.html_url])
         .sort((a: string, b: string, c: string) => new Date(b[1]).getTime() - new Date(a[1]).getTime())
         .slice(0, 3)
-
-    // Revalidates the path to update the data every 5 minutes.
-    // revalidatePath('/')
 
     return (
         <div className="grid gap-4 rounded-md p-4 bg-indigo-900 shadow-lg">
