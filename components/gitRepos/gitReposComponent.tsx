@@ -42,7 +42,7 @@ export default function GitReposComponent() {
         <div className="grid gap-4 rounded-md p-4 bg-indigo-900 shadow-lg">
             <div className="flex flex-row justify-between items-baseline">
                 <h2 className="text-3xl text-pink-400">{'//'} Explore My Latest GitHub Ventures</h2>
-                <button className={`p-2 rounded-md text-2xl ${loading ? 'bg-slate-300' : 'bg-pink-400'}`} onClick={fetchRepos}>
+                <button title="Refresh" className={`p-2 rounded-md text-2xl ${loading ? 'bg-slate-300' : 'bg-pink-400'}`} onClick={fetchRepos}>
                     {loading ? <div className="grid grid-flow-col gap-3 animate-spin text-xl h-7 w-7">🌀</div> : '🔁'}
                 </button>
             </div>
