@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowPathIcon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
@@ -19,6 +20,7 @@ interface IRepo {
 export default function GitReposComponent() {
     // State to store the repository data.
     const [repoData, setRepoData] = useState([])
+    // State to store the loading state.
     const [loading, setLoading] = useState(true)
 
     // Fetches the latest repositories from the GitHub API.
@@ -41,9 +43,9 @@ export default function GitReposComponent() {
     return (
         <div className="grid gap-4 rounded-md p-4 bg-indigo-900 shadow-lg">
             <div className="flex flex-row justify-between items-baseline">
-                <h2 className="text-3xl text-pink-400">{'//'} Explore My Latest GitHub Ventures</h2>
-                <button title="Refresh" className={`p-2 rounded-md text-2xl ${loading ? 'bg-slate-300' : 'bg-pink-400'}`} onClick={fetchRepos}>
-                    {loading ? <div className="grid grid-flow-col gap-3 animate-spin text-xl h-7 w-7">🌀</div> : '🔁'}
+                <h2 className="sm:text-3xl text-xl text-pink-400">{'//'} Explore My Latest GitHub Ventures</h2>
+                <button title="Refresh" className={`p-2 rounded-md  ${loading ? 'bg-slate-300' : 'bg-pink-400 hover:bg-pink-500'}`} onClick={fetchRepos}>
+                    {loading ? <ArrowPathIcon className="h-5 w-5 text-slate-800 animate-spin" /> : <ArrowPathIcon className="h-5 w-5 text-slate-800" />}
                 </button>
             </div>
             <div className="grid grid-flow-row md:grid-flow-col pt-4">
