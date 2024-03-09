@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 /**
  * Interface for the repository data fetched from the GitHub API.
@@ -9,25 +12,40 @@ interface IRepo {
     html_url: string
 }
 
-// Force dynamic rendering, which will result in rendering at request time.
-export const dynamic = 'force-dynamic'
-
 /**
  * Renders a component that displays the latest GitHub repositories of a user.
  * Fetches data from the GitHub API server side and displays the repository name, last push date, and a link to the repository.
  */
-export default async function GitReposComponent() {
+export default function GitReposComponent() {
+    // State to store the repository data.
+    const [repoData, setRepoData] = useState([])
+    const [loading, setLoading] = useState(true)
+
     // Fetches the latest repositories from the GitHub API.
-    const response = await fetch('https://api.github.com/users/devdeer-kevin/repos')
-    const data = await response.json()
-    const repoData = data
-        .map((repo: IRepo) => [repo.name, repo.pushed_at, repo.html_url])
-        .sort((a: string, b: string, c: string) => new Date(b[1]).getTime() - new Date(a[1]).getTime())
-        .slice(0, 3)
+    const fetchRepos = async () => {
+        setLoading(true)
+        const response = await fetch('https://api.github.com/users/devdeer-kevin/repos')
+        const data = await response.json()
+        const repoData = data
+            .map((repo: IRepo) => [repo.name, repo.pushed_at, repo.html_url])
+            .sort((a: string, b: string, c: string) => new Date(b[1]).getTime() - new Date(a[1]).getTime())
+            .slice(0, 3)
+        setRepoData(repoData)
+        setLoading(false)
+    }
+
+    useEffect(() => {
+        fetchRepos()
+    }, [])
 
     return (
         <div className="grid gap-4 rounded-md p-4 bg-indigo-900 shadow-lg">
-            <h2 className="text-3xl text-pink-400">{'//'} Explore My Latest GitHub Ventures</h2>
+            <div className="flex flex-row justify-between items-baseline">
+                <h2 className="text-3xl text-pink-400">{'//'} Explore My Latest GitHub Ventures</h2>
+                <button className={`p-2 rounded-md text-2xl ${loading ? 'bg-slate-300' : 'bg-pink-400'}`} onClick={fetchRepos}>
+                    {loading ? <div className="grid grid-flow-col gap-3 animate-spin text-xl h-7 w-7">🌀</div> : '🔁'}
+                </button>
+            </div>
             <div className="grid grid-flow-row md:grid-flow-col pt-4">
                 <>
                     {repoData.map((project: string[]) => (
