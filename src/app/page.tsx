@@ -6,7 +6,7 @@ import GitReposComponent from '../../components/gitRepos'
 export default function Home() {
     return (
         <>
-            <div className="p-8 lg:p-24">
+            <div className="px-8 py-28 lg:px-24 lg:py-28">
                 <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
                     <div className="grid xl:grid-flow-col lg:grid-flow-row gap-8">
                         <div>
