@@ -1,21 +1,21 @@
-import { ArrowPathIcon } from '@heroicons/react/16/solid'
+// import { ArrowPathIcon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
-import { unstable_noStore as noStore } from 'next/cache'
+// import { useState, useEffect } from 'react'
 
 /**
- * Renders a component that displays the latest GitHub repositories of a user.
- * Fetches data from the GitHub API server side and displays the repository name, last push date, and a link to the repository.
+ * Interface for the repository data.
  */
-
 interface IRepo {
     name: string
     pushed_at: string
     html_url: string
 }
 
+/**
+ * Renders a component that displays the latest GitHub repositories of a user.
+ * Fetches data from the GitHub API server side and displays the repository name, last push date, and a link to the repository.
+ */
 export default async function GitReposComponent() {
-    noStore()
     // // State to store the repository data.
     // const [repoData, setRepoData] = useState([])
     // // State to store the loading state.
