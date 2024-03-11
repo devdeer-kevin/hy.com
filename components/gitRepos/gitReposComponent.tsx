@@ -1,6 +1,7 @@
 // import { ArrowPathIcon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
 // import { useState, useEffect } from 'react'
+import { unstable_noStore as noStore } from 'next/cache'
 
 /**
  * Interface for the repository data.
@@ -16,6 +17,7 @@ interface IRepo {
  * Fetches data from the GitHub API server side and displays the repository name, last push date, and a link to the repository.
  */
 export default async function GitReposComponent() {
+    noStore()
     // // State to store the repository data.
     // const [repoData, setRepoData] = useState([])
     // // State to store the loading state.
