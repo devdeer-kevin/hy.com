@@ -1,6 +1,4 @@
-// import { ArrowPathIcon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
-// import { useState, useEffect } from 'react'
 import { unstable_noStore as noStore } from 'next/cache'
 
 /**
@@ -17,25 +15,8 @@ interface IRepo {
  * Fetches data from the GitHub API server side and displays the repository name, last push date, and a link to the repository.
  */
 export default async function GitReposComponent() {
+    // Declaratively opt out of static rendering
     noStore()
-    // // State to store the repository data.
-    // const [repoData, setRepoData] = useState([])
-    // // State to store the loading state.
-    // const [loading, setLoading] = useState(true)
-
-    // Fetches the latest repositories from the GitHub API.
-    // const fetchRepos = async () => {
-    // setLoading(true)
-    // const response = await fetch('/api/v1/repos')
-    // const data = await response.json()
-    // const repoData = data.repoData
-    // setRepoData(repoData)
-    // setLoading(false)
-    // }
-
-    // useEffect(() => {
-    //     fetchRepos()
-    // }, [])
 
     const response = await fetch('https://api.github.com/users/devdeer-kevin/repos')
     const data = await response.json()
@@ -48,9 +29,6 @@ export default async function GitReposComponent() {
         <div className="grid gap-4 rounded-md p-4 bg-indigo-900 shadow-lg">
             <div className="flex flex-row justify-between items-baseline">
                 <h2 className="sm:text-3xl text-xl text-pink-400">{'//'} Explore My Latest GitHub Ventures</h2>
-                {/* <button title="Refresh" className={`p-2 rounded-md  ${loading ? 'bg-slate-300' : 'bg-pink-400 hover:bg-pink-500'}`} onClick={fetchRepos}>
-                    {loading ? <ArrowPathIcon className="h-5 w-5 text-slate-800 animate-spin" /> : <ArrowPathIcon className="h-5 w-5 text-slate-800" />}
-                </button> */}
             </div>
             <div className="grid grid-flow-row md:grid-flow-col pt-4">
                 <>
