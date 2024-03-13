@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import Logo from '../../public/HY_LOGO218.png'
 
@@ -8,7 +7,7 @@ import Logo from '../../public/HY_LOGO218.png'
  */
 export default async function NavigationTopComponent() {
     return (
-        <nav className="flex w-full h-24 justify-between">
+        <nav className="flex w-full justify-between">
             <Image loading="eager" src={Logo} alt="logo" width={100} height={100} />
         </nav>
     )

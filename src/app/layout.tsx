@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className="grid min-h-screen w-full flex-col justify-center">
+            <body className="flex flex-col min-h-screen w-full">
                 <NavigationTopComponent />
                 {children}
             </body>
