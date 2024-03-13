@@ -2,17 +2,17 @@
 
 ## Introduction
 
-This is the official GitHub repository of my website. This website will be a personal and professional showcase for me, focusing on software development, project management, and a passion for technology and design.
+This is the official GitHub repository of my website. This web app will be a personal and professional showcase for me, focusing on software development, project management, and a passion for technology and design.
 
 ## Overview
 
-This website will serve as a portfolio and blog where I, Kevin, share my expertise in agile project management, software development using modern web technologies like Node, React, Next.js, and Azure Cloud, as well as insights into UX design and cloud application development.
+This website will serve as a portfolio and blog where I, Kevin, share my expertise in Agile project management, software development using modern web technologies like Node, React, Next.js, and Azure Cloud, as well as insights into UX design and cloud application development.
 
 In addition, this platform will offer insights into my consulting work in business analytics, IT, and enterprise solutions.
 
 ## Features
 
--   **Placeholder:** Just a link to my corporate website for now.
+-   **Responsiveness:** Seamlessly adapts to any screen for an optimal viewing experience on any device.
 -   **GitHub API Integration:** Get real-time updates on my newest projects.
 
 ## Local Development
