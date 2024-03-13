@@ -8,7 +8,7 @@ import Logo from '../../public/HY_LOGO218.png'
  */
 export default async function NavigationTopComponent() {
     return (
-        <nav className="flex fixed top-0 w-full justify-between bg-slate-900 lg:bg-transparent">
+        <nav className="flex w-full h-24 justify-between">
             <Image loading="eager" src={Logo} alt="logo" width={100} height={100} />
         </nav>
     )
