@@ -9,7 +9,7 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid'
  */
 export default async function NavigationTopComponent() {
     return (
-        <nav className="flex flex-row w-full justify-between items-center p-8 ">
+        <nav className="flex flex-row w-full justify-between items-center p-8">
             <div className="flex flex-row justify-between">
                 <Link className="font-bold text-slate-50 opacity-35" href="/">
                     Home
