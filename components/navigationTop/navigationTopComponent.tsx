@@ -20,7 +20,7 @@ export default async function NavigationTopComponent() {
                 <div className="text-slate-50">Kevin Heyland</div>
             </div>
             <div className="flex flex-row justify-end items-center">
-                <Image className="w-10 h-10 rounded-full bg-slate-600" loading="eager" src={Logo} alt="logo" width={100} height={100} />
+                <Image className="w-10 h-10 rounded-full bg-slate-600 bg-opacity-60" loading="eager" src={Logo} alt="logo" width={100} height={100} />
             </div>
         </nav>
     )
