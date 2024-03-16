@@ -11,10 +11,10 @@ export default async function NavigationTopComponent() {
     return (
         <nav className="flex flex-row w-full justify-between items-center p-8 ">
             <div className="flex flex-row justify-between">
-                <Link className="font-bold text-slate-50 opacity-35 " href="/">
+                <Link className="font-bold text-slate-50 opacity-35" href="/">
                     Home
                 </Link>
-                <div className="px-6">
+                <div className="sm:px-6 px-2">
                     <ChevronRightIcon className="w-6 h-6 text-slate-50" />
                 </div>
                 <div className="text-slate-50">Kevin Heyland</div>
