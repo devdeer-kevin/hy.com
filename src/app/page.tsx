@@ -8,7 +8,7 @@ export default function Home() {
         <>
             <div className="py-8 lg:py-8 px-4 lg:px-8">
                 <div className="pb-6">
-                    <h1 className="text-5xl font-bold text-slate-50 opacity-70">About me</h1>
+                    <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">About me</h1>
                     <h4 className="text-md font-mono  text-slate-400 opacity-80">Introduction</h4>
                 </div>
                 <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
