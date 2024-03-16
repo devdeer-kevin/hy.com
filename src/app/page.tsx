@@ -6,13 +6,13 @@ import Link from 'next/link'
 export default function Home() {
     return (
         <>
-            <div className="py-8 lg:py-8 px-8 lg:px-8">
-                <div>
+            <div className="py-8 lg:py-8 px-4 lg:px-8">
+                <div className="pb-6">
                     <h1 className="text-5xl font-bold text-slate-50 opacity-70">About me</h1>
                     <h4 className="text-md font-mono  text-slate-400 opacity-80">Introduction</h4>
                 </div>
                 <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
-                    <div className="flex lg:flex-row flex-col-reverse pt-4 gap-8">
+                    <div className="flex lg:flex-row flex-col-reverse gap-8">
                         <div className="lg:w-1/2 w-full">
                             <div className="flex flex-col w-full h-full min-h-80 relative overflow-hidden">
                                 <Image
@@ -38,7 +38,7 @@ export default function Home() {
                         </div>
                         <div className="lg:w-1/2 w-full">
                             <div className="flex flex-row gap-8 pb-8">
-                                <div className="p-8 relative w-44 h-44 rounded-full border-2 border-t-slate-500 border-l-slate-500 border-r-slate-600 border-b-slate-600">
+                                <div className="p-8 relative sm:w-44 sm:h-44 w-32 h-32 w rounded-full border-2 border-t-slate-500 border-l-slate-500 border-r-slate-600 border-b-slate-600">
                                     <Image
                                         className="rounded-full border border-t-slate-500 border-l-slate-500 border-r-slate-600 border-b-slate-600"
                                         loading="eager"
@@ -50,11 +50,11 @@ export default function Home() {
                                 </div>
                                 <div className="flex flex-col justify-center">
                                     <div className="flex flex-col">
-                                        <h3 className="text-4xl font-sans font-bold text-slate-300 opacity-60 leading-0">Kevin</h3>
-                                        <h3 className="text-4xl font-sans font-bold text-slate-300 opacity-60 leading-0">Heyland</h3>
+                                        <h3 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60 leading-0">Kevin</h3>
+                                        <h3 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60 leading-0">Heyland</h3>
                                         <div className="flex flex-col justify-start">
-                                            <h5 className="text-md font-mono text-slate-100 opacity-80 leading-0">BSc Business Education</h5>
-                                            <h5 className="text-md font-sans text-slate-400 opacity-60 leading-0">Magdeburg, Germany</h5>
+                                            <h5 className="sm:text-md text-sm font-mono text-slate-100 opacity-80 leading-0">BSc Business Education</h5>
+                                            <h5 className="sm:text-md text-sm font-sans text-slate-400 opacity-60 leading-0">Magdeburg, Germany</h5>
                                         </div>
                                     </div>
                                 </div>
