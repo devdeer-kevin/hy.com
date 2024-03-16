@@ -67,7 +67,9 @@ export default function Home() {
                             responsibility.
                         </p>
                     </div>
-                    <div>{/* <GitReposComponent /> */}</div>
+                    <div>
+                        <GitReposComponent />
+                    </div>
                 </div>
             </div>
             <footer className="flex w-full justify-center pb-8 px-8">
