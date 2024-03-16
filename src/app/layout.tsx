@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-            <body className="flex flex-col min-h-screen w-full items-center bg-gradient-to-r from-slate-950 to-indigo-950">
+            <body className="flex flex-col min-h-screen w-full items-center bg-gradient-to-br from-slate-950 to-indigo-950">
                 <NavigationTopComponent />
                 {children}
             </body>

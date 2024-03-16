@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-    @apply bg-slate-900;
+    @apply bg-slate-950;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        @apply bg-slate-900;
+        @apply bg-slate-950;
     }
 }
 
 body {
-    @apply bg-slate-900;
+    @apply bg-slate-950;
 }
 
 @layer utilities {
