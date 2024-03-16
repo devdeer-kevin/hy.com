@@ -59,7 +59,7 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="p-6 bg-slate-950 bg-opacity-30 rounded-2xl backdrop-blur-sm border-2 border-t-slate-600 border-l-slate-600 border-r-slate-700 border-b-slate-700">
+                            <div className="pt-6 pb-2 px-6 bg-slate-950 bg-opacity-30 rounded-2xl backdrop-blur-sm border-2 border-t-slate-600 border-l-slate-600 border-r-slate-700 border-b-slate-700">
                                 <h3 className="text-sm font-sans font-bold text-slate-300 opacity-70 ">Code, Creativity & Change: Navigating the Digital Frontier</h3>
                                 <p className="text-md leading-7 font-sans text-slate-300 opacity-70">
                                     With a solid foundation in Agile methodology through my certifications with the Scrum Alliance and a robust educational background with a
