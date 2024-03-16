@@ -64,7 +64,7 @@ export default function Home() {
                                 <p className="text-md leading-7 font-sans text-slate-300 opacity-70">
                                     With a solid foundation in Agile methodology through my certifications with the Scrum Alliance and a robust educational background with a
                                     Bachelor of Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in
-                                    Agile project management and software development.
+                                    Agile project management and full stack software development.
                                 </p>
                             </div>
                         </div>
