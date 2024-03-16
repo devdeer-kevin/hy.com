@@ -8,7 +8,7 @@ export default function Home() {
         <>
             <div className="py-8 lg:py-8 px-8 lg:px-8">
                 <div>
-                    <h1 className="text-5xl font-bold text-slate-400 opacity-60">About me</h1>
+                    <h1 className="text-5xl font-bold text-slate-50 opacity-70">About me</h1>
                     <h4 className="text-md font-mono  text-slate-400 opacity-80">Introduction</h4>
                 </div>
                 <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
@@ -24,10 +24,13 @@ export default function Home() {
                                     style={{ objectFit: 'cover' }}
                                 />
                                 <div className="z-10 flex h-full min-h-72 items-center w-1/2 pl-4">
-                                    <h2 className="text-5xl font-sans font-bold text-gray-800 opacity-35"> Code, Creativity & Change</h2>
+                                    <h2 className="text-5xl font-sans font-bold text-gray-800 opacity-35">Code, Creativity & Change</h2>
                                 </div>
-                                <div className="z-10 absolute bottom-0 h-14 bg-gradient-to-r from-gray-400 to-transparent bg-opacity-60 backdrop-blur-sm w-full rounded-b-xl">
-                                    <Link className="text-gray-100 opacity-65 text-sm flex items-center h-14 justify-center" target="_blank" href="https://www.giovannagahrns.com">
+                                <div className="z-10 absolute bottom-0 sm:h-24 h-16 bg-gradient-to-r from-gray-400 to-transparent bg-opacity-60 backdrop-blur-sm w-full rounded-b-xl">
+                                    <Link
+                                        className="text-gray-100 opacity-65 text-sm flex items-center sm:h-24 h-16 justify-center"
+                                        target="_blank"
+                                        href="https://www.giovannagahrns.com">
                                         Photography by Giovanna Veronica Gahrns
                                     </Link>
                                 </div>
@@ -57,8 +60,8 @@ export default function Home() {
                                 </div>
                             </div>
                             <div className="p-6 bg-slate-950 bg-opacity-30 rounded-2xl backdrop-blur-sm border-2 border-t-slate-600 border-l-slate-600 border-r-slate-700 border-b-slate-700">
-                                <h3 className="text-md font-sans font-bold text-slate-300 opacity-70 ">Navigating the Digital Frontier</h3>
-                                <p className="text-sm leading-6 font-sans text-slate-300 opacity-70">
+                                <h3 className="text-sm font-sans font-bold text-slate-300 opacity-70 ">Code, Creativity & Change: Navigating the Digital Frontier</h3>
+                                <p className="text-md leading-7 font-sans text-slate-300 opacity-70">
                                     With a solid foundation in Agile methodology through my certifications with the Scrum Alliance and a robust educational background with a
                                     Bachelor of Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in
                                     Agile project management and software development.
@@ -68,7 +71,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <footer className="flex w-full justify-center py-8 px-8">
+            <footer className="flex w-full justify-center py-6 px-8">
                 <div className="flex flex-row gap-3 font-mono items-center">
                     <div className="h-full">
                         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-teal-300">
