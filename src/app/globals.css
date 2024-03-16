@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-    @apply bg-gradient-to-b from-slate-900 to-slate-800;
+    @apply bg-slate-900;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        @apply bg-gradient-to-b from-slate-900 to-slate-800;
+        @apply bg-slate-900;
     }
 }
 

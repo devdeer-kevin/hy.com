@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className="flex flex-col min-h-screen w-full items-center">
+            <body className="flex flex-col min-h-screen w-full items-center  bg-gradient-to-r from-slate-900 to-indigo-950">
                 <NavigationTopComponent />
                 {children}
             </body>
