@@ -1,78 +1,74 @@
 import Image from 'next/image'
 import Photo from '../../public/kevinheyland_bw.jpg'
+import Profile from '../../public/kevinheyland-profile.jpeg'
 import Link from 'next/link'
-import GitReposComponent from '../../components/gitRepos'
 
 export default function Home() {
     return (
         <>
-            <div className="p-8 lg:p-12">
+            <div className="py-8 lg:py-8 px-8 lg:px-8">
+                <div>
+                    <h1 className="text-5xl font-bold text-slate-400 opacity-60">About me</h1>
+                    <h4 className="text-md font-mono  text-slate-400 opacity-80">Introduction</h4>
+                </div>
                 <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
-                    <div className="grid xl:grid-flow-col lg:grid-flow-row gap-8">
-                        <div>
-                            <div className="flex flex-col">
-                                <Image className="rounded-sm shadow-xl border-b-8 border-pink-400" loading="eager" alt="Kevin Heyland" src={Photo} width={400} height={100} />
-                                <Link className="text-indigo-700 text-sm pt-1" target="_blank" href="https://www.giovannagahrns.com">
-                                    {'>>'} Photography by Giovanna Veronica Gahrns
-                                </Link>
+                    <div className="flex lg:flex-row flex-col-reverse pt-4 gap-8">
+                        <div className="lg:w-1/2 w-full">
+                            <div className="flex flex-col w-full h-full min-h-80 relative overflow-hidden">
+                                <Image
+                                    className="rounded-2xl border-2 border-t-slate-500 border-l-slate-500 border-r-slate-600 border-b-slate-600"
+                                    loading="eager"
+                                    alt="Kevin Heyland"
+                                    src={Photo}
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                />
+                                <div className="z-10 flex h-full min-h-72 items-center w-1/2 pl-4">
+                                    <h2 className="text-5xl font-sans font-bold text-gray-800 opacity-35"> Code, Creativity & Change</h2>
+                                </div>
+                                <div className="z-10 absolute bottom-0 h-14 bg-gradient-to-r from-gray-400 to-transparent bg-opacity-60 backdrop-blur-sm w-full rounded-b-xl">
+                                    <Link className="text-gray-100 opacity-65 text-sm flex items-center h-14 justify-center" target="_blank" href="https://www.giovannagahrns.com">
+                                        Photography by Giovanna Veronica Gahrns
+                                    </Link>
+                                </div>
                             </div>
                         </div>
-                        <div className="grid grid-flow-row">
-                            <h2 className="text-6xl text-pink-400 font-bold pb-6">TL;DR</h2>
-                            <h3 className="text-sm text-lime-400">Code, Creativity & Change: Navigating the Digital Frontier</h3>
-                            <p>
-                                With a solid foundation in Agile methodology through my certifications with the Scrum Alliance and a robust educational background with a Bachelor
-                                of Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in Agile project
-                                management and software development.
-                            </p>
+                        <div className="lg:w-1/2 w-full">
+                            <div className="flex flex-row gap-8 pb-8">
+                                <div className="p-8 relative w-44 h-44 rounded-full border-2 border-t-slate-500 border-l-slate-500 border-r-slate-600 border-b-slate-600">
+                                    <Image
+                                        className="rounded-full border border-t-slate-500 border-l-slate-500 border-r-slate-600 border-b-slate-600"
+                                        loading="eager"
+                                        alt="Kevin Heyland"
+                                        src={Profile}
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </div>
+                                <div className="flex flex-col justify-center">
+                                    <div className="flex flex-col">
+                                        <h3 className="text-4xl font-sans font-bold text-slate-300 opacity-60 leading-0">Kevin</h3>
+                                        <h3 className="text-4xl font-sans font-bold text-slate-300 opacity-60 leading-0">Heyland</h3>
+                                        <div className="flex flex-col justify-start">
+                                            <h5 className="text-md font-mono text-slate-100 opacity-80 leading-0">BSc Business Education</h5>
+                                            <h5 className="text-md font-sans text-slate-400 opacity-60 leading-0">Magdeburg, Germany</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="p-6 bg-slate-950 bg-opacity-30 rounded-2xl backdrop-blur-sm border-2 border-t-slate-600 border-l-slate-600 border-r-slate-700 border-b-slate-700">
+                                <h3 className="text-md font-sans font-bold text-slate-300 opacity-70 ">Navigating the Digital Frontier</h3>
+                                <p className="text-sm leading-6 font-sans text-slate-300 opacity-70">
+                                    With a solid foundation in Agile methodology through my certifications with the Scrum Alliance and a robust educational background with a
+                                    Bachelor of Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in
+                                    Agile project management and software development.
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <h2 className="text-3xl text-pink-400 pb-6">{'//'} For those who want the full story</h2>
-                        <h3 className="text-sm text-lime-400">From Storefronts to Software: A Story of Transformation and Technology</h3>
-                        <p>
-                            Starting in retail, where I underwent a remarkable transition from a temporary worker to a Marketing Manager, my path led me through various strategic
-                            positions in the fields of digital marketing and entrepreneurship. As a Senior Digital Marketing Engineer, I directed significant digital transformation
-                            projects at a leading technology company. I demonstrated my entrepreneurial skills as the founder of an online marketing agency and as the CMO of a
-                            startup, where we created groundbreaking visual 3D content.
-                        </p>
-                        <p>
-                            As a Senior UX Designer, I laid the groundwork for top-notch user experiences. Then, as a certified Scrum Product Owner and Team Lead, I utilized agile
-                            practices to forge effective backlogs. These efforts delivered valuable product increments for clients ranging from mid-sized businesses to large
-                            corporations across various industries.
-                        </p>
-                        <p>
-                            In my current role as Head of Operations, I integrate my passion for artificial intelligence, sustainable development practices, and diversity into our
-                            operational processes and consulting services. Drawing upon my extensive background in software development, I actively contribute to front-end
-                            development, ensuring our solutions not only align with our operational excellence but also embody cutting-edge user experience. Additionally,
-                            leveraging the principles of agile project management, I co-hosted and developed a podcast by applying these principles, demonstrating how agile
-                            methodologies can be effectively utilized beyond traditional software development projects.
-                        </p>
-                        <div className="border-l-8 border-pink-400 pl-4 rounded-sm">
-                            <p>
-                                This combination of practical professional experience and continuous education allows me to blend operational efficiency with technical innovation,
-                                consistently delivering high-quality results. My career path reflects my relentless drive to evolve, expand my expertise, and implement innovative
-                                solutions in a rapidly changing digital world.
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <h3 className="text-sm text-lime-400">Code, Communication & Compassion: A Commitment to Community</h3>
-                        <p>
-                            Beyond my professional accomplishments, {"I've"} dedicated a portion of my time to voluntary work, underscoring my commitment to contributing positively
-                            to the wider community. This engagement has not only allowed me to give back but has also enriched my own perspective, improving my capabilities in
-                            leadership, empathy, and problem-solving. Whether {"it's"} through leveraging my expertise in technology to support non-profit organizations, advocating
-                            for parents{"'"} interests to the city administration or planning and organizing inspiring excursions for school kids, my voluntary work remains a vital
-                            aspect of my personal and professional identity. This diverse engagement drives me to foster a culture of innovation, inclusiveness, and social
-                            responsibility.
-                        </p>
-                    </div>
-                    <div>
-                        <GitReposComponent />
                     </div>
                 </div>
             </div>
-            <footer className="flex w-full justify-center pb-8 px-8">
+            <footer className="flex w-full justify-center py-8 px-8">
                 <div className="flex flex-row gap-3 font-mono items-center">
                     <div className="h-full">
                         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-teal-300">
