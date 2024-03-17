@@ -2,16 +2,19 @@ import Image from 'next/image'
 import Photo from '../../public/kevinheyland_bw.jpg'
 import Profile from '../../public/kevinheyland-profile.jpeg'
 import Link from 'next/link'
+import { CommandLineIcon } from '@heroicons/react/24/solid'
+import { RocketLaunchIcon } from '@heroicons/react/24/outline'
+import { UserGroupIcon } from '@heroicons/react/24/outline'
 
 export default function Home() {
     return (
         <>
-            <div className="py-8 lg:py-8 px-4 sm:px-8">
-                <div className="pb-6">
+            <div className="flex flex-col py-8 lg:py-8 px-4 sm:px-8 max-w-7xl lg:gap-20 gap-12">
+                <div>
                     <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">About me</h1>
                     <h4 className="text-md font-mono  text-slate-400 opacity-80">Introduction</h4>
                 </div>
-                <div className="z-10 grid w-full max-w-5xl grid-flow-row items-center justify-center gap-8 font-mono">
+                <div className="w-full grid-flow-row items-center justify-center gap-8 font-mono">
                     <div className="flex lg:flex-row flex-col-reverse gap-8">
                         <div className="lg:w-1/2 w-full">
                             <div className="flex flex-col w-full h-full min-h-80 relative overflow-hidden">
@@ -70,8 +73,35 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                <div className="flex flex-col gap-8 pt-16 pb-10 px-6 bg-gray-950 bg-opacity-50 rounded-2xl backdrop-blur-sm border-2 border-t-slate-700 border-l-slate-700 border-r-slate-800 border-b-slate-800">
+                    <div className="flex flex-row gap-3">
+                        <CommandLineIcon className="w-8 h-8 text-pink-400" />
+                        <UserGroupIcon className="w-8 h-8 text-teal-400" />
+                        <RocketLaunchIcon className="w-8 h-8 text-lime-400" />
+                    </div>
+                    <div className="lg:w-1/2 w-4/5">
+                        <h3 className="leading-tight text-5xl font-sans font-bold text-slate-50 opacity-80 ">From Storefronts to Software Development</h3>
+                    </div>
+                    <div className="grid lg:grid-flow-col grid-flow-row gap-4 font-medium">
+                        <p className="text-md leading-7 font-sans text-gray-500">
+                            <span className="text-gray-50 opacity-100">Beginning my career journey in retail,</span> I experienced a transformative journey, evolving from a
+                            temporary worker to a Marketing Manager. This path was not just a series of roles but a rich tapestry of collaborations with some truly{' '}
+                            <span className="text-gray-50 opacity-100">
+                                outstanding individuals whose insights and mentorship greatly accelerated my professional and personal growth.
+                            </span>{' '}
+                            In the realm of digital marketing and entrepreneurship, my trajectory included significant milestones. As a Senior UX Designer, I laid the groundwork
+                            for top-notch user experiences.
+                        </p>
+                        <p className="text-md leading-7 font-sans text-gray-500">
+                            Then, as a certified Scrum Product Owner and Team Lead, I utilized agile practices to forge effective backlogs. These efforts delivered valuable product
+                            increments for clients ranging from mid-sized businesses to large corporations across various industries. At each stage, it was{' '}
+                            <span className="text-gray-50 opacity-100">the collaboration with remarkable colleagues</span> that fueled my growth, enhancing my journey with their
+                            expertise and perspectives.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <footer className="flex w-full justify-center py-6 px-8">
+            <footer className="flex w-full justify-center py-8 px-8">
                 <div className="flex flex-row gap-3 font-mono items-center">
                     <div className="h-full">
                         <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-teal-300">
