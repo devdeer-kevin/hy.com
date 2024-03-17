@@ -5,11 +5,12 @@ import Link from 'next/link'
 import { CommandLineIcon } from '@heroicons/react/24/solid'
 import { RocketLaunchIcon } from '@heroicons/react/24/outline'
 import { UserGroupIcon } from '@heroicons/react/24/outline'
+import GitReposComponent from '../../components/gitRepos'
 
 export default function Home() {
     return (
         <>
-            <div className="flex flex-col py-8 lg:py-8 px-4 sm:px-8 max-w-7xl lg:gap-20 gap-12">
+            <div className="flex flex-col py-8 lg:py-8 px-4 sm:px-8 max-w-7xl lg:gap-16 gap-12">
                 <div>
                     <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">About me</h1>
                     <h4 className="text-md font-mono  text-slate-400 opacity-80">Introduction</h4>
@@ -64,7 +65,7 @@ export default function Home() {
                             </div>
                             <div className="pt-6 pb-2 px-6 bg-slate-950 bg-opacity-30 rounded-2xl backdrop-blur-sm border-2 border-t-slate-600 border-l-slate-600 border-r-slate-700 border-b-slate-700">
                                 <h3 className="text-sm font-sans font-bold text-slate-300 opacity-70 ">Code, Creativity & Change: Navigating the Digital Frontier</h3>
-                                <p className="text-md leading-7 font-sans text-slate-300 opacity-70">
+                                <p className="text-md leading-7 font-sans text-slate-300 opacity-70 font-medium">
                                     With a solid foundation in Agile methodology through my certifications with the Scrum Alliance and a robust educational background with a
                                     Bachelor of Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in
                                     Agile project management and full stack software development.
@@ -73,32 +74,36 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-8 pt-16 pb-10 px-6 bg-gray-950 bg-opacity-50 rounded-2xl backdrop-blur-sm border-2 border-t-slate-700 border-l-slate-700 border-r-slate-800 border-b-slate-800">
-                    <div className="flex flex-row gap-3">
-                        <CommandLineIcon className="w-8 h-8 text-pink-400" />
-                        <UserGroupIcon className="w-8 h-8 text-teal-400" />
-                        <RocketLaunchIcon className="w-8 h-8 text-lime-400" />
-                    </div>
+                <div>
+                    <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">Repos</h1>
+                    <h4 className="text-md font-mono  text-slate-400 opacity-80">Current GitHub Ventures</h4>
+                </div>
+                <GitReposComponent />
+                <div>
+                    <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">Career</h1>
+                    <h4 className="text-md font-mono  text-slate-400 opacity-80">Learning, Growth and Companionship</h4>
+                </div>
+                <div className="flex flex-col gap-8 pt-16 pb-10 px-6 bg-slate-950 bg-opacity-30 rounded-2xl backdrop-blur-sm border-2 border-t-slate-700 border-l-slate-700 border-r-slate-800 border-b-slate-800">
                     <div className="lg:w-1/2 w-4/5">
                         <h3 className="sm:text-5xl text-4xl font-sans font-bold text-gray-400">
                             From Storefronts to <span className="font-mono text-slate-100">Software Development</span>
                         </h3>
+                        <h3 className="text-sm font-sans font-bold text-slate-100 opacity-30 ">[2006 - 2018] A Story of Transformation and Technology</h3>
                     </div>
-                    <div className="grid lg:grid-flow-col grid-flow-row gap-4 font-medium">
-                        <p className="text-md leading-7 font-sans text-gray-500">
-                            <span className="text-gray-50 opacity-100">Beginning my career journey in retail,</span> I experienced a transformative journey, evolving from a
-                            temporary worker to a Marketing Manager. This path was not just a series of roles but a rich tapestry of collaborations with some truly{' '}
-                            <span className="text-gray-50 opacity-100">
-                                outstanding individuals whose insights and mentorship greatly accelerated my professional and personal growth.
-                            </span>{' '}
-                            In the realm of digital marketing and entrepreneurship, my trajectory included significant milestones. As a Senior UX Designer, I laid the groundwork
-                            for top-notch user experiences.
+                    <div className="grid lg:grid-flow-col grid-flow-row gap-8 font-medium">
+                        <p className="text-md leading-7 font-sans text-slate-300 opacity-70">
+                            Starting after school as a temporary worker in retail and progressing to a Marketing Manager, my early career was a journey marked by significant growth
+                            and learning, enriched by mentorship from outstanding individuals. Balancing university studies in Magdeburg, Germany, I further evolved from a working
+                            student into a Senior Digital Marketing Engineer. This period effectively merged my academic knowledge with practical experience in digital marketing
+                            and product design, thanks to the guidance of remarkable colleagues. I am deeply thankful for this journey, showcasing the impactful synergy between
+                            education and practical application in shaping my career.
                         </p>
-                        <p className="text-md leading-7 font-sans text-gray-500">
-                            Then, as a certified Scrum Product Owner and Team Lead, I utilized agile practices to forge effective backlogs. These efforts delivered valuable product
-                            increments for clients ranging from mid-sized businesses to large corporations across various industries. At each stage,{' '}
-                            <span className="text-gray-50 opacity-100">it was the collaboration with remarkable colleagues</span> that fueled my growth, enhancing my journey with
-                            their expertise and perspectives.
+                        <p className="text-md leading-7 font-sans text-slate-300 opacity-70">
+                            Transitioning seamlessly into my career, my initial foray into User Experience (UX) design began uniquely as a Digital Performance Marketer. In this
+                            role, I delved into analyzing user flows and optimizing journeys on product landing pages I crafted myself. This hands-on experience with enhancing
+                            digital interactions marked the genesis of my passion for software development, particularly sparking my interest in frontend development. Leveraging
+                            this newfound enthusiasm, I went on to establish robust foundations for exceptional user experiences as a Senior UX Designer, combining strategic
+                            marketing insights with user-centered design principles.
                         </p>
                     </div>
                 </div>
