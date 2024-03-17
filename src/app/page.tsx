@@ -80,7 +80,7 @@ export default function Home() {
                         <RocketLaunchIcon className="w-8 h-8 text-lime-400" />
                     </div>
                     <div className="lg:w-1/2 w-4/5">
-                        <h3 className="leading-tight text-5xl font-sans font-bold text-gray-400">
+                        <h3 className="sm:text-5xl text-4xl font-sans font-bold text-gray-400">
                             From Storefronts to <span className="font-mono text-slate-100">Software Development</span>
                         </h3>
                     </div>
@@ -96,9 +96,9 @@ export default function Home() {
                         </p>
                         <p className="text-md leading-7 font-sans text-gray-500">
                             Then, as a certified Scrum Product Owner and Team Lead, I utilized agile practices to forge effective backlogs. These efforts delivered valuable product
-                            increments for clients ranging from mid-sized businesses to large corporations across various industries. At each stage, it was{' '}
-                            <span className="text-gray-50 opacity-100">the collaboration with remarkable colleagues</span> that fueled my growth, enhancing my journey with their
-                            expertise and perspectives.
+                            increments for clients ranging from mid-sized businesses to large corporations across various industries. At each stage,{' '}
+                            <span className="text-gray-50 opacity-100">it was the collaboration with remarkable colleagues</span> that fueled my growth, enhancing my journey with
+                            their expertise and perspectives.
                         </p>
                     </div>
                 </div>
