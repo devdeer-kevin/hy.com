@@ -80,7 +80,7 @@ export default function Home() {
                         <RocketLaunchIcon className="w-8 h-8 text-lime-400" />
                     </div>
                     <div className="lg:w-1/2 w-4/5">
-                        <h3 className="leading-tight text-5xl font-sans font-bold text-slate-50 opacity-80 ">From Storefronts to Software Development</h3>
+                        <h3 className="leading-tight text-5xl font-sans font-bold text-slate-50">From Storefronts to Software Development</h3>
                     </div>
                     <div className="grid lg:grid-flow-col grid-flow-row gap-4 font-medium">
                         <p className="text-md leading-7 font-sans text-gray-500">
