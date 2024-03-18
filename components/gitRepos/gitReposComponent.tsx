@@ -77,7 +77,7 @@ export default async function GitReposComponent() {
     function getRepoName(repoName: string) {
         switch (repoName) {
             case 'terminal-gpt-chat':
-                return 'Terminal Chat'
+                return 'Terminal GPT Chat'
             case 'shopping-list':
                 return 'Shopping List'
             case 'hy.com':
