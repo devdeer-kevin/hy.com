@@ -89,7 +89,7 @@ export default async function GitReposComponent() {
 
     return (
         <div className="">
-            <div className="grid grid-flow-row lg:grid-flow-col lg:grid-cols-3 grid-cols-1 pt-4 gap-8">
+            <div className="grid grid-flow-row lg:grid-flow-col lg:grid-cols-3 grid-cols-1 gap-8">
                 <>
                     {repoData.map((project: string[]) => (
                         <div className="py-2" key={project[1]}>
