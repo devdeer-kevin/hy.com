@@ -5,6 +5,7 @@ import Terminal from '../../public/terminal.jpeg'
 import Shopping from '../../public/shopping.jpeg'
 import Website from '../../public/website.jpeg'
 import Github from '../../public/github.jpeg'
+import Scotty from '../../public/scotty.jpeg'
 
 /**
  * Interface for the repository data.
@@ -69,6 +70,8 @@ export default async function GitReposComponent() {
                 return Shopping
             case 'hy.com':
                 return Website
+            case 'scotty-ui':
+                return Scotty
             default:
                 return Github
         }
@@ -82,6 +85,8 @@ export default async function GitReposComponent() {
                 return 'Shopping List'
             case 'hy.com':
                 return 'Personal Website'
+            case 'scotty-ui':
+                return 'Scotty UI'
             default:
                 return 'GitHub'
         }
