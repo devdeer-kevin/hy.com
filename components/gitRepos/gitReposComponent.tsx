@@ -6,6 +6,7 @@ import Shopping from '../../public/shopping.jpeg'
 import Website from '../../public/website.jpeg'
 import Github from '../../public/github.jpeg'
 import Scotty from '../../public/scotty.jpeg'
+import ShelfLife from '../../public/shelflife.jpeg'
 
 /**
  * Interface for the repository data.
@@ -72,6 +73,8 @@ export default async function GitReposComponent() {
                 return Website
             case 'scotty-ui':
                 return Scotty
+            case 'ShelfLife':
+                return ShelfLife
             default:
                 return Github
         }
@@ -87,6 +90,8 @@ export default async function GitReposComponent() {
                 return 'Personal Website'
             case 'scotty-ui':
                 return 'Scotty UI'
+            case 'ShelfLife':
+                return 'ShelfLife'
             default:
                 return 'GitHub'
         }
