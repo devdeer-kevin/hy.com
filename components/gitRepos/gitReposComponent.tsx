@@ -93,14 +93,14 @@ export default async function GitReposComponent() {
             case 'scotty-ui':
                 return 'Scotty UI'
             case 'ShelfLife':
-                return 'ShelfLife'
+                return 'ShelfLife Console'
             default:
                 return 'GitHub'
         }
     }
 
     return (
-        <div className="">
+        <>
             <div className="grid grid-flow-row lg:grid-flow-col lg:grid-cols-3 grid-cols-1 gap-8">
                 <>
                     {repoData.map((project: string[]) => (
@@ -147,6 +147,6 @@ export default async function GitReposComponent() {
                     ))}
                 </>
             </div>
-        </div>
+        </>
     )
 }
