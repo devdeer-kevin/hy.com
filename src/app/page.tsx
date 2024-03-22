@@ -2,9 +2,6 @@ import Image from 'next/image'
 import Photo from '../../public/kevinheyland_bw.jpg'
 import Profile from '../../public/kevinheyland-profile.jpeg'
 import Link from 'next/link'
-import { CommandLineIcon } from '@heroicons/react/24/solid'
-import { RocketLaunchIcon } from '@heroicons/react/24/outline'
-import { UserGroupIcon } from '@heroicons/react/24/outline'
 import GitReposComponent from '../../components/gitRepos'
 
 export default function Home() {
