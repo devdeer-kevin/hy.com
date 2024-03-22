@@ -63,6 +63,7 @@ export default async function GitReposComponent() {
     //     .sort((a: any[], b: any[]) => new Date(b[1]).getTime() - new Date(a[1]).getTime())
     //     .slice(0, 3)
 
+    // Function to get the image source based on the repository name
     function getImageSource(repoName: string) {
         switch (repoName) {
             case 'terminal-gpt-chat':
@@ -80,6 +81,7 @@ export default async function GitReposComponent() {
         }
     }
 
+    // Function to get the display name based on the repository name
     function getRepoName(repoName: string) {
         switch (repoName) {
             case 'terminal-gpt-chat':
