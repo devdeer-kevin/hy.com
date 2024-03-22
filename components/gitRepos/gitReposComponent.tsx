@@ -74,7 +74,7 @@ export default async function GitReposComponent() {
                 return Website
             case 'scotty-ui':
                 return Scotty
-            case 'ShelfLife':
+            case 'shelflife':
                 return ShelfLife
             default:
                 return Github
@@ -92,7 +92,7 @@ export default async function GitReposComponent() {
                 return 'Personal Website'
             case 'scotty-ui':
                 return 'Scotty UI'
-            case 'ShelfLife':
+            case 'shelflife':
                 return 'ShelfLife Console'
             default:
                 return 'GitHub'
