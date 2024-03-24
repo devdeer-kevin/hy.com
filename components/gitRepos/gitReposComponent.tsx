@@ -7,6 +7,7 @@ import Website from '../../public/website.jpeg'
 import Github from '../../public/github.jpeg'
 import Scotty from '../../public/scotty.jpeg'
 import ShelfLife from '../../public/shelflife.jpeg'
+import Assistent from '../../public/assistant.jpeg'
 
 /**
  * Interface for the repository data.
@@ -76,6 +77,8 @@ export default async function GitReposComponent() {
                 return Scotty
             case 'shelflife':
                 return ShelfLife
+            case 'terminal-gpt-assistant-chat':
+                return Assistent
             default:
                 return Github
         }
@@ -94,6 +97,8 @@ export default async function GitReposComponent() {
                 return 'Scotty UI'
             case 'shelflife':
                 return 'ShelfLife Console'
+            case 'terminal-gpt-assistant-chat':
+                return 'Terminal GPT Assistant'
             default:
                 return 'GitHub'
         }
