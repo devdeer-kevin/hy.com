@@ -7,7 +7,7 @@ import Website from '../../public/website.jpeg'
 import Github from '../../public/github.jpeg'
 import Scotty from '../../public/scotty.jpeg'
 import ShelfLife from '../../public/shelflife.jpeg'
-import Assistent from '../../public/assistant.jpeg'
+import Assistant from '../../public/assistant.jpeg'
 
 /**
  * Interface for the repository data.
@@ -78,7 +78,7 @@ export default async function GitReposComponent() {
             case 'shelflife':
                 return ShelfLife
             case 'terminal-gpt-assistant-chat':
-                return Assistent
+                return Assistant
             default:
                 return Github
         }
