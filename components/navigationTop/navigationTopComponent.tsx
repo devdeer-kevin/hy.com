@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Logo from '../../public/HY_LOGO218.png'
@@ -12,7 +12,6 @@ import { ChevronRightIcon } from '@heroicons/react/20/solid'
  * Fetches data from the GitHub API server side and displays the repository name, last push date, and a link to the repository.
  */
 export default function NavigationTopComponent(): React.ReactElement {
-    const [navMenu, setNavMenu] = useState(false)
     const pathname: string = usePathname()
 
     return (
@@ -37,29 +36,7 @@ export default function NavigationTopComponent(): React.ReactElement {
                 )}
             </div>
             <div className="flex flex-row justify-end items-center">
-                <div className="relative">
-                    <button onClick={() => setNavMenu(!navMenu)}>
-                        <Image className="w-10 h-10 rounded-full bg-slate-600 bg-opacity-60" loading="eager" src={Logo} alt="logo" width={100} height={100} />
-                    </button>
-                    {navMenu && (
-                        <div className="absolute -ml-10 mt-1 left-0 text-slate-400 p-3 bg-slate-800 bg-opacity-60 rounded-lg w-20 text-left shadow-lg">
-                            <div className="flex flex-col gap-2">
-                                <ul>
-                                    <li>
-                                        <Link className={`${pathname === '/' ? 'font-bold text-slate-300' : ''}`} href="/">
-                                            Home
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className={`${pathname === '/blog' ? 'font-bold text-slate-300' : ''}`} href="/blog">
-                                            Blog
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    )}
-                </div>
+                <Image className="w-10 h-10 rounded-full bg-slate-600 bg-opacity-60" loading="eager" src={Logo} alt="logo" width={100} height={100} />
             </div>
         </nav>
     )
