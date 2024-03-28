@@ -31,7 +31,7 @@ export default function NavigationTopComponent(): React.ReactElement {
                             <ChevronRightIcon className="w-6 h-6 text-slate-50" />
                         </div>
                         <Link className="font-bold text-slate-50 opacity-35" href="/blog">
-                            Code Calms Cognition
+                            Blog
                         </Link>
                     </>
                 )}
