@@ -117,8 +117,10 @@ export default function Home() {
                         If you have any feedback or want to know how this website was built.
                     </Link>
                 </div>
-                <div className="flex justify-center">
-                    <ArrowUpRightIcon className="h-6 w-6 text-indigo-600 animate-bounce" />
+                <div className="flex justify-center gap-4">
+                    <div className="h-full ">
+                        <ArrowUpRightIcon className="h-6 w-6 text-indigo-600 animate-bounce" />
+                    </div>
                     <Link className="text-indigo-600 underline font-mono" target="_blank" href="https://unsplash.com/collections/123508/repo-covers">
                         For those intrigued by my repository cover images, I&apos;ve curated a collection on Unsplash where you can download them.
                     </Link>
