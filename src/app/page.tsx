@@ -3,9 +3,9 @@ import Photo from '../../public/kevinheyland_bw.jpg'
 import Profile from '../../public/kevinheyland-profile.jpeg'
 import Link from 'next/link'
 import GitReposComponent from '../../components/gitRepos'
-import { ArrowUpCircleIcon, ArrowUpRightIcon } from '@heroicons/react/20/solid'
+import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
 
-export default function Home() {
+export default function Home(): React.ReactElement {
     return (
         <>
             <div className="flex flex-col py-8 lg:py-8 px-4 sm:px-8 max-w-7xl lg:gap-16 gap-12">
