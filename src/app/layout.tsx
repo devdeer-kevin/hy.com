@@ -14,7 +14,7 @@ export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode
-}>) {
+}>): React.ReactElement {
     return (
         <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
             <body className="flex flex-col min-h-screen w-full items-center bg-gradient-to-br from-slate-950 to-indigo-950">

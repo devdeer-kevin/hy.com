@@ -1,4 +1,4 @@
-export default function BlogLandingPage() {
+export default function BlogLandingPage(): React.ReactElement {
     return (
         <div className="flex flex-col py-8 lg:py-8 px-4 sm:px-8 max-w-7xl lg:gap-16 gap-12">
             <div>

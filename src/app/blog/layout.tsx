@@ -10,6 +10,6 @@ export default function BlogLayout({
     children, // will be a page or nested layout
 }: {
     children: React.ReactNode
-}) {
+}): React.ReactElement {
     return <section className="flex flex-col min-h-screen w-full items-center bg-gradient-to-br from-slate-950 to-indigo-950">{children}</section>
 }
