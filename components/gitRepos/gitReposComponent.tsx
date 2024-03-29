@@ -22,7 +22,7 @@ interface IRepo {
  * Renders a component that displays the latest GitHub repositories of a user.
  * Fetches data from the GitHub API server side and displays the repository name, last push date, and a link to the repository.
  */
-export default async function GitReposComponent() {
+export default async function GitReposComponent(): Promise<React.ReactElement> {
     // Declaratively opt out of static rendering
     noStore()
 
