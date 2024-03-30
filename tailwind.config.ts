@@ -5,8 +5,7 @@ const config: Config = {
     theme: {
         extend: {
             backgroundImage: {
-                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                'blog-background': "url('/public/blog-background.jpg')",
             },
             fontFamily: {
                 sans: ['var(--font-geist-sans)'],

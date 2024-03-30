@@ -15,7 +15,7 @@ export default function NavigationTopComponent(): React.ReactElement {
     const pathname: string = usePathname()
 
     return (
-        <nav className="flex flex-row w-full justify-between items-center py-6 sm:px-8 px-4 max-w-7xl">
+        <nav className="flex flex-row w-full justify-between z-10 items-center py-6 sm:px-8 px-4 max-w-7xl">
             <div className="flex flex-row justify-between">
                 <Link className="font-bold text-slate-50 opacity-35" href="/">
                     Home

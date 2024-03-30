@@ -4,11 +4,13 @@ import Profile from '../../public/kevinheyland-profile.jpeg'
 import Link from 'next/link'
 import GitReposComponent from '../../components/gitRepos'
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
+import NavigationTopComponent from '../../components/navigationTop'
 
 export default function Home(): React.ReactElement {
     return (
         <>
-            <div className="flex flex-col py-8 lg:py-8 px-4 sm:px-8 max-w-7xl lg:gap-16 gap-12">
+            <NavigationTopComponent />
+            <div className="flex flex-col py-12 px-4 sm:px-8 max-w-7xl lg:gap-16 gap-12">
                 <div>
                     <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">About me</h1>
                     <h4 className="text-md font-mono  text-slate-400 opacity-80">Introduction</h4>

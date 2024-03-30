@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Background from '../../../public/blog-background.jpg'
 
 export const metadata: Metadata = {
     title: 'Code Calms Cognition',
@@ -11,5 +13,10 @@ export default function BlogLayout({
 }: {
     children: React.ReactNode
 }): React.ReactElement {
-    return <section className="flex flex-col min-h-screen w-full items-center bg-gradient-to-br from-slate-950 to-indigo-950">{children}</section>
+    return (
+        <section className="flex flex-col w-full h-screen justify-center items-center">
+            <Image loading="eager" alt="Background Image" src={Background} fill style={{ objectFit: 'cover' }} />
+            {children}
+        </section>
+    )
 }
