@@ -2,11 +2,27 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Default from '../../../public/blog-default.jpg'
 import Profile from '../../../public/kevinheyland-profile.jpeg'
+import { MinusIcon, XCircleIcon, XMarkIcon } from '@heroicons/react/16/solid'
 
 export default function BlogLandingPage(): React.ReactElement {
     return (
         <div className="flex flex-col py-0 lg:py-24 lg:px-16 px-0 max-w-7xl lg:gap-16">
-            <div className="flex flex-col lg:w-full md:w-[800px] w-[350px] bg-gray-200 bg-opacity-20 backdrop-blur-md py-8 pl-8 rounded-xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl gap-8">
+            <div className="flex flex-col lg:w-full md:w-[800px] w-[350px] bg-gray-200 bg-opacity-20 backdrop-blur-md pt-12 pb-6 pl-8 rounded-xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl gap-8">
+                <div className="absolute lg:visible invisible top-4 left-4">
+                    <div className="flex flex-row gap-2">
+                        <button className="size-3 rounded-full bg-red-500">
+                            <Link href="/">
+                                <XMarkIcon className="hover:opacity-100 opacity-0 text-slate-800" />
+                            </Link>
+                        </button>
+                        <button className="size-3 rounded-full bg-yellow-500">
+                            <Link href="/">
+                                <MinusIcon className="hover:opacity-100 opacity-0 text-slate-800" />
+                            </Link>
+                        </button>
+                        <button className="size-3 rounded-full bg-green-500"></button>
+                    </div>
+                </div>
                 <div className="flex flex-row justify-between items-start">
                     <div className="flex flex-col">
                         <h1 className="lg:text-5xl text-3xl font-bold text-slate-950">Blog</h1>

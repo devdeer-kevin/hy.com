@@ -14,7 +14,7 @@ export default function BlogLayout({
     children: React.ReactNode
 }): React.ReactElement {
     return (
-        <section className="flex flex-col w-full h-screen justify-center items-center">
+        <section className="flex flex-col w-full h-screen justify-center items-center pt-safe pl-safe pb-safe pr-safe">
             <Image loading="eager" alt="Background Image" src={Background} fill style={{ objectFit: 'cover' }} />
             {children}
         </section>
