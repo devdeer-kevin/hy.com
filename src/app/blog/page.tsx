@@ -9,14 +9,17 @@ export default function BlogLandingPage(): React.ReactElement {
             <div className="flex flex-col lg:w-full md:w-[800px] w-[350px] bg-gray-200 bg-opacity-20 backdrop-blur-md py-8 pl-8 rounded-xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl gap-8">
                 <div className="flex flex-row justify-between items-start">
                     <div className="flex flex-col">
-                        <h1 className="lg:text-5xl text-2xl font-bold text-slate-950">Blog Space</h1>
-                        <h2 className="lg:text-xl text-md pb-2 font-mono text-slate-950">Recent Posts</h2>
+                        <h1 className="lg:text-5xl text-3xl font-bold text-slate-950">Blog</h1>
                     </div>
                     <div className="flex flex-row justify-end items-center pr-6">
                         <Link href="/">
                             <Image className="lg:size-10 size-8 rounded-full bg-slate-600 bg-opacity-60" loading="eager" src={Profile} alt="logo" width={100} height={100} />
                         </Link>
                     </div>
+                </div>
+                <div>
+                    <h2 className="absolute lg:text-xl text-md font-semibold text-slate-900">Most Recent Posts</h2>
+                    <h3 className="relative top-6 lg:text-xl text-sm font-normal text-slate-900 opacity-60">New Releases</h3>
                 </div>
                 <div className="flex flex-row lg:gap-8 gap-6 min-h-80 lg:min-h-[450px] overflow-scroll overflow-x-auto py-4 pr-6">
                     <div className="lg:min-w-[400px] min-w-[225px]">
@@ -41,7 +44,7 @@ export default function BlogLandingPage(): React.ReactElement {
                             </div>
                         </div>
                     </div>
-                    <div className="lg:min-w-[400px] min-w-[200px]">
+                    <div className="lg:min-w-[400px] min-w-[225px]">
                         <div className="flex flex-col w-full h-full min-h-80 relative overflow-hidden">
                             <Image className="rounded-2xl shadow-4xl" loading="eager" alt="Spatial Web Redesign" src={Default} fill style={{ objectFit: 'cover' }} />
                             <div className="z-10 flex h-full min-h-72 items-center w-1/2 pl-4">
@@ -63,7 +66,7 @@ export default function BlogLandingPage(): React.ReactElement {
                             </div>
                         </div>
                     </div>
-                    <div className="lg:min-w-[400px] min-w-[200px]">
+                    <div className="lg:min-w-[400px] min-w-[225px]">
                         <div className="flex flex-col w-full h-full min-h-80 relative overflow-hidden">
                             <Image className="rounded-2xl shadow-4xl" loading="eager" alt="Kevin Heyland" src={Default} fill style={{ objectFit: 'cover' }} />
                             <div className="z-10 flex h-full min-h-72 items-center w-1/2 pl-4">
