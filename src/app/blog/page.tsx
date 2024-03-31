@@ -6,20 +6,20 @@ import Profile from '../../../public/kevinheyland-profile.jpeg'
 export default function BlogLandingPage(): React.ReactElement {
     return (
         <div className="flex flex-col py-0 lg:py-24 lg:px-16 px-0 max-w-7xl lg:gap-16">
-            <div className="flex flex-col lg:w-full md:w-[800px] w-[400px] bg-gray-200 bg-opacity-20 backdrop-blur-md py-8 pl-8 rounded-xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl gap-8">
+            <div className="flex flex-col lg:w-full md:w-[800px] w-[350px] bg-gray-200 bg-opacity-20 backdrop-blur-md py-8 pl-8 rounded-xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl gap-8">
                 <div className="flex flex-row justify-between items-start">
-                    <div className="flex flex-col gap-2">
-                        <h1 className="lg:text-5xl text-3xl font-bold text-slate-950">Blog Space</h1>
-                        <h2 className="lg:text-xl text-xl pb-2 font-mono text-slate-950">Writing Calms Cognition</h2>
+                    <div className="flex flex-col">
+                        <h1 className="lg:text-5xl text-2xl font-bold text-slate-950">Blog Space</h1>
+                        <h2 className="lg:text-xl text-md pb-2 font-mono text-slate-950">Recent Posts</h2>
                     </div>
                     <div className="flex flex-row justify-end items-center pr-6">
                         <Link href="/">
-                            <Image className="w-10 h-10 rounded-full bg-slate-600 bg-opacity-60" loading="eager" src={Profile} alt="logo" width={100} height={100} />
+                            <Image className="lg:size-10 size-8 rounded-full bg-slate-600 bg-opacity-60" loading="eager" src={Profile} alt="logo" width={100} height={100} />
                         </Link>
                     </div>
                 </div>
-                <div className="flex flex-row lg:gap-8 gap-6     min-h-[450px] overflow-scroll overflow-x-auto py-4 pr-6">
-                    <div className="lg:min-w-[400px] min-w-[200px]">
+                <div className="flex flex-row lg:gap-8 gap-6 min-h-80 lg:min-h-[450px] overflow-scroll overflow-x-auto py-4 pr-6">
+                    <div className="lg:min-w-[400px] min-w-[225px]">
                         <div className="flex flex-col w-full h-full min-h-80 relative overflow-hidden">
                             <Image className="shadow-4xl rounded-xl" loading="eager" alt="Committing to Progress" src={Default} fill style={{ objectFit: 'cover' }} />
                             <div className="z-10 flex h-full min-h-72 items-center w-1/2 pl-4">
