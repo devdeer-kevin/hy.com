@@ -6,7 +6,7 @@ import Logo from '../../../public/HY_LOGO218.png'
 export default function BlogLandingPage(): React.ReactElement {
     return (
         <div className="flex flex-col py-0 lg:py-24 lg:px-16 px-0 max-w-7xl lg:gap-16">
-            <div className="flex flex-col lg:w-full md:w-[800px] w-[350px] bg-gray-950 bg-opacity-30 backdrop-blur-md py-6 pl-8 rounded-xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl gap-8">
+            <div className="flex flex-col max-w-[1150px] lg:w-full md:w-[800px] w-[350px] bg-gray-950 bg-opacity-30 backdrop-blur-md py-6 pl-8 rounded-xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl gap-8">
                 <div className="flex flex-row justify-between items-start">
                     <div className="flex flex-col">
                         <h1 className="lg:text-5xl text-3xl font-bold text-slate-50">Blog</h1>

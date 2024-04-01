@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function BlogLandingPage(): React.ReactElement {
     return (
         <div className="flex flex-col justify-center items-center py-8 lg:py-8 px-4 sm:px-8 max-w-7xl lg:gap-16 gap-12">
-            <div className="flex flex-col bg-gray-950 bg-opacity-30 backdrop-blur-lg lg:p-16 py-16 px-8 rounded-2xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl">
+            <div className="flex flex-col max-w-[1150px] bg-gray-950 bg-opacity-30 backdrop-blur-lg lg:p-16 py-16 px-8 rounded-2xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl">
                 <div className="absolute left-6 top-6">
                     <Link href="/blog">
                         <ArrowLeftIcon className="h-6 w-6 text-slate-50 hover:opacity-80 transition" />
