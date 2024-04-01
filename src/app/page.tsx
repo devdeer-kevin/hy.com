@@ -35,7 +35,7 @@ export default function Home(): React.ReactElement {
                                         <div className="flex">
                                             <button className="bg-gray-300 bg-opacity-40 rounded-lg py-1 px-2">
                                                 <Link className="text-slate-50 font-bold opacity-80" href="/blog">
-                                                    Discover the Blog
+                                                    Blog
                                                 </Link>
                                             </button>
                                         </div>

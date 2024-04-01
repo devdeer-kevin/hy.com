@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Default from '../../../public/blog-default.jpg'
-import Profile from '../../../public/kevinheyland-profile.jpeg'
+import Logo from '../../../public/HY_LOGO218.png'
 
 export default function BlogLandingPage(): React.ReactElement {
     return (
@@ -13,7 +13,14 @@ export default function BlogLandingPage(): React.ReactElement {
                     </div>
                     <div className="flex flex-row justify-end items-center pr-6">
                         <Link href="/">
-                            <Image className="lg:size-10 size-8 rounded-full bg-slate-600 bg-opacity-60" loading="eager" src={Profile} alt="logo" width={100} height={100} />
+                            <Image
+                                className="lg:size-10 size-8 rounded-full bg-slate-800 bg-opacity-60 hover:border hover:border-slate-200/50 transition-all ease-in duration-400"
+                                loading="eager"
+                                src={Logo}
+                                alt="logo"
+                                width={100}
+                                height={100}
+                            />
                         </Link>
                     </div>
                 </div>
