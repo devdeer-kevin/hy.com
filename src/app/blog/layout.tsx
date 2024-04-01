@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Background from '../../../public/blog-background.jpg'
 
 export const metadata: Metadata = {
-    title: 'Code Calms Cognition',
+    title: 'Writing Calms Cognition',
     description: 'Exploring the intersection of software coding and cognitive processes creatively.',
     robots: 'index, follow',
 }

@@ -20,7 +20,7 @@ export default function Home(): React.ReactElement {
                         <div className="lg:w-1/2 w-full">
                             <div className="flex flex-col w-full h-full min-h-80 relative overflow-hidden">
                                 <Image
-                                    className="rounded-2xl border-2 border-t-slate-500 border-l-slate-500 border-r-slate-600 border-b-slate-600"
+                                    className="rounded-2xl border-2 border-t-slate-500/50 border-l-slate-500/50 border-r-slate-600/50 border-b-slate-600/50"
                                     loading="eager"
                                     alt="Kevin Heyland"
                                     src={Photo}
@@ -31,26 +31,31 @@ export default function Home(): React.ReactElement {
                                     <h2 className="text-5xl font-sans font-bold text-gray-800 opacity-35">Code, Creativity & Change</h2>
                                 </div>
                                 <div className="z-10 absolute bottom-0 sm:h-24 h-16 bg-gradient-to-r from-gray-400 to-transparent bg-opacity-60 backdrop-blur-sm w-full rounded-b-xl">
-                                    <Link
-                                        className="text-gray-100 opacity-65 text-sm flex items-center sm:h-24 h-16 justify-center"
-                                        target="_blank"
-                                        href="https://www.giovannagahrns.com">
-                                        Photography by Giovanna Veronica Gahrns
-                                    </Link>
+                                    <div className="flex justify-between items-center h-full flex-row-reverse px-4">
+                                        <div className="flex">
+                                            <button className="bg-gray-300 bg-opacity-40 rounded-lg py-1 px-2">
+                                                <Link className="text-slate-50 font-bold opacity-80" href="/blog">
+                                                    Discover the Blog
+                                                </Link>
+                                            </button>
+                                        </div>
+                                        <div className="flex opacity-40 ">
+                                            <Link
+                                                className="text-gray-50 text-sm flex items-center sm:h-24 h-16 justify-center"
+                                                target="_blank"
+                                                href="https://www.giovannagahrns.com">
+                                                <span className="block sm:hidden mr-2">📷</span>
+                                                <span className="hidden sm:block mr-2">Photography</span>by Giovanna Veronica Gahrns
+                                            </Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="lg:w-1/2 w-full">
                             <div className="flex flex-row gap-8 pb-8">
-                                <div className="p-8 relative sm:w-44 sm:h-44 w-32 h-32 w rounded-full border-2 border-t-slate-500 border-l-slate-500 border-r-slate-600 border-b-slate-600">
-                                    <Image
-                                        className="rounded-full border border-t-slate-500 border-l-slate-500 border-r-slate-600 border-b-slate-600"
-                                        loading="eager"
-                                        alt="Kevin Heyland"
-                                        src={Profile}
-                                        fill
-                                        style={{ objectFit: 'cover' }}
-                                    />
+                                <div className="p-8 relative sm:w-44 sm:h-44 w-32 h-32 w rounded-full border-2 border-t-slate-500/50 border-l-slate-500/50 border-r-slate-600/50 border-b-slate-600/50">
+                                    <Image className="rounded-full" loading="eager" alt="Kevin Heyland" src={Profile} fill style={{ objectFit: 'cover' }} />
                                 </div>
                                 <div className="flex flex-col justify-center">
                                     <div className="flex flex-col">
@@ -63,7 +68,7 @@ export default function Home(): React.ReactElement {
                                     </div>
                                 </div>
                             </div>
-                            <div className="pt-6 pb-2 px-6 bg-slate-950 bg-opacity-30 rounded-2xl backdrop-blur-sm border-2 border-t-slate-600 border-l-slate-600 border-r-slate-700 border-b-slate-700">
+                            <div className="pt-6 pb-2 px-6 bg-slate-950 bg-opacity-30 rounded-2xl backdrop-blur-sm border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
                                 <h3 className="text-sm font-sans font-bold text-slate-300 opacity-70 ">Code, Creativity & Change: Navigating the Digital Frontier</h3>
                                 <p className="text-md leading-7 font-sans text-slate-300 opacity-70 font-medium">
                                     With a solid foundation in Agile methodology through my certifications with the Scrum Alliance and a robust educational background with a
