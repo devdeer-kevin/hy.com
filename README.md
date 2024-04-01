@@ -14,6 +14,7 @@ In addition, this platform will offer insights into my consulting work in busine
 
 -   **Responsiveness:** Seamlessly adapts to any screen for an optimal viewing experience on any device.
 -   **GitHub API Integration:** Get real-time updates on my newest projects.
+-   **[beta] Blog:** 🍏 Music-like blog section with scrolling row of blog posts (still a bit quirky on mobile devices).
 
 ## Local Development
 
