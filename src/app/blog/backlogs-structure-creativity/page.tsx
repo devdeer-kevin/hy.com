@@ -1,7 +1,5 @@
-import { ArrowLeftIcon } from '@heroicons/react/16/solid'
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import React from 'react' // Add missing import for React
+import BlogPostWrapper from '../../../../components/blogPostWrapper'
 
 export const metadata: Metadata = {
     title: 'Backlogs Structure Creativity',
@@ -11,13 +9,8 @@ export const metadata: Metadata = {
 
 export default function BlogLandingPage(): React.ReactElement {
     return (
-        <div className="flex flex-col max-w-[1150px] bg-gray-950 bg-opacity-30 backdrop-blur-lg lg:pt-16 lg:pb:16 pt-16 pb-8 px-8 sm:rounded-2xl border-2 border-t-gray-200/30 border-l-gray-200/30 border-r-gray-300/20 border-b-gray-300/20 shadow-2xl">
-            <div className="absolute left-6 top-6">
-                <Link href="/blog">
-                    <ArrowLeftIcon className="h-6 w-6 text-slate-50 hover:opacity-80 transition" />
-                </Link>
-            </div>
-            <div className="flex flex-col lg:max-h-[500px] overflow-y-auto px-2">
+        <BlogPostWrapper>
+            <div>
                 <div>
                     <h1 className="text-4xl pb-2 font-bold text-slate-50">Backlogs Structure Creativity</h1>
                     <h3 className="text-2xl pb-2 font-normal text-slate-50">Blending Structure with Creativity: The Evolution of My Personal Backlogs</h3>
@@ -49,6 +42,6 @@ export default function BlogLandingPage(): React.ReactElement {
                     </p>
                 </div>
             </div>
-        </div>
+        </BlogPostWrapper>
     )
 }
