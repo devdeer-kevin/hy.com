@@ -14,9 +14,9 @@ export default function BlogLayout({
     children: React.ReactNode
 }): React.ReactElement {
     return (
-        <section className="flex flex-col w-full h-screen justify-center items-center pt-safe pl-safe pb-safe pr-safe">
+        <section className="flex flex-col max-h-screen overflow-auto justify-center items-center">
             <Image loading="eager" alt="Background Image" src={Background} fill style={{ objectFit: 'cover' }} />
-            {children}
+            <div className="relative overflow-auto">{children}</div>
         </section>
     )
 }
