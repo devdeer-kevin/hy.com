@@ -34,8 +34,8 @@ export default function Home(): React.ReactElement {
                                     <div className="flex justify-between items-center h-full flex-row-reverse px-4">
                                         <div className="flex">
                                             <button className="bg-gray-300 bg-opacity-40 rounded-lg py-1 px-2">
-                                                <Link className="text-slate-50 font-bold opacity-80" href="/blog">
-                                                    Blog
+                                                <Link className="text-slate-50 font-bold opacity-80 flex flex-row" href="/blog">
+                                                    Read <span className="hidden sm:block ml-2">More</span>
                                                 </Link>
                                             </button>
                                         </div>
