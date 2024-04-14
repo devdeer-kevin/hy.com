@@ -1,3 +1,4 @@
+import { ReactElement } from 'react'
 import Image from 'next/image'
 import Photo from '../../public/kevinheyland_bw.jpg'
 import Profile from '../../public/kevinheyland-profile.jpeg'
@@ -6,7 +7,7 @@ import GitReposComponent from '../../components/gitRepos'
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
 import NavigationTopComponent from '../../components/navigationTop'
 
-export default function Home(): React.ReactElement {
+export default function Home(): ReactElement {
     return (
         <>
             <NavigationTopComponent />
