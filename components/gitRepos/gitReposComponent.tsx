@@ -46,7 +46,7 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
     //     })
     // }
 
-    // Prefetch the data
+    // Prefetch the data for the query client
     await queryClient.prefetchQuery({
         queryKey: ['repos'],
         queryFn: async () => {

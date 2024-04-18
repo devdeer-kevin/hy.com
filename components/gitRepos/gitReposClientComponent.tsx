@@ -65,6 +65,7 @@ export default function GitReposClientComponent(): React.ReactElement {
         }
     }
 
+    // Fetch the data from the GitHub API by using the useQuery hook
     const { data } = useQuery({
         queryKey: ['repos'],
         queryFn: async () => {
