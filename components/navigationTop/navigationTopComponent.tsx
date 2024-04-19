@@ -8,8 +8,7 @@ import Link from 'next/link'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
 /**
- * Renders a component that displays the latest GitHub repositories of a user.
- * Fetches data from the GitHub API server side and displays the repository name, last push date, and a link to the repository.
+ * Renders a component that displays the navigation bar at the top of the page.
  */
 export default function NavigationTopComponent(): React.ReactElement {
     const pathname: string = usePathname()
