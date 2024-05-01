@@ -8,6 +8,7 @@ import Github from '../../public/github.jpeg'
 import Scotty from '../../public/scotty.jpeg'
 import ShelfLife from '../../public/shelflife.jpeg'
 import Assistant from '../../public/assistant.jpeg'
+import PacePlaner from '../../public/pace-planer.jpeg'
 
 /**
  * Interface for the repository data.
@@ -79,6 +80,8 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
                 return ShelfLife
             case 'terminal-gpt-assistant-chat':
                 return Assistant
+            case 'pace-planer':
+                return PacePlaner
             default:
                 return Github
         }
@@ -99,6 +102,8 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
                 return 'ShelfLife Console'
             case 'terminal-gpt-assistant-chat':
                 return 'Terminal GPT Assistant'
+            case 'pace-planer':
+                return 'Pace Planer'
             default:
                 return 'GitHub'
         }
