@@ -14,7 +14,7 @@ export default function LandingPageComponent(): React.ReactElement {
         <div className="flex flex-col py-12 px-4 sm:px-8 max-w-7xl lg:gap-16 gap-12">
             <div>
                 <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">About me</h1>
-                <h4 className="text-md font-mono  text-slate-400 opacity-80">Introduction</h4>
+                <h2 className="text-md font-mono  text-slate-400 opacity-80">Introduction</h2>
             </div>
             <div className="w-full grid-flow-row items-center justify-center gap-8 font-mono">
                 <div className="flex lg:flex-row flex-col-reverse gap-8">
@@ -57,11 +57,11 @@ export default function LandingPageComponent(): React.ReactElement {
                             </div>
                             <div className="flex flex-col justify-center">
                                 <div className="flex flex-col">
-                                    <h3 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60 leading-0">Kevin</h3>
-                                    <h3 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60 leading-0">Heyland</h3>
+                                    <h2 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60 leading-0">Kevin</h2>
+                                    <h2 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60 leading-0">Heyland</h2>
                                     <div className="flex flex-col justify-start">
-                                        <h5 className="sm:text-md text-sm font-mono text-slate-100 opacity-80 leading-0">BSc Business Education</h5>
-                                        <h5 className="sm:text-md text-sm font-sans text-slate-400 opacity-60 leading-0">Magdeburg, Germany</h5>
+                                        <h3 className="sm:text-md text-sm font-mono text-slate-100 opacity-80 leading-0">BSc Business Education</h3>
+                                        <h3 className="sm:text-md text-sm font-sans text-slate-400 opacity-60 leading-0">Magdeburg, Germany</h3>
                                     </div>
                                 </div>
                             </div>
@@ -79,12 +79,12 @@ export default function LandingPageComponent(): React.ReactElement {
             </div>
             <div>
                 <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">Repos</h1>
-                <h4 className="text-md font-mono  text-slate-400 opacity-80">Current GitHub Ventures</h4>
+                <h2 className="text-md font-mono  text-slate-400 opacity-80">Current GitHub Ventures</h2>
             </div>
             <GitReposComponent />
             <div>
                 <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">Career</h1>
-                <h4 className="text-md font-mono  text-slate-400 opacity-80">Learning, Growth and Companionship</h4>
+                <h2 className="text-md font-mono  text-slate-400 opacity-80">Learning, Growth and Companionship</h2>
             </div>
             <div className="flex flex-col gap-8 pt-16 pb-10 px-6 bg-slate-950 bg-opacity-30 rounded-2xl backdrop-blur-sm border-2 border-t-slate-700 border-l-slate-700 border-r-slate-800 border-b-slate-800">
                 <div className="lg:w-1/2 w-4/5">
