@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
+import { ScaleIcon } from '@heroicons/react/20/solid'
 
 /**
  * The component that renders the footer of the website.
@@ -23,6 +24,14 @@ export default function FooterComponent(): React.ReactElement {
                 </div>
                 <Link className="text-indigo-600 underline font-mono" target="_blank" href="https://unsplash.com/collections/123508/repo-covers">
                     For those intrigued by my repository cover images, I&apos;ve curated a collection on Unsplash where you can download them.
+                </Link>
+            </div>
+            <div className="flex justify-center gap-4">
+                <div className="h-full ">
+                    <ScaleIcon className="h-6 w-6 text-slate-700" />
+                </div>
+                <Link className="text-slate-700 underline font-mono" href="/imprint">
+                    Imprint
                 </Link>
             </div>
         </footer>
