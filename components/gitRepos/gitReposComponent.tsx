@@ -10,6 +10,7 @@ import ShelfLife from '../../public/shelflife.jpeg'
 import Assistant from '../../public/assistant.jpeg'
 import PacePlaner from '../../public/pace-planer.jpeg'
 import TerminalFootball from '../../public/terminal-football-game.jpeg'
+import ModerationWheel from '../../public/moderation-wheel.jpeg'
 
 /**
  * Interface for the repository data.
@@ -57,7 +58,7 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
     const data = await response.json()
     const repoData = data
         .map((repo: IRepo) => [repo.name, repo.pushed_at, repo.html_url])
-        .sort((a: string, b: string, c: string) => new Date(b[1]).getTime() - new Date(a[1]).getTime())
+        .sort((a: string, b: string) => new Date(b[1]).getTime() - new Date(a[1]).getTime())
         .slice(0, 3)
 
     // const data = await mockFetch()
@@ -85,6 +86,8 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
                 return PacePlaner
             case 'terminal-football-game':
                 return TerminalFootball
+            case 'moderation-wheel':
+                return ModerationWheel
             default:
                 return Github
         }
@@ -109,6 +112,8 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
                 return 'Pace Planer'
             case 'terminal-football-game':
                 return 'Terminal Football'
+            case 'moderation-wheel':
+                return 'Moderation Wheel'
             default:
                 return 'GitHub'
         }
