@@ -5,6 +5,8 @@ import Link from 'next/link'
 import GitReposComponent from '../gitRepos'
 import Photo from '../../public/kevinheyland_bw.jpg'
 import Profile from '../../public/kevinheyland-profile.jpeg'
+import PacePlaner from '../../public/Pace-Planer-Mockup.png'
+import AIAssistant from '../../public/KI-Assistant-Ausfuellhilfe.png'
 
 /**
  * Renders a component that displays the content of the landing page aka homepage.
@@ -82,6 +84,61 @@ export default function LandingPageComponent(): React.ReactElement {
                 <h2 className="text-md font-mono  text-slate-400 opacity-80">Current GitHub Ventures</h2>
             </div>
             <GitReposComponent />
+            <div>
+                <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">Products</h1>
+                <h2 className="text-md font-mono  text-slate-400 opacity-80">Free, yet priceless.</h2>
+            </div>
+            <div className="flex flex-row gap-8 w-full justify-between">
+                <div className="flex relative flex-col transition-all ease-linear rounded-xl w-1/2 border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
+                    <div className="relative items-center flex flex-col w-full h-96">
+                        <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={AIAssistant} />
+                    </div>
+                    <div className="flex flex-col p-4 bg-gradient-to-b from-indigo-950/60 to-transparent">
+                        <div className="flex flex-col justify-between w-full rounded-b-xl">
+                            <div className="flex flex-col flex-1 flex-grow">
+                                <h2 className="text-4xl font-bold text-cyan-400 font-mono">AI Assistant</h2>
+                                <p>
+                                    <b>Quickly to the right answer:</b> The AI Assistant uses artificial intelligence to provide targeted answers from the official filling
+                                    instructions of the Magdeburg City Parents’ Council regarding school pathway declarations. I wanted to create an experience where users simply
+                                    enter their question, and the application will deliver a precise answer with a page reference in seconds – without the hassle of searching
+                                    through the entire document.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="absolute bottom-0 right-0 flex flex-row justify-end p-4">
+                        <button className="bg-gray-600 bg-opacity-40 rounded-lg py-1 px-2">
+                            <Link className="text-slate-50 font-bold opacity-70" href="https://ausfuellhilfe.stadtelternrat-magdeburg.de" target="_blank">
+                                Ask a question
+                            </Link>
+                        </button>
+                    </div>
+                </div>
+                <div className="flex relative flex-col rounded-xl w-1/2 border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
+                    <div className="relative items-center flex flex-col w-full h-96">
+                        <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={PacePlaner} />
+                    </div>
+                    <div className="flex flex-col p-4 bg-gradient-to-b from-indigo-950/60 to-transparent">
+                        <div className="flex flex-col justify-between  w-full rounded-b-xl">
+                            <div className="flex flex-col flex-1 flex-grow pb-24">
+                                <h2 className="text-4xl text-yellow-400 font-mono font-bold ">Pace Planer</h2>
+                                <p>
+                                    <b>Simplicity comes first:</b> “Pace Planer” offers a clear, intuitive interface for runners to calculate target times for standard and custom
+                                    race distances. By entering their pace, runners can determine their finish time. They can also input their start time to see when they’ll reach
+                                    key milestones like 5K or 10K, making it easy to plan arrivals and share their achievements with friends and family!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="absolute bottom-0 right-0 flex flex-row justify-end p-4">
+                        <button className="bg-gray-600 bg-opacity-40 rounded-lg py-1 px-2">
+                            <Link className="text-slate-50 font-bold opacity-70" href="https://pace-planer.de" target="_blank">
+                                Plan your race
+                            </Link>
+                        </button>
+                    </div>
+                </div>
+            </div>
             <div>
                 <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">Career</h1>
                 <h2 className="text-md font-mono  text-slate-400 opacity-80">Learning, Growth and Companionship</h2>
