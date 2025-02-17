@@ -123,9 +123,10 @@ export default function LandingPageComponent(): React.ReactElement {
                             <div className="flex flex-col flex-1 flex-grow pb-12">
                                 <h2 className="text-4xl text-yellow-400 font-mono font-bold ">Pace Planer</h2>
                                 <p>
-                                    <b>Simplicity comes first:</b> “Pace Planer” offers a clear, intuitive interface for runners to calculate target times for standard and custom
-                                    race distances. By entering their pace, runners can determine their finish time. They can also input their start time to see when they’ll reach
-                                    key milestones like 5K or 10K, making it easy to plan arrivals and share their achievements with friends and family!
+                                    <b>Simplicity comes first:</b> “Pace Planer” offers a clear, intuitive but old school calculator interface for runners to calculate target times
+                                    for standard and custom race distances. By entering their pace, runners can determine their finish time and clock time. They can also input
+                                    their start time to see when they’ll reach key milestones like 5K or 10K, making it easy to plan arrivals or fly-by&apos;s to share their
+                                    achievements with friends and family!
                                 </p>
                             </div>
                         </div>
