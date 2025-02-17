@@ -5,8 +5,8 @@ import Link from 'next/link'
 import GitReposComponent from '../gitRepos'
 import Photo from '../../public/kevinheyland_bw.jpg'
 import Profile from '../../public/kevinheyland-profile.jpeg'
-import PacePlaner from '../../public/Pace-Planer-Mockup.png'
-import AIAssistant from '../../public/KI-Assistant-Ausfuellhilfe.png'
+// import PacePlaner from '../../public/Pace-Planer-Mockup.png'
+// import AIAssistant from '../../public/KI-Assistant-Ausfuellhilfe.png'
 
 /**
  * Renders a component that displays the content of the landing page aka homepage.
@@ -91,7 +91,7 @@ export default function LandingPageComponent(): React.ReactElement {
             <div className="flex flex-row gap-8 w-full justify-between">
                 <div className="flex relative flex-col transition-all ease-linear rounded-xl w-1/2 border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
                     <div className="relative items-center flex flex-col w-full h-96">
-                        <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={AIAssistant} />
+                        {/* <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={AIAssistant} /> */}
                     </div>
                     <div className="flex flex-col p-4 bg-gradient-to-b from-indigo-950/60 to-transparent">
                         <div className="flex flex-col justify-between w-full rounded-b-xl">
@@ -116,7 +116,7 @@ export default function LandingPageComponent(): React.ReactElement {
                 </div>
                 <div className="flex relative flex-col rounded-xl w-1/2 border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
                     <div className="relative items-center flex flex-col w-full h-96">
-                        <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={PacePlaner} />
+                        {/* <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={PacePlaner} /> */}
                     </div>
                     <div className="flex flex-col p-4 bg-gradient-to-b from-indigo-950/60 to-transparent">
                         <div className="flex flex-col justify-between  w-full rounded-b-xl">
