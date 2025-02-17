@@ -88,14 +88,14 @@ export default function LandingPageComponent(): React.ReactElement {
                 <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">Products</h1>
                 <h2 className="text-md font-mono  text-slate-400 opacity-80">Free, yet priceless.</h2>
             </div>
-            <div className="flex flex-row gap-8 w-full justify-between">
-                <div className="flex relative flex-col transition-all ease-linear rounded-xl w-1/2 border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
+            <div className="flex md:flex-row flex-col gap-8 w-full justify-between">
+                <div className="flex relative flex-col transition-all ease-linear rounded-xl md:w-1/2 w-full border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
                     <div className="relative items-center flex flex-col w-full h-96">
                         <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={AIAssistant} />
                     </div>
                     <div className="flex flex-col p-4 bg-gradient-to-b from-indigo-950/60 to-transparent">
                         <div className="flex flex-col justify-between w-full rounded-b-xl">
-                            <div className="flex flex-col flex-1 flex-grow">
+                            <div className="flex flex-col flex-1 flex-grow pb-12">
                                 <h2 className="text-4xl font-bold text-cyan-400 font-mono">AI Assistant</h2>
                                 <p>
                                     <b>Quickly to the right answer:</b> The AI Assistant uses artificial intelligence to provide targeted answers from the official filling
@@ -114,13 +114,13 @@ export default function LandingPageComponent(): React.ReactElement {
                         </button>
                     </div>
                 </div>
-                <div className="flex relative flex-col rounded-xl w-1/2 border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
+                <div className="flex relative flex-col rounded-xl md:w-1/2 w-full border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
                     <div className="relative items-center flex flex-col w-full h-96">
                         <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={PacePlaner} />
                     </div>
                     <div className="flex flex-col p-4 bg-gradient-to-b from-indigo-950/60 to-transparent">
                         <div className="flex flex-col justify-between  w-full rounded-b-xl">
-                            <div className="flex flex-col flex-1 flex-grow pb-24">
+                            <div className="flex flex-col flex-1 flex-grow pb-12">
                                 <h2 className="text-4xl text-yellow-400 font-mono font-bold ">Pace Planer</h2>
                                 <p>
                                     <b>Simplicity comes first:</b> “Pace Planer” offers a clear, intuitive interface for runners to calculate target times for standard and custom
