@@ -86,7 +86,7 @@ export default function LandingPageComponent(): React.ReactElement {
             <GitReposComponent />
             <div>
                 <h1 className="text-5xl pb-2 font-bold text-slate-50 opacity-70">Products</h1>
-                <h2 className="text-md font-mono  text-slate-400 opacity-80">Free, yet priceless.</h2>
+                <h2 className="text-md font-mono  text-slate-400 opacity-80">Free, yet priceless</h2>
             </div>
             <div className="flex md:flex-row flex-col gap-8 w-full justify-between">
                 <div className="flex relative flex-col transition-all ease-linear rounded-xl md:w-1/2 w-full border-2 border-t-slate-600/50 border-l-slate-600/50 border-r-slate-700/50 border-b-slate-700/50">
