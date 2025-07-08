@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     title: 'Kevin Heyland',
     description: 'Code, Creativity & Change: Navigating the Digital Frontier',
     robots: 'index, follow',
+    alternates: {
+        canonical: '/',
+    },
 }
 
 export default function RootLayout({
