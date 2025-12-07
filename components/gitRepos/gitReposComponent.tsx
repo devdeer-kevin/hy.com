@@ -124,7 +124,7 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
             <div className="grid grid-flow-row lg:grid-flow-col lg:grid-cols-3 grid-cols-1 gap-8">
                 <>
                     {repoData.map((project: string[]) => (
-                        <div className="py-2" key={project[1]}>
+                        <div className="py-2" key={project[2]}>
                             <div className="relative min-h-96">
                                 <Image
                                     className="rounded-xl border border-t-slate-700 border-l-slate-700 border-r-slate-800 border-b-slate-800"
