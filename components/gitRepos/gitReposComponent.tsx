@@ -144,7 +144,7 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
                                 <div className="z-10 flex h-full min-h-72 items-end w-1/2 pl-4">
                                     <h2 className="text-4xl font-sans font-bold text-gray-100 opacity-35">{getRepoName(project[0])}</h2>
                                 </div>
-                                <div className="absolute bottom-0 sm:h-20 h-16 bg-gradient-to-r from-gray-900 to-transparent bg-opacity-60 backdrop-blur-sm w-full rounded-b-xl">
+                                <div className="absolute bottom-0 sm:h-20 h-16 bg-linear-to-r from-gray-900 to-transparent bg-opacity-60 backdrop-blur-sm w-full rounded-b-xl">
                                     <div className="flex justify-between items-center h-full flex-row-reverse px-4">
                                         <div className="flex">
                                             <button className="bg-gray-600 bg-opacity-40 rounded-lg py-1 px-2">

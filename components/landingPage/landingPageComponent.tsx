@@ -31,7 +31,7 @@ export default function LandingPageComponent(): React.ReactElement {
                             <div className="z-10 flex h-full min-h-72 items-center w-1/2 pl-4">
                                 <h2 className="text-5xl font-sans font-bold text-gray-800 opacity-35">Code, Creativity & Change</h2>
                             </div>
-                            <div className="z-10 absolute bottom-0 sm:h-24 h-16 bg-gradient-to-r from-gray-400 to-transparent bg-opacity-60 backdrop-blur-sm w-full rounded-b-xl">
+                            <div className="z-10 absolute bottom-0 sm:h-24 h-16 bg-linear-to-r from-gray-400 to-transparent bg-opacity-60 backdrop-blur-sm w-full rounded-b-xl">
                                 <div className="flex justify-between items-center h-full flex-row-reverse px-4">
                                     <div className="flex">
                                         <button className="bg-gray-300 bg-opacity-40 rounded-lg py-1 px-2">
@@ -91,9 +91,9 @@ export default function LandingPageComponent(): React.ReactElement {
                     <div className="relative items-center flex flex-col w-full h-96">
                         <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={AIAssistant} />
                     </div>
-                    <div className="flex flex-col p-4 bg-gradient-to-b from-indigo-950/60 to-transparent">
+                    <div className="flex flex-col p-4 bg-linear-to-b from-indigo-950/60 to-transparent">
                         <div className="flex flex-col justify-between w-full rounded-b-xl">
-                            <div className="flex flex-col flex-1 flex-grow pb-12">
+                            <div className="flex flex-col flex-1 grow pb-12">
                                 <h2 className="text-4xl font-bold text-cyan-400 font-mono">AI Assistant</h2>
                                 <p>
                                     <b>Quickly to the right answer:</b> The AI Assistant uses artificial intelligence to provide targeted answers from the official filling
@@ -116,9 +116,9 @@ export default function LandingPageComponent(): React.ReactElement {
                     <div className="relative items-center flex flex-col w-full h-96">
                         <Image className="absolute h-80 w-fit bottom-0" loading="eager" alt="Kevin Heyland" src={PacePlaner} />
                     </div>
-                    <div className="flex flex-col p-4 bg-gradient-to-b from-indigo-950/60 to-transparent">
+                    <div className="flex flex-col p-4 bg-linear-to-b from-indigo-950/60 to-transparent">
                         <div className="flex flex-col justify-between  w-full rounded-b-xl">
-                            <div className="flex flex-col flex-1 flex-grow pb-12">
+                            <div className="flex flex-col flex-1 grow pb-12">
                                 <h2 className="text-4xl text-yellow-400 font-mono font-bold ">Pace Planer</h2>
                                 <p>
                                     <b>Simplicity comes first:</b> “Pace Planer” offers a clear, intuitive but old school calculator interface for runners to calculate target times
