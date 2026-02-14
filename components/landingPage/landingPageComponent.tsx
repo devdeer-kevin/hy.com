@@ -56,13 +56,13 @@ export default function LandingPageComponent(): React.ReactElement {
                                 <Image className="rounded-full" loading="eager" alt="Kevin Heyland" src={Profile} fill style={{ objectFit: 'cover' }} />
                             </div>
                             <div className="flex flex-col justify-center">
-                                <div className="flex flex-col">
-                                    <h2 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60 leading-0">Kevin</h2>
-                                    <h2 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60 leading-0">Heyland</h2>
-                                    <div className="flex flex-col justify-start">
-                                        <h3 className="sm:text-md text-sm font-mono text-slate-100 opacity-80 leading-0">BSc Business Education</h3>
-                                        <h3 className="sm:text-md text-sm font-sans text-slate-400 opacity-60 leading-0">Magdeburg, Germany</h3>
-                                    </div>
+                                <div className="flex flex-row gap-1">
+                                    <h2 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60">Kevin</h2>
+                                    <h2 className="sm:text-4xl text-3xl font-sans font-bold text-slate-300 opacity-60">Heyland</h2>
+                                </div>
+                                <div className="flex flex-col justify-start gap-0.5 mt-1">
+                                    <h3 className="sm:text-md text-sm font-mono text-slate-100 opacity-80">BSc Business Education</h3>
+                                    <h3 className="sm:text-md text-sm font-sans text-slate-400 opacity-60">Magdeburg, Germany</h3>
                                 </div>
                             </div>
                         </div>
