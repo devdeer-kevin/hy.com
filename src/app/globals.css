@@ -3,7 +3,6 @@
 @source "../../components/**/*.{js,ts,jsx,tsx,mdx}";
 
 @theme {
-    --background-image-blog-background: url('/public/blog-background.jpg');
     --font-family-sans: var(--font-geist-sans);
     --font-family-mono: var(--font-geist-mono);
 }
@@ -28,6 +27,48 @@ body {
     }
 }
 
-p {
-    @apply py-4 text-lg leading-relaxed text-slate-300;
+/* Soft ambient light behind the glass, fixed to the viewport. */
+.ambient {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.ambient::before,
+.ambient::after {
+    content: '';
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(120px);
+}
+
+.ambient::before {
+    width: 60vw;
+    height: 60vw;
+    top: -20vw;
+    right: -15vw;
+    background: radial-gradient(closest-side, rgba(99, 102, 241, 0.18), transparent);
+}
+
+.ambient::after {
+    width: 50vw;
+    height: 50vw;
+    bottom: -20vw;
+    left: -10vw;
+    background: radial-gradient(closest-side, rgba(45, 212, 191, 0.08), transparent);
+}
+
+/* Visible focus for keyboard navigation, matching the accent. */
+:focus-visible {
+    outline: 2px solid rgb(94 234 212 / 0.7);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }

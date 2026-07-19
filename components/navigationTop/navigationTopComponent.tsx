@@ -8,34 +8,38 @@ import Link from 'next/link'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
 /**
- * Renders a component that displays the navigation bar at the top of the page.
+ * Renders the top navigation: a quiet breadcrumb and the logo.
  */
 export default function NavigationTopComponent(): React.ReactElement {
     const pathname: string = usePathname()
+    const segment: string = pathname.split('/')[1]
 
     return (
         <nav className="flex flex-row w-full justify-between z-10 items-center py-6 sm:px-8 px-4 max-w-7xl">
-            <div className="flex flex-row justify-between">
-                <Link className="font-bold text-slate-50 opacity-35" href="/">
+            <div className="flex flex-row items-center gap-2 text-sm">
+                <Link className="font-medium text-slate-50/60 hover:text-slate-50/90 transition-colors" href="/">
                     Home
                 </Link>
-                <div className="sm:px-6 px-2">
-                    <ChevronRightIcon className="w-6 h-6 text-slate-50" />
-                </div>
-                <div className="text-slate-50">Kevin Heyland</div>
-                {pathname !== '/' && (
+                <ChevronRightIcon className="w-4 h-4 text-slate-50/35" />
+                <span className="font-medium text-slate-50/90">Kevin Heyland</span>
+                {segment && (
                     <>
-                        <div className="sm:px-6 px-2">
-                            <ChevronRightIcon className="w-6 h-6 text-slate-50" />
-                        </div>
-                        <Link className="font-bold text-slate-50 opacity-35" href="/blog">
-                            Blog
-                        </Link>
+                        <ChevronRightIcon className="w-4 h-4 text-slate-50/35" />
+                        <span className="font-medium text-slate-50/60 capitalize">{segment}</span>
                     </>
                 )}
             </div>
             <div className="flex flex-row justify-end items-center">
-                <Image className="w-10 h-10 rounded-full bg-slate-600 bg-opacity-60" loading="eager" src={Logo} alt="logo" width={100} height={100} />
+                <Link href="/">
+                    <Image
+                        className="w-10 h-10 rounded-full bg-slate-600/60 hover:ring-1 hover:ring-white/30 transition-all"
+                        loading="eager"
+                        src={Logo}
+                        alt="HY logo"
+                        width={100}
+                        height={100}
+                    />
+                </Link>
             </div>
         </nav>
     )
