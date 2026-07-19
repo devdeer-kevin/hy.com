@@ -55,9 +55,6 @@ export default function LandingPageComponent(): React.ReactElement {
                         <PillLink href="https://github.com/devdeer-kevin">GitHub</PillLink>
                         <PillLink href="https://www.linkedin.com/in/kevin-heyland-003b1456/">LinkedIn</PillLink>
                         <PillLink href="https://devdeer.com">DEVDEER</PillLink>
-                        <Link className={pillButton} href="mailto:mail@kevinheyland.com">
-                            Contact
-                        </Link>
                     </div>
                 </div>
 
