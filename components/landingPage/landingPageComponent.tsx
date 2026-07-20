@@ -105,11 +105,9 @@ export default function LandingPageComponent(): React.ReactElement {
                             </div>
                         </div>
                         <div className={`pt-6 pb-6 px-7 ${glass}`}>
-                            <h3 className="text-sm font-bold text-slate-50/70 pb-2">About</h3>
+                            <h3 className="text-sm font-bold text-slate-50/70 pb-2">Code, Creativity & Change: Navigating the Digital Frontier</h3>
                             <p className="text-md leading-7 font-sans text-slate-300">
-                                From shop floor to software, the long way round: marketing first, then UX, then code. That route left a habit I kept: understanding
-                                people before building for them. Today I run operations at DEVDEER, an Azure consultancy in Magdeburg. Evenings belong to free tools
-                                for this city: bin schedules, school forms, race paces.
+                               With a solid foundation in Agile methodology through my certifications with the Scrum Alliance and a robust educational background with a Bachelor of Science in Vocational Education in Business, I blend versatile academic and professional experience with specialized expertise in Agile project management and full stack software development.
                             </p>
                         </div>
                     </div>
