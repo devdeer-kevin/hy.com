@@ -11,11 +11,12 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 /**
  * Human-readable labels for the route segments.
  */
-const segmentLabels: Record<string, string> = {
-    'ueber-mich': 'Über mich',
-    referenzen: 'Referenzen',
-    impressum: 'Impressum',
-    datenschutz: 'Datenschutz',
+const segmentLabels: Record<string, { label: string; parent?: { label: string; href: string } }> = {
+    'ueber-mich': { label: 'Über mich' },
+    referenzen: { label: 'Referenzen' },
+    impressum: { label: 'Impressum' },
+    datenschutz: { label: 'Datenschutz' },
+    'ki-workshop-magdeburg': { label: 'KI-Werkstatt', parent: { label: 'Angebote', href: '/#angebote' } },
 }
 
 /**
@@ -88,8 +89,16 @@ export default function NavigationTopComponent(): React.ReactElement {
                     <Link className="font-medium text-slate-50/60 hover:text-slate-50/90 transition-colors" href="/">
                         Start
                     </Link>
+                    {segmentLabels[segment]?.parent && (
+                        <>
+                            <ChevronRightIcon className="w-4 h-4 text-slate-50/35" />
+                            <Link className="font-medium text-slate-50/60 hover:text-slate-50/90 transition-colors" href={segmentLabels[segment].parent.href}>
+                                {segmentLabels[segment].parent.label}
+                            </Link>
+                        </>
+                    )}
                     <ChevronRightIcon className="w-4 h-4 text-slate-50/35" />
-                    <span className="font-medium text-slate-50/90">{segmentLabels[segment] ?? segment}</span>
+                    <span className="font-medium text-slate-50/90">{segmentLabels[segment]?.label ?? segment}</span>
                 </div>
             )}
         </nav>

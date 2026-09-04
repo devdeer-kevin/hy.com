@@ -63,6 +63,13 @@ export default function Home(): ReactElement {
                                 )}
                                 <h3 className={`text-2xl font-bold ${textHeading} text-balance`}>{angebot.title}</h3>
                                 <p className={`text-md leading-7 ${textBody}`}>{angebot.text}</p>
+                                {angebot.link && (
+                                    <div className="pt-1 mt-auto">
+                                        <Link className={pillButton} href={angebot.link.href}>
+                                            {angebot.link.label}
+                                        </Link>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>

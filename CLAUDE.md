@@ -35,7 +35,7 @@ Wenn eine Änderung diesem Zweck nicht dient, ist sie falsch, auch wenn sie tech
 | Route | Zweck | Status |
 |---|---|---|
 | `/` | Positionierung, Angebote, Belege, ein CTA | umgebaut (2026-09) |
-| `/ki-workshop-magdeburg` | KI-Werkstatt, dreitägig, sechs Plätze | Copy liegt vor, noch nicht im Repo |
+| `/ki-workshop-magdeburg` | KI-Werkstatt, dreitägig, sechs Plätze | gebaut (2026-09); Livegang wartet auf Termine, Gehminuten, Stufenfreiheit, Fotofreigabe |
 | `/ki-schulung` | Inhouse-Schulung beim Kunden | offen |
 | `/foerderung` | Förderlandschaft erklären, Interessenten sammeln | offen |
 | `/ki-beratung` | 1:1 Begleitung, Automatisierung, Wissensmanagement | offen |
@@ -49,7 +49,7 @@ Wenn eine Änderung diesem Zweck nicht dient, ist sie falsch, auch wenn sie tech
 
 **Slug-Regeln:** kleingeschrieben, Bindestrich als Trenner, keine Umlaute und kein ß (`foerderung`, `ueber-mich`). Ein Slug wird nach Livegang nicht mehr geändert.
 
-**Reserviert:** `/ki-werkstatt` als 301 auf `/ki-workshop-magdeburg`. Der Slug wird gesucht, der Name bleibt hängen. Der Redirect wird erst gesetzt, wenn die Zielseite existiert, sonst führt er auf eine 404.
+**Reserviert:** `/ki-werkstatt` als 301 auf `/ki-workshop-magdeburg`. Der Slug wird gesucht, der Name bleibt hängen. Der Redirect ist in `next.config.mjs` gesetzt.
 
 ---
 
@@ -182,7 +182,7 @@ Erledigt am 2026-09-03. Ergebnis:
 
 - **Router:** App Router unter `src/app/`, Next.js 16, React 19, TypeScript strict
 - **Tailwind:** Version 4 (CSS-first, `@theme` in `src/app/globals.css`). Design-Tokens existieren in `components/theme.ts`
-- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `busySpinner`, `career`, `footer`, `gitRepos`, `navigationTop`, `sectionHeader`, `valueCard`
+- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `ablaufDiagramm`, `busySpinner`, `career`, `footer`, `gitRepos`, `navigationTop`, `sectionHeader`, `valueCard`
 - **Bildassets:** in `public/`, statisch importiert über `next/image`
 - **Deployment:** Serverprofis GmbH (laut Datenschutzerklärung), Node-Server. Redirects in `next.config.mjs` greifen dort (der `/blog`-Redirect lief bereits so); nach jedem Deployment einmal `/imprint` und `/privacy` prüfen
 - **MDX:** kein Setup vorhanden. Content liegt als typisierte TS-Objekte unter `content/`

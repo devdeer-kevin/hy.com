@@ -7,6 +7,10 @@ export interface IAngebot {
     title: string
     text: string
     badge?: string
+    link?: {
+        label: string
+        href: string
+    }
 }
 
 export interface IProduktKurz {
@@ -48,6 +52,10 @@ export const home = {
                 title: 'KI-Werkstatt in Magdeburg',
                 badge: 'Drei Tage, sechs Plätze',
                 text: 'Du bringst eine echte Aufgabe aus deinem Alltag mit und arbeitest direkt daran, mit mir an deiner Seite. Keine Folienschlacht, sondern Handarbeit an deinem eigenen Fall.',
+                link: {
+                    label: 'Zur Werkstatt',
+                    href: '/ki-workshop-magdeburg',
+                },
             },
             {
                 title: 'Inhouse-Schulung',

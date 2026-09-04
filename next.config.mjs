@@ -22,6 +22,11 @@ const nextConfig = {
                 destination: '/datenschutz',
                 statusCode: 301,
             },
+            {
+                source: '/ki-werkstatt',
+                destination: '/ki-workshop-magdeburg',
+                statusCode: 301,
+            },
         ]
     },
 }
