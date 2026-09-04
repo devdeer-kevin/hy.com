@@ -8,6 +8,16 @@ import Link from 'next/link'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
 /**
+ * Human-readable labels for the route segments.
+ */
+const segmentLabels: Record<string, string> = {
+    'ueber-mich': 'Über mich',
+    referenzen: 'Referenzen',
+    impressum: 'Impressum',
+    datenschutz: 'Datenschutz',
+}
+
+/**
  * Renders the top navigation: a quiet breadcrumb and the logo.
  */
 export default function NavigationTopComponent(): React.ReactElement {
@@ -18,14 +28,14 @@ export default function NavigationTopComponent(): React.ReactElement {
         <nav className="flex flex-row w-full justify-between z-10 items-center py-6 sm:px-8 px-4 max-w-7xl">
             <div className="flex flex-row items-center gap-2 text-sm">
                 <Link className="font-medium text-slate-50/60 hover:text-slate-50/90 transition-colors" href="/">
-                    Home
+                    Start
                 </Link>
                 <ChevronRightIcon className="w-4 h-4 text-slate-50/35" />
                 <span className="font-medium text-slate-50/90">Kevin Heyland</span>
                 {segment && (
                     <>
                         <ChevronRightIcon className="w-4 h-4 text-slate-50/35" />
-                        <span className="font-medium text-slate-50/60 capitalize">{segment}</span>
+                        <span className="font-medium text-slate-50/60">{segmentLabels[segment] ?? segment}</span>
                     </>
                 )}
             </div>
@@ -35,7 +45,7 @@ export default function NavigationTopComponent(): React.ReactElement {
                         className="w-10 h-10 rounded-full bg-slate-600/60 hover:ring-1 hover:ring-white/30 transition-all"
                         loading="eager"
                         src={Logo}
-                        alt="HY logo"
+                        alt="HY-Logo"
                         width={100}
                         height={100}
                     />

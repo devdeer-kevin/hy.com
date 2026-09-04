@@ -1,26 +1,50 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { home } from '../../content/home'
 import './globals.css'
-
-const description = 'Partner & Head of Operations at DEVDEER. Cloud architectures by day, free tools for Magdeburg after hours.'
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://kevinheyland.com'),
-    title: 'Kevin Heyland',
-    description,
+    title: home.metadata.title,
+    description: home.metadata.description,
     robots: 'index, follow',
     alternates: {
         canonical: '/',
     },
     openGraph: {
-        title: 'Kevin Heyland',
-        description,
+        title: home.metadata.title,
+        description: home.metadata.description,
         url: 'https://kevinheyland.com',
         siteName: 'Kevin Heyland',
         type: 'website',
-        locale: 'en_US',
+        locale: 'de_DE',
     },
+}
+
+/**
+ * Structured data describing the person behind this site, for search engines.
+ * Lives exactly once in the root layout.
+ */
+const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Kevin Heyland',
+    url: 'https://kevinheyland.com',
+    image: 'https://kevinheyland.com/opengraph-image',
+    jobTitle: 'Partner & Head of Operations',
+    worksFor: {
+        '@type': 'Organization',
+        name: 'DEVDEER GmbH',
+        url: 'https://devdeer.com',
+    },
+    address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Magdeburg',
+        addressCountry: 'DE',
+    },
+    sameAs: ['https://github.com/devdeer-kevin', 'https://www.linkedin.com/in/kevin-heyland-003b1456/'],
+    knowsAbout: ['Künstliche Intelligenz', 'Microsoft Azure', 'Agile Softwareentwicklung', 'UX-Design', 'Operations', 'Digitales Marketing'],
 }
 
 export default function RootLayout({
@@ -29,8 +53,9 @@ export default function RootLayout({
     children: React.ReactNode
 }>): React.ReactElement {
     return (
-        <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+        <html lang="de" className={`${GeistSans.variable} ${GeistMono.variable}`}>
             <body className="flex flex-col justify-center w-full items-center bg-linear-to-br from-slate-950 via-slate-950 to-indigo-950">
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
                 <div aria-hidden className="ambient" />
                 {children}
             </body>

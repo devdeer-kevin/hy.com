@@ -9,8 +9,7 @@ function DockLink({ href, label, external }: { href: string; label: string; exte
         <Link
             className="flex flex-row items-center gap-1 px-3 py-1.5 rounded-full text-sm text-slate-300 hover:text-slate-50 hover:bg-white/10 transition-colors"
             href={href}
-            target={external ? '_blank' : undefined}
-        >
+            target={external ? '_blank' : undefined}>
             {label}
             {external && <ArrowUpRightIcon className="h-3.5 w-3.5 opacity-50" />}
         </Link>
@@ -24,27 +23,25 @@ export default function FooterComponent(): React.ReactElement {
     return (
         <footer className="flex flex-col w-full max-w-7xl items-center justify-center py-12 sm:px-8 px-4 gap-6">
             <div className="flex flex-row flex-wrap items-center justify-center gap-1 rounded-3xl lg:rounded-full bg-slate-400/10 backdrop-blur-xl border border-white/10 border-t-white/20 shadow-xl shadow-slate-950/40 px-3 sm:px-2 py-2 sm:py-1.5">
-                <DockLink href="#about" label="About" />
-                <DockLink href="#career" label="Career" />
-                <DockLink href="#products" label="Products" />
-                <DockLink href="#opensource" label="Open Source" />
+                <DockLink href="/ueber-mich" label="Über mich" />
+                <DockLink href="/referenzen" label="Referenzen" />
                 <span className="mx-1 h-5 w-px bg-white/10 hidden sm:block" aria-hidden />
                 <DockLink href="https://devdeer.com" label="DEVDEER" external />
                 <DockLink href="https://github.com/devdeer-kevin" label="GitHub" external />
                 <DockLink href="https://www.linkedin.com/in/kevin-heyland-003b1456/" label="LinkedIn" external />
-                <DockLink href="/imprint" label="Imprint" />
-                <DockLink href="/privacy" label="Privacy" />
+                <DockLink href="/impressum" label="Impressum" />
+                <DockLink href="/datenschutz" label="Datenschutz" />
             </div>
             <p className="text-center text-xs text-slate-500">
-                Built with Next.js and Tailwind.{' '}
+                Gebaut mit Next.js und Tailwind.{' '}
                 <Link className="underline hover:text-slate-300 transition-colors" href="https://github.com/devdeer-kevin/hy.com" target="_blank">
-                    Source on GitHub
+                    Quellcode auf GitHub
                 </Link>
-                . Portrait by{' '}
+                . Porträt von{' '}
                 <Link className="underline hover:text-slate-300 transition-colors" href="https://www.giovannagahrns.com" target="_blank">
                     Giovanna Veronica Gahrns
                 </Link>
-                . No cookies, no tracking.
+                . Keine Cookies, kein Tracking.
             </p>
         </footer>
     )

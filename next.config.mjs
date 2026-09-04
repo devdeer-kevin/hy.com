@@ -12,6 +12,16 @@ const nextConfig = {
                 destination: '/',
                 permanent: true,
             },
+            {
+                source: '/imprint',
+                destination: '/impressum',
+                statusCode: 301,
+            },
+            {
+                source: '/privacy',
+                destination: '/datenschutz',
+                statusCode: 301,
+            },
         ]
     },
 }

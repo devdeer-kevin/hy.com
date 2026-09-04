@@ -22,7 +22,7 @@ function getRepoName(repoName: string): string {
         case 'shopping-list':
             return 'Shopping List'
         case 'hy.com':
-            return 'Personal Website'
+            return 'Diese Website'
         case 'scotty-ui':
             return 'Scotty UI'
         case 'shelflife':
@@ -63,10 +63,10 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
                         <span className="font-sans font-bold text-lg text-slate-50/90 group-hover:text-slate-50 transition-colors">{getRepoName(project[0])}</span>
                         {getRepoName(project[0]) !== project[0] && <span className="font-mono text-sm text-slate-500 hidden sm:inline">{project[0]}</span>}
                         <span className="font-mono text-sm text-slate-400 ml-auto">
-                            last push:{' '}
-                            {new Date(project[1]).toLocaleDateString('en-GB') === new Date().toLocaleDateString('en-GB')
-                                ? 'today'
-                                : new Date(project[1]).toLocaleDateString('en-GB')}
+                            letzter Push:{' '}
+                            {new Date(project[1]).toLocaleDateString('de-DE') === new Date().toLocaleDateString('de-DE')
+                                ? 'heute'
+                                : new Date(project[1]).toLocaleDateString('de-DE')}
                         </span>
                         <ArrowUpRightIcon className="h-4 w-4 text-slate-50/80 opacity-0 group-hover:opacity-100 transition-opacity self-center" />
                     </Link>
@@ -75,9 +75,8 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
             <Link
                 className="group flex flex-row items-center gap-1 text-sm text-slate-400 hover:text-slate-200 transition-colors self-start"
                 href="https://github.com/devdeer-kevin?tab=repositories"
-                target="_blank"
-            >
-                View all repositories on GitHub
+                target="_blank">
+                Alle Repositories auf GitHub ansehen
                 <ArrowUpRightIcon className="h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity" />
             </Link>
         </div>
