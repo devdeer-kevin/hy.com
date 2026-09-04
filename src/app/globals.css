@@ -5,6 +5,37 @@
 @theme {
     --font-family-sans: var(--font-geist-sans);
     --font-family-mono: var(--font-geist-mono);
+
+    /* Farbe: kalte Basis aus dem Bestand, ein warmer Lichtton aus den Raumfotos. */
+    --color-navy-950: #020617;
+    --color-navy-900: #0f172a;
+    --color-ink: #f8fafc;
+    --color-ink-body: #cbd5e1;
+    --color-ink-muted: #94a3b8;
+    --color-lamp: #ef9a41;
+
+    /* Typoskala, fluid. Prosa in der Grotesk, Daten in Mono. */
+    --text-h1: clamp(2.75rem, 6.5vw, 6rem);
+    --text-h1--line-height: 1;
+    --text-h1--letter-spacing: -0.03em;
+    --text-h2: clamp(2rem, 3.2vw, 3rem);
+    --text-h2--line-height: 1.1;
+    --text-h2--letter-spacing: -0.02em;
+    --text-h3: 1.5rem;
+    --text-h3--line-height: 1.25;
+    --text-body: clamp(1.0625rem, 1vw, 1.125rem);
+    --text-body--line-height: 1.55;
+    --text-data-xl: clamp(4.5rem, 10vw, 9rem);
+    --text-data-xl--line-height: 1;
+    --text-data-xl--letter-spacing: -0.04em;
+}
+
+/* Eine Lampe, kein Farbklecks: heller Kern, weiter Abfall. Genau zweimal pro Seite. */
+.lamp-light {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 9999px;
+    background: radial-gradient(closest-side, rgb(239 154 65 / 0.32) 0%, rgb(239 154 65 / 0.14) 22%, rgb(239 154 65 / 0.05) 48%, transparent 72%);
 }
 
 :root {

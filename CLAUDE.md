@@ -23,7 +23,7 @@ Wenn eine Änderung diesem Zweck nicht dient, ist sie falsch, auch wenn sie tech
 | Thema | Regel |
 |---|---|
 | Stack | Next.js und Tailwind. Kein Framework-Wechsel, keine zusätzliche UI-Bibliothek ohne Rückfrage |
-| Design | visionOS-Sprache aus dem Bestand. Kein Redesign, keine neuen Farben, keine neue Schrift |
+| Design | visionOS-Sprache aus dem Bestand. Kein Redesign, keine neue Schrift. Palette bleibt kalt (Marineblau, Slate), ein warmer Lichtton `lamp` #ef9a41 kommt hinzu, gemessen aus den Kugellampen der Raumfotos. Er wird nur als Licht und als aktiver Zustand eingesetzt, nie als Fläche, Button, Rahmen oder Überschrift |
 | Tracking | keine Analytics, keine Cookies, keine Drittanbieter-Skripte. Steht so im Footer und bleibt so |
 | Sprache | Deutsch, `lang="de"`, `og:locale: de_DE`. Keine englische Parallelfassung |
 | Ansprache | Du, durchgängig, auch in Formularen, Fehlermeldungen und Buttons |
@@ -109,7 +109,12 @@ Jede Seite liefert über die Next Metadata API:
 
 ## 7. Design
 
-Die visionOS-Sprache aus dem Bestand ist die Vorgabe. Die Tokens liegen in `components/theme.ts` (`glass`, `glassCard`, `glassFrame`, `pillButton`, `sectionLabel`, `sectionTitle`) und werden von dort wiederverwendet, nicht neu erfunden.
+Die visionOS-Sprache aus dem Bestand ist die Vorgabe. Die Tokens liegen in `components/theme.ts` und werden von dort wiederverwendet, nicht neu erfunden:
+- Textrollen `textPrimary`, `textHeading`, `textBody`, `textMuted`, `textMeta`, dazu `textData` (Mono, nur für Zahlen, Preise, Termine, Kapazitäten)
+- Flächenstufen `surface1` (angedeutet, rounded-xl), `surface2` (Karte, rounded-2xl), `surface3` (Glas mit Licht, rounded-3xl); Radius kodiert die Stufe
+- Bestand für die Startseite: `cardPrimary`, `cardSecondary`, `glassAccent`, `glass`, `glassCard`, `glassFrame`, `pillButton`
+- Farben und Typoskala als `@theme`-Werte in `src/app/globals.css`: `navy-950`, `navy-900`, `ink`, `ink-body`, `ink-muted`, `lamp`; Größen `text-h1`, `text-h2`, `text-h3`, `text-body`, `text-data-xl` (fluid über clamp)
+- Warmes Licht über die Klasse `.lamp-light`, höchstens zweimal pro Seite (Hero und Schluss-CTA)
 
 Leitlinien, wenn eine neue Fläche entsteht:
 - Tiefe entsteht durch Ebenen, Unschärfe und Helligkeit, nicht durch Schlagschatten und Rahmen
@@ -118,6 +123,8 @@ Leitlinien, wenn eine neue Fläche entsteht:
 - Kein zusätzlicher Signalton im Farbsystem
 - Keine ALL-CAPS-Labels über Überschriften, keine Pfeile in Buttontexten, keine Meta-Zeilen mit Mittelpunkten
 - JSX-Whitespace beachten: Text, der über mehrere Zeilen umbricht, braucht explizite Leerzeichen
+
+**Fließtext:** maximal rund 70 Zeichen Zeilenlänge (`max-w-[58ch]`). Keine Mono-Untertitel unter Überschriften.
 
 **Bewegung:** höchstens eine orchestrierte Bewegung pro Seite. Kein Fade-and-slide-up auf jedem Abschnitt, keine Hover-Animation auf jeder Karte. Bewegung, die auf eine Handlung antwortet, ist willkommen. `prefers-reduced-motion` wird immer respektiert (steht in `globals.css`).
 
@@ -182,7 +189,7 @@ Erledigt am 2026-09-03. Ergebnis:
 
 - **Router:** App Router unter `src/app/`, Next.js 16, React 19, TypeScript strict
 - **Tailwind:** Version 4 (CSS-first, `@theme` in `src/app/globals.css`). Design-Tokens existieren in `components/theme.ts`
-- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `ablaufDiagramm`, `busySpinner`, `career`, `footer`, `gitRepos`, `navigationTop`, `sectionHeader`, `valueCard`
+- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `busySpinner`, `career`, `footer`, `gitRepos`, `navigationTop`, `sectionHeader`, `valueCard`, `werkbank`
 - **Bildassets:** in `public/`, statisch importiert über `next/image`
 - **Deployment:** Serverprofis GmbH (laut Datenschutzerklärung), Node-Server. Redirects in `next.config.mjs` greifen dort (der `/blog`-Redirect lief bereits so); nach jedem Deployment einmal `/imprint` und `/privacy` prüfen
 - **MDX:** kein Setup vorhanden. Content liegt als typisierte TS-Objekte unter `content/`

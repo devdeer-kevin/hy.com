@@ -23,6 +23,12 @@ export interface ITag {
     label: string
     title: string
     paragraphs: string[]
+    ergebnis: string
+}
+
+export interface IFakt {
+    label: string
+    wert: string
 }
 
 export interface ITermin {
@@ -49,7 +55,8 @@ export const kiWorkshopMagdeburg = {
         description: 'Drei Tage, sechs Plätze, ein echtes Werkzeug: Du baust mit KI ein Tool für deinen Betrieb und bringst es sicher online. Ohne Programmierkenntnisse.',
     },
     hero: {
-        h1: 'Die KI-Werkstatt: In drei Tagen zum eigenen Werkzeug',
+        kicker: 'KI-Werkstatt in Magdeburg',
+        h1: 'In drei Tagen zum eigenen KI-Werkzeug',
         intro: 'Du gehst mit einem Problem rein und mit einer laufenden Anwendung raus. Kein Foliensatz, keine Demo, kein "so könnte man das machen". Dein Werkzeug, deine Daten, deine URL.',
         sub: 'Sechs Plätze. Drei Tage. In Magdeburg, an einem Tisch.',
         cta: {
@@ -57,6 +64,12 @@ export const kiWorkshopMagdeburg = {
             href: ctaHref,
         },
         terminLabel: 'Nächster Termin:',
+        fakten: [
+            { label: 'Nächster Termin', wert: 'auf Anfrage' },
+            { label: 'Plätze', wert: '6' },
+            { label: 'Preis ab', wert: '690 € netto' },
+            { label: 'Ort', wert: 'Herderstraße 31, Magdeburg' },
+        ] satisfies IFakt[],
     },
     fuerWen: {
         title: 'Für wen das gemacht ist',
@@ -96,6 +109,7 @@ export const kiWorkshopMagdeburg = {
                     'Nach dem Mittag richten wir deinen Rechner ein: GitHub, Vercel, Editor, Claude Code oder Codex. Danach nur so viel Git, wie du wirklich brauchst: speichern, hochladen, rückgängig machen.',
                     'Am späten Nachmittag steht deine erste selbstgebaute Seite im Netz. Bei jedem im Raum.',
                 ],
+                ergebnis: 'Deine erste Seite steht im Netz.',
             },
             {
                 label: 'Tag 2',
@@ -104,6 +118,7 @@ export const kiWorkshopMagdeburg = {
                     'Der Tag, an dem aus der Übung Ernst wird. Wir arbeiten an deinem Fall: die Anforderung so formulieren, dass die KI trifft, was du meinst. Echte Daten anbinden, Tabellen rein, Auswertung raus. Fehlermeldungen lesen, ohne sie zu fürchten. Und erkennen, wann man nachbessert und wann man verwirft und neu ansetzt.',
                     'Zum Abschluss zeigt jeder seinen Stand. Diese Runde ist der Grund, warum sechs Leute im Raum sitzen und nicht einer: Du siehst fünf Lösungswege, auf die du allein nicht gekommen wärst.',
                 ],
+                ergebnis: 'Dein Werkzeug läuft mit echten Daten.',
             },
             {
                 label: 'Tag 3',
@@ -112,13 +127,15 @@ export const kiWorkshopMagdeburg = {
                     'Der Tag, der diese Werkstatt von einem Wochenendkurs unterscheidet.',
                     'Zugriffsschutz, damit nicht die halbe Welt dein Werkzeug öffnen kann. Zugangsschlüssel richtig ablegen, statt sie im Code zu vergessen. Was auf keinen Fall auf einen öffentlichen Server gehört. Danach die Kostenseite: Was verbrauchen die Modelle, was kostet das Hosting, was zahlst du im Monat wirklich.',
                     'Zum Schluss lässt du die Dokumentation schreiben und übst den Ernstfall: Version zurückdrehen, wenn etwas kaputtgeht.',
-                    'Du gehst raus mit etwas, das läuft, geschützt ist und ohne dich weiterlebt.',
                 ],
+                ergebnis: 'Dein Werkzeug läuft auch ohne dich.',
             },
         ] satisfies ITag[],
     },
     vibeCoding: {
         title: 'Vibe Coding, aber übergabefähig',
+        zahl: '88',
+        zahlEinheit: '%',
         paragraphs: [
             'Der Begriff ist gerade überall. Und er hat ein Problem: In einer Untersuchung von 50 öffentlichen KI-generierten Projekten hatten 88 Prozent kritische Sicherheitslücken. Sicherheitsforscher finden regelmäßig KI-gebaute Anwendungen, die Kundendaten offen ins Netz stellen. Nicht durch Hackerangriffe, sondern weil niemand den Zugriffsschutz eingeschaltet hat.',
             'Auffällig an den Daten ist die Spaltung: Ein knappes Drittel der Projekte ist katastrophal, ein kleiner Teil ist richtig gut, dazwischen liegt fast nichts. Der Unterschied sind ein paar bewusste Entscheidungen, die man an einem Tag lernt.',

@@ -9,11 +9,22 @@
  * brightest text on the page, meta the quietest. Values are re-mapped from
  * the existing palette, no new colors.
  */
-export const textPrimary = 'text-slate-50'
-export const textHeading = 'text-slate-50/90'
-export const textBody = 'text-slate-300'
-export const textMuted = 'text-slate-400'
+export const textPrimary = 'text-ink'
+export const textHeading = 'text-ink/90'
+export const textBody = 'text-ink-body'
+export const textMuted = 'text-ink-muted'
 export const textMeta = 'text-slate-500'
+
+/** Data voice: numbers, prices, dates, capacities. Never prose. */
+export const textData = 'font-mono'
+
+/**
+ * Surface stages. Radius encodes the stage: the higher, the softer.
+ * Stage 0 is the page background.
+ */
+export const surface1 = 'rounded-xl bg-white/[0.04] border border-white/[0.06]'
+export const surface2 = 'rounded-2xl bg-white/[0.08] border border-white/10 border-t-white/15'
+export const surface3 = 'rounded-3xl bg-navy-900/60 bg-linear-to-b from-white/10 to-transparent backdrop-blur-xl border border-white/15 border-t-white/30'
 
 /** visionOS glass material for large panels and windows. */
 export const glass = 'rounded-3xl bg-slate-400/10 backdrop-blur-xl border border-white/10 border-t-white/20 shadow-xl shadow-slate-950/40'
