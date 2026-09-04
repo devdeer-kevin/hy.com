@@ -6,6 +6,7 @@
 export interface IAngebot {
     title: string
     text: string
+    badge?: string
 }
 
 export interface IProduktKurz {
@@ -44,7 +45,8 @@ export const home = {
         items: [
             {
                 title: 'KI-Werkstatt in Magdeburg',
-                text: 'Drei Tage, sechs Plätze. Du bringst eine echte Aufgabe aus deinem Alltag mit und arbeitest direkt daran, mit mir an deiner Seite. Keine Folienschlacht, sondern Handarbeit an deinem eigenen Fall.',
+                badge: 'Drei Tage, sechs Plätze',
+                text: 'Du bringst eine echte Aufgabe aus deinem Alltag mit und arbeitest direkt daran, mit mir an deiner Seite. Keine Folienschlacht, sondern Handarbeit an deinem eigenen Fall.',
             },
             {
                 title: 'Inhouse-Schulung',

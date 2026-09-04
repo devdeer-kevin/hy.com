@@ -47,6 +47,11 @@ export default function Home(): ReactElement {
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 w-full">
                         {home.angebote.items.map((angebot) => (
                             <div key={angebot.title} className={`flex flex-col gap-3 p-7 ${cardPrimary}`}>
+                                {angebot.badge && (
+                                    <span className={`self-start rounded-full bg-white/10 border border-white/10 border-t-white/20 px-3 py-1 text-xs font-medium ${textBody}`}>
+                                        {angebot.badge}
+                                    </span>
+                                )}
                                 <h3 className={`text-2xl font-bold ${textHeading} text-balance`}>{angebot.title}</h3>
                                 <p className={`text-md leading-7 ${textBody}`}>{angebot.text}</p>
                             </div>
@@ -86,7 +91,7 @@ export default function Home(): ReactElement {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-3 p-7 pt-4 grow">
-                                    <h3 className={`text-lg font-bold ${textHeading} text-balance`}>{produkt.title}</h3>
+                                    <h3 className={`text-lg font-bold ${textHeading} text-balance lg:min-h-14`}>{produkt.title}</h3>
                                     <p className={`text-md leading-7 ${textBody}`}>{produkt.text}</p>
                                     <div className="pt-1 mt-auto">
                                         <Link className={pillButton} href={produkt.cta.href} target="_blank">
@@ -97,11 +102,11 @@ export default function Home(): ReactElement {
                             </div>
                         ))}
                     </div>
-                    <div className="flex flex-row flex-wrap gap-3">
+                    <div className="flex flex-row flex-wrap items-center gap-5">
                         <Link className={pillButton} href={home.belege.links.referenzen.href}>
                             {home.belege.links.referenzen.label}
                         </Link>
-                        <Link className={pillButton} href={home.belege.links.ueberMich.href}>
+                        <Link className={`text-sm font-medium ${textMuted} hover:text-slate-200 transition-colors`} href={home.belege.links.ueberMich.href}>
                             {home.belege.links.ueberMich.label}
                         </Link>
                     </div>
