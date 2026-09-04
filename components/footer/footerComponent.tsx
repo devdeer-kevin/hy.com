@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid'
+import { textMeta } from '../theme'
 
 /**
  * A single link inside the dock.
@@ -32,7 +33,7 @@ export default function FooterComponent(): React.ReactElement {
                 <DockLink href="/impressum" label="Impressum" />
                 <DockLink href="/datenschutz" label="Datenschutz" />
             </div>
-            <p className="text-center text-xs text-slate-500">
+            <p className={`text-center text-xs ${textMeta}`}>
                 Gebaut mit Next.js und Tailwind.{' '}
                 <Link className="underline hover:text-slate-300 transition-colors" href="https://github.com/devdeer-kevin/hy.com" target="_blank">
                     Quellcode auf GitHub

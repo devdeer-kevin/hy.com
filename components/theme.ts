@@ -4,6 +4,17 @@
  * and vibrancy typography (white at 90 / 60 / 35).
  */
 
+/**
+ * Text roles. Brightness follows importance: primary (the H1) is the
+ * brightest text on the page, meta the quietest. Values are re-mapped from
+ * the existing palette, no new colors.
+ */
+export const textPrimary = 'text-slate-50'
+export const textHeading = 'text-slate-50/90'
+export const textBody = 'text-slate-300'
+export const textMuted = 'text-slate-400'
+export const textMeta = 'text-slate-500'
+
 /** visionOS glass material for large panels and windows. */
 export const glass = 'rounded-3xl bg-slate-400/10 backdrop-blur-xl border border-white/10 border-t-white/20 shadow-xl shadow-slate-950/40'
 
@@ -19,7 +30,7 @@ export const pillButton =
     'rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 border-t-white/20 px-4 py-1.5 text-sm font-medium text-slate-50/90 transition-colors'
 
 /** Small mono label above a section title. */
-export const sectionLabel = 'font-mono text-sm text-slate-400'
+export const sectionLabel = `font-mono text-sm ${textMuted}`
 
 /** Large section title with vibrancy. */
-export const sectionTitle = 'text-5xl pb-2 font-bold text-slate-50/70'
+export const sectionTitle = `text-5xl pb-2 font-bold ${textHeading}`
