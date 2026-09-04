@@ -25,6 +25,13 @@ export const home = {
             label: 'E-Mail schreiben',
             href: 'mailto:mail@kevinheyland.com',
         },
+        portrait: {
+            alt: 'Kevin Heyland, Schwarz-Weiß-Porträt',
+            credit: {
+                label: 'Fotografie von Giovanna Veronica Gahrns',
+                href: 'https://www.giovannagahrns.com',
+            },
+        },
     },
     angebote: {
         title: 'Angebote',
