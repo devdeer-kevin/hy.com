@@ -31,6 +31,7 @@ export const home = {
             label: 'E-Mail schreiben',
             href: 'mailto:mail@kevinheyland.com',
         },
+        beleg: 'Partner & Head of Operations, DEVDEER GmbH, Magdeburg.',
         portrait: {
             alt: 'Kevin Heyland, Schwarz-Weiß-Porträt',
             credit: {

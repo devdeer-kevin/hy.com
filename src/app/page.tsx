@@ -22,23 +22,32 @@ export default function Home(): ReactElement {
             <NavigationTopComponent />
             <main className="flex flex-col py-6 pb-12 px-4 sm:px-8 max-w-7xl w-full gap-10 lg:gap-12">
                 {/* POSITIONIERUNG */}
-                <section className="flex lg:flex-row flex-col gap-8 lg:items-center">
-                    <div className="lg:w-1/2 w-full flex flex-col gap-5">
-                        <h1 className={`text-5xl sm:text-7xl font-sans font-bold ${textPrimary} tracking-tight leading-tight text-balance`}>{home.hero.h1}</h1>
-                        <p className={`max-w-2xl text-lg leading-relaxed ${textBody} text-balance`}>{home.hero.intro}</p>
-                        <div className="flex flex-row flex-wrap items-center gap-4 pt-1">
-                            <Link className={pillButton} href={home.hero.cta.href}>
-                                {home.hero.cta.label}
+                <section className="flex flex-col gap-6">
+                    <div className="flex lg:flex-row flex-col gap-8 lg:items-center">
+                        <div className="lg:w-1/2 w-full flex flex-col gap-5">
+                            <h1 className={`text-5xl sm:text-7xl font-sans font-bold ${textPrimary} tracking-tight leading-tight text-balance`}>{home.hero.h1}</h1>
+                            <p className={`max-w-2xl text-lg leading-relaxed ${textBody} text-balance`}>{home.hero.intro}</p>
+                            <div className="flex flex-row flex-wrap items-center gap-4 pt-1">
+                                <Link className={pillButton} href={home.hero.cta.href}>
+                                    {home.hero.cta.label}
+                                </Link>
+                                <span className={`font-mono text-sm ${textMuted}`}>mail@kevinheyland.com</span>
+                            </div>
+                        </div>
+                        <div className="lg:w-1/2 w-full flex flex-col gap-2">
+                            <Image
+                                className={`rounded-3xl w-full h-auto ${glassFrame}`}
+                                priority
+                                alt={home.hero.portrait.alt}
+                                src={Photo}
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                            <Link className={`self-end text-xs ${textMeta} hover:text-slate-300 transition-colors`} href={home.hero.portrait.credit.href} target="_blank">
+                                {home.hero.portrait.credit.label}
                             </Link>
-                            <span className={`font-mono text-sm ${textMuted}`}>mail@kevinheyland.com</span>
                         </div>
                     </div>
-                    <div className="lg:w-1/2 w-full flex flex-col gap-2">
-                        <Image className={`rounded-3xl w-full h-auto ${glassFrame}`} priority alt={home.hero.portrait.alt} src={Photo} sizes="(max-width: 1024px) 100vw, 50vw" />
-                        <Link className={`self-end text-xs ${textMeta} hover:text-slate-300 transition-colors`} href={home.hero.portrait.credit.href} target="_blank">
-                            {home.hero.portrait.credit.label}
-                        </Link>
-                    </div>
+                    <p className={`text-sm ${textMuted}`}>{home.hero.beleg}</p>
                 </section>
 
                 {/* ANGEBOTE */}
