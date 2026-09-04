@@ -100,7 +100,7 @@ export default function Home(): ReactElement {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-3 p-7 pt-4 grow">
-                                    <h3 className={`text-lg font-bold ${textHeading} text-balance lg:min-h-14`}>{produkt.title}</h3>
+                                    <h3 className={`text-lg font-bold ${textHeading} text-balance`}>{produkt.title}</h3>
                                     <p className={`text-md leading-7 ${textBody}`}>{produkt.text}</p>
                                     <div className="pt-1 mt-auto">
                                         <Link className={pillButton} href={produkt.cta.href} target="_blank">

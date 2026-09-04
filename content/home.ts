@@ -86,7 +86,7 @@ export const home = {
                 },
             },
             {
-                title: 'Ausfüllhilfe zur Schulanmeldung',
+                title: 'Ausfüllhilfe',
                 text: 'Beantwortet Fragen zur Schulanmeldung aus dem offiziellen Leitfaden des Stadtelternrats Magdeburg.',
                 imageAlt: 'Die Ausfüllhilfe des Stadtelternrats auf einem Smartphone',
                 cta: {
