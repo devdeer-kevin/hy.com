@@ -24,6 +24,7 @@ export default function FooterComponent(): React.ReactElement {
     return (
         <footer className="flex flex-col w-full max-w-7xl items-center justify-center py-12 sm:px-8 px-4 gap-6">
             <div className="flex flex-row flex-wrap items-center justify-center gap-1 rounded-3xl lg:rounded-full bg-slate-400/10 backdrop-blur-xl border border-white/10 border-t-white/20 shadow-xl shadow-slate-950/40 px-3 sm:px-2 py-2 sm:py-1.5">
+                <DockLink href="/#angebote" label="Angebote" />
                 <DockLink href="/ueber-mich" label="Über mich" />
                 <DockLink href="/referenzen" label="Referenzen" />
                 <span className="mx-1 h-5 w-px bg-white/10 hidden sm:block" aria-hidden />

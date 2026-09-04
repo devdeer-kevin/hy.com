@@ -27,7 +27,7 @@ export default function Home(): ReactElement {
                 </section>
 
                 {/* ANGEBOTE */}
-                <section className="flex flex-col gap-8">
+                <section id="angebote" className="flex flex-col gap-8 scroll-mt-24">
                     <SectionHeaderComponent title={home.angebote.title} subtitle={home.angebote.subtitle} />
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 w-full">
                         {home.angebote.items.map((angebot) => (
