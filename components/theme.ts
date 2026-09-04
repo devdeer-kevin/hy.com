@@ -46,8 +46,8 @@ export const glassFrame = 'border-2 border-white/10 border-t-white/25 border-l-w
 export const pillButton =
     'rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 border-t-white/20 px-4 py-1.5 text-sm font-medium text-slate-50/90 transition-colors'
 
-/** Small mono label above a section title. */
-export const sectionLabel = `font-mono text-sm ${textMuted}`
+/** Quiet subline under a section title, plain body type. Mono is reserved for data. */
+export const sectionLabel = `text-md ${textMuted}`
 
 /** Large section title with vibrancy. */
 export const sectionTitle = `text-5xl pb-2 font-bold ${textHeading}`
