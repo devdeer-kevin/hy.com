@@ -15,7 +15,7 @@ export default function Home(): ReactElement {
     return (
         <>
             <NavigationTopComponent />
-            <main className="flex flex-col py-12 px-4 sm:px-8 max-w-7xl w-full lg:gap-24 gap-16">
+            <main className="flex flex-col py-6 pb-12 px-4 sm:px-8 max-w-7xl w-full gap-10 lg:gap-12">
                 {/* POSITIONIERUNG */}
                 <section className="flex lg:flex-row flex-col gap-8 lg:items-center">
                     <div className="lg:w-1/2 w-full flex flex-col gap-5">
@@ -37,9 +37,9 @@ export default function Home(): ReactElement {
                 </section>
 
                 {/* ANGEBOTE */}
-                <section id="angebote" className="flex flex-col gap-8 scroll-mt-24">
+                <section id="angebote" className="flex flex-col gap-6 scroll-mt-24">
                     <SectionHeaderComponent title={home.angebote.title} subtitle={home.angebote.subtitle} />
-                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 w-full">
+                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 w-full">
                         {home.angebote.items.map((angebot) => (
                             <div key={angebot.title} className={`flex flex-col gap-3 p-7 ${cardPrimary}`}>
                                 <h3 className={`text-2xl font-bold ${textHeading} text-balance`}>{angebot.title}</h3>
@@ -56,7 +56,7 @@ export default function Home(): ReactElement {
                 </section>
 
                 {/* BELEGE */}
-                <section className="flex flex-col gap-8">
+                <section className="flex flex-col gap-6">
                     <SectionHeaderComponent title={home.belege.title} subtitle={home.belege.subtitle} />
                     <div className={`flex flex-col gap-3 px-7 sm:px-10 py-8 ${cardSecondary}`}>
                         <h3 className={`text-2xl font-bold ${textHeading}`}>{home.belege.devdeer.title}</h3>
@@ -68,7 +68,7 @@ export default function Home(): ReactElement {
                         </div>
                     </div>
                     <p className={`text-md leading-7 ${textBody}`}>{home.belege.produkteIntro}</p>
-                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 w-full">
+                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 w-full">
                         {home.belege.produkte.map((produkt) => (
                             <div key={produkt.title} className={`flex flex-col gap-3 p-7 ${cardSecondary}`}>
                                 <h3 className={`text-lg font-bold ${textHeading} text-balance`}>{produkt.title}</h3>
