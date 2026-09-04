@@ -27,15 +27,15 @@ export default function NavigationTopComponent(): React.ReactElement {
     return (
         <nav className="flex flex-row w-full justify-between z-10 items-center py-6 sm:px-8 px-4 max-w-7xl">
             <div className="flex flex-row items-center gap-2 text-sm">
-                <Link className="font-medium text-slate-50/60 hover:text-slate-50/90 transition-colors" href="/">
-                    Start
-                </Link>
-                <ChevronRightIcon className="w-4 h-4 text-slate-50/35" />
-                <span className="font-medium text-slate-50/90">Kevin Heyland</span>
+                {segment && (
+                    <Link className="font-medium text-slate-50/60 hover:text-slate-50/90 transition-colors" href="/">
+                        Start
+                    </Link>
+                )}
                 {segment && (
                     <>
                         <ChevronRightIcon className="w-4 h-4 text-slate-50/35" />
-                        <span className="font-medium text-slate-50/60">{segmentLabels[segment] ?? segment}</span>
+                        <span className="font-medium text-slate-50/90">{segmentLabels[segment] ?? segment}</span>
                     </>
                 )}
             </div>
