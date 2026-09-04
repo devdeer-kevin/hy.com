@@ -5,7 +5,7 @@ import Photo from '../../public/kevinheyland_bw.jpg'
 import NavigationTopComponent from '../../components/navigationTop'
 import FooterComponent from '../../components/footer'
 import SectionHeaderComponent from '../../components/sectionHeader'
-import { cardPrimary, cardSecondary, glass, glassFrame, pillButton, textBody, textHeading, textMeta, textMuted, textPrimary } from '../../components/theme'
+import { cardPrimary, cardSecondary, glassAccent, glassFrame, pillButton, textBody, textHeading, textMeta, textMuted, textPrimary } from '../../components/theme'
 import { home } from '../../content/home'
 
 /**
@@ -87,8 +87,9 @@ export default function Home(): ReactElement {
                 </section>
 
                 {/* KONTAKT */}
-                <section className="flex flex-col gap-8">
-                    <div className={`flex flex-col gap-3 px-7 sm:px-10 py-10 ${glass}`}>
+                <section className="relative flex flex-col">
+                    <div aria-hidden className="absolute -inset-8 rounded-[3rem] bg-indigo-500/10 blur-3xl" />
+                    <div className={`relative flex flex-col gap-3 px-7 sm:px-10 py-10 ${glassAccent}`}>
                         <h2 className={`text-3xl font-bold ${textHeading}`}>{home.kontakt.title}</h2>
                         <p className={`text-md leading-7 ${textBody} max-w-3xl`}>{home.kontakt.text}</p>
                         <div className="pt-2">

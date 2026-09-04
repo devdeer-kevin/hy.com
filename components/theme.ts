@@ -32,6 +32,13 @@ export const cardPrimary = 'rounded-3xl bg-white/10 border border-white/15 borde
 /** Secondary card: proof and supporting content. Quieter surface, smaller radius. */
 export const cardSecondary = 'rounded-2xl bg-white/5 border border-white/10'
 
+/**
+ * Accent surface: the one full visionOS glass moment on a page. Layered
+ * light from the top edge, blur behind the pane, depth through brightness
+ * instead of drop shadows. Use exactly once per page.
+ */
+export const glassAccent = 'rounded-3xl bg-slate-400/15 bg-linear-to-b from-white/10 to-transparent backdrop-blur-xl border border-white/15 border-t-white/30'
+
 /** Photo frame: same material language, tighter. */
 export const glassFrame = 'border-2 border-white/10 border-t-white/25 border-l-white/15'
 
