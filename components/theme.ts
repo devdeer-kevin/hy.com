@@ -22,6 +22,16 @@ export const glass = 'rounded-3xl bg-slate-400/10 backdrop-blur-xl border border
 export const glassCard =
     'rounded-3xl bg-slate-400/10 backdrop-blur-xl border border-white/10 border-t-white/20 shadow-xl shadow-slate-950/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-950/60 hover:border-white/20 hover:border-t-white/30'
 
+/**
+ * Primary card: the offers. Largest radius, brightest surface, clearest
+ * edge. Radius encodes hierarchy, so no other surface uses this radius plus
+ * this brightness.
+ */
+export const cardPrimary = 'rounded-3xl bg-white/10 border border-white/15 border-t-white/30'
+
+/** Secondary card: proof and supporting content. Quieter surface, smaller radius. */
+export const cardSecondary = 'rounded-2xl bg-white/5 border border-white/10'
+
 /** Photo frame: same material language, tighter. */
 export const glassFrame = 'border-2 border-white/10 border-t-white/25 border-l-white/15'
 

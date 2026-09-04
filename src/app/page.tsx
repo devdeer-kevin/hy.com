@@ -5,7 +5,7 @@ import Photo from '../../public/kevinheyland_bw.jpg'
 import NavigationTopComponent from '../../components/navigationTop'
 import FooterComponent from '../../components/footer'
 import SectionHeaderComponent from '../../components/sectionHeader'
-import { glass, glassCard, glassFrame, pillButton, textBody, textHeading, textMeta, textMuted, textPrimary } from '../../components/theme'
+import { cardPrimary, cardSecondary, glass, glassFrame, pillButton, textBody, textHeading, textMeta, textMuted, textPrimary } from '../../components/theme'
 import { home } from '../../content/home'
 
 /**
@@ -41,7 +41,7 @@ export default function Home(): ReactElement {
                     <SectionHeaderComponent title={home.angebote.title} subtitle={home.angebote.subtitle} />
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 w-full">
                         {home.angebote.items.map((angebot) => (
-                            <div key={angebot.title} className={`flex flex-col gap-3 p-7 ${glassCard}`}>
+                            <div key={angebot.title} className={`flex flex-col gap-3 p-7 ${cardPrimary}`}>
                                 <h3 className={`text-2xl font-bold ${textHeading} text-balance`}>{angebot.title}</h3>
                                 <p className={`text-md leading-7 ${textBody}`}>{angebot.text}</p>
                             </div>
@@ -50,17 +50,15 @@ export default function Home(): ReactElement {
                 </section>
 
                 {/* PRINZIP */}
-                <section className="flex flex-col gap-8">
-                    <div className={`flex flex-col gap-3 px-7 sm:px-10 py-10 ${glass}`}>
-                        <h2 className={`text-3xl font-bold ${textHeading} text-balance`}>{home.prinzip.title}</h2>
-                        <p className={`text-md leading-7 ${textBody} max-w-3xl`}>{home.prinzip.text}</p>
-                    </div>
+                <section className="flex flex-col gap-3 max-w-3xl border-l-2 border-white/20 pl-6 sm:pl-8 my-2">
+                    <h2 className={`text-3xl font-bold ${textHeading} text-balance`}>{home.prinzip.title}</h2>
+                    <p className={`text-xl leading-8 ${textBody}`}>{home.prinzip.text}</p>
                 </section>
 
                 {/* BELEGE */}
                 <section className="flex flex-col gap-8">
                     <SectionHeaderComponent title={home.belege.title} subtitle={home.belege.subtitle} />
-                    <div className={`flex flex-col gap-3 px-7 sm:px-10 py-10 ${glass}`}>
+                    <div className={`flex flex-col gap-3 px-7 sm:px-10 py-8 ${cardSecondary}`}>
                         <h3 className={`text-2xl font-bold ${textHeading}`}>{home.belege.devdeer.title}</h3>
                         <p className={`text-md leading-7 ${textBody} max-w-3xl`}>{home.belege.devdeer.text}</p>
                         <div className="pt-2">
@@ -72,7 +70,7 @@ export default function Home(): ReactElement {
                     <p className={`text-md leading-7 ${textBody}`}>{home.belege.produkteIntro}</p>
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 w-full">
                         {home.belege.produkte.map((produkt) => (
-                            <div key={produkt.title} className={`flex flex-col gap-3 p-7 ${glassCard}`}>
+                            <div key={produkt.title} className={`flex flex-col gap-3 p-7 ${cardSecondary}`}>
                                 <h3 className={`text-lg font-bold ${textHeading} text-balance`}>{produkt.title}</h3>
                                 <p className={`text-md leading-7 ${textBody}`}>{produkt.text}</p>
                             </div>
