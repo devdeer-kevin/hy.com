@@ -2,11 +2,16 @@ import { ReactElement } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Photo from '../../public/kevinheyland_bw.jpg'
+import Tonnentour from '../../public/tonnentour-mockup.png'
+import AIAssistant from '../../public/KI-Assistant-Ausfuellhilfe.png'
+import PacePlaner from '../../public/Pace-Planer-Mockup.png'
 import NavigationTopComponent from '../../components/navigationTop'
 import FooterComponent from '../../components/footer'
 import SectionHeaderComponent from '../../components/sectionHeader'
 import { cardPrimary, cardSecondary, glassAccent, glassFrame, pillButton, textBody, textHeading, textMeta, textMuted, textPrimary } from '../../components/theme'
 import { home } from '../../content/home'
+
+const produktImages = [Tonnentour, AIAssistant, PacePlaner]
 
 /**
  * Renders the start page: positioning, offers, proof and one call to action.
@@ -69,10 +74,26 @@ export default function Home(): ReactElement {
                     </div>
                     <p className={`text-md leading-7 ${textBody}`}>{home.belege.produkteIntro}</p>
                     <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 w-full">
-                        {home.belege.produkte.map((produkt) => (
-                            <div key={produkt.title} className={`flex flex-col gap-3 p-7 ${cardSecondary}`}>
-                                <h3 className={`text-lg font-bold ${textHeading} text-balance`}>{produkt.title}</h3>
-                                <p className={`text-md leading-7 ${textBody}`}>{produkt.text}</p>
+                        {home.belege.produkte.map((produkt, index) => (
+                            <div key={produkt.title} className={`flex flex-col overflow-hidden ${cardSecondary}`}>
+                                <div className="relative w-full aspect-[4/3]">
+                                    <Image
+                                        className="object-contain object-bottom p-4"
+                                        alt={produkt.imageAlt}
+                                        src={produktImages[index]}
+                                        sizes="(max-width: 1024px) 100vw, 33vw"
+                                        fill
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-3 p-7 pt-4 grow">
+                                    <h3 className={`text-lg font-bold ${textHeading} text-balance`}>{produkt.title}</h3>
+                                    <p className={`text-md leading-7 ${textBody}`}>{produkt.text}</p>
+                                    <div className="pt-1 mt-auto">
+                                        <Link className={pillButton} href={produkt.cta.href} target="_blank">
+                                            {produkt.cta.label}
+                                        </Link>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>

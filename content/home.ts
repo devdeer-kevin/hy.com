@@ -11,6 +11,11 @@ export interface IAngebot {
 export interface IProduktKurz {
     title: string
     text: string
+    imageAlt: string
+    cta: {
+        label: string
+        href: string
+    }
 }
 
 export const home = {
@@ -71,14 +76,29 @@ export const home = {
             {
                 title: 'Tonnentour',
                 text: 'Abfuhrtermine für Magdeburg und das Jerichower Land. Straße eingeben, Termine für jede Tonne sehen.',
+                imageAlt: 'Die Tonnentour-App auf einem Smartphone',
+                cta: {
+                    label: 'Termine finden',
+                    href: 'https://tonnentour.de',
+                },
             },
             {
                 title: 'Ausfüllhilfe zur Schulanmeldung',
                 text: 'Beantwortet Fragen zur Schulanmeldung aus dem offiziellen Leitfaden des Stadtelternrats Magdeburg.',
+                imageAlt: 'Die Ausfüllhilfe des Stadtelternrats auf einem Smartphone',
+                cta: {
+                    label: 'Assistent ausprobieren',
+                    href: 'https://ausfuellhilfe.stadtelternrat-magdeburg.de',
+                },
             },
             {
                 title: 'Pace Planer',
                 text: 'Ein bewusst einfacher Pace-Rechner für den Wettkampftag.',
+                imageAlt: 'Der Pace Planer auf einem Smartphone',
+                cta: {
+                    label: 'Rennen planen',
+                    href: 'https://pace-planer.de',
+                },
             },
         ] satisfies IProduktKurz[],
         links: {
