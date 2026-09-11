@@ -38,20 +38,30 @@ export default function WerkbankComponent({ stations }: { stations: IStation[] }
         }
         setArmed(true)
         setActive(-1)
-        const observer = new IntersectionObserver(
-            (entries) => {
-                if (!entries.some((entry) => entry.isIntersecting)) {
-                    return
-                }
-                observer.disconnect()
-                stations.forEach((_, index) => {
-                    window.setTimeout(() => setActive(index), 250 + index * 550)
-                })
-            },
-            { threshold: 0.35 },
-        )
-        observer.observe(element)
-        return () => observer.disconnect()
+        // Kein IntersectionObserver: gestapelt auf dem Handy ist die Werkbank
+        // mehrere Bildschirme hoch, ein Schwellwert über 0 wird dort nie
+        // erreicht und der Aufbau bliebe aus. Die Rechteckprüfung ist von der
+        // Höhe unabhängig und greift auch, wenn die Werkbank beim Laden schon
+        // hinter dem Viewport liegt.
+        let done = false
+        const check = (): void => {
+            if (done || element.getBoundingClientRect().top > window.innerHeight * 0.85) {
+                return
+            }
+            done = true
+            stop()
+            stations.forEach((_, index) => {
+                window.setTimeout(() => setActive(index), 250 + index * 550)
+            })
+        }
+        const stop = (): void => {
+            window.removeEventListener('scroll', check)
+            window.removeEventListener('resize', check)
+        }
+        window.addEventListener('scroll', check, { passive: true })
+        window.addEventListener('resize', check)
+        check()
+        return stop
     }, [stations])
 
     return (
