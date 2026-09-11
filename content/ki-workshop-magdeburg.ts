@@ -9,8 +9,8 @@
  *   Abschnitt nicht gerendert und der Hero zeigt keinen Termin.
  * - Gehminuten: an `ort.anfahrt.wege[0].text` anhängen, sobald abgelaufen
  *   ("Von dort sind es X Minuten zu Fuß.").
- * - Stufenfreiheit: Satz in `ort.anfahrt.wege[2].text` und in der FAQ-Antwort
- *   "Ist der Zugang barrierefrei?" ergänzen, sobald bestätigt.
+ * - Stufen: Zahl der Stufen in `ort.anfahrt.wege[2].text` und in der
+ *   FAQ-Antwort "Ist der Zugang barrierefrei?" ergänzen, sobald abgezählt.
  * - Straßenbahnlinien kurz vor Livegang gegen mvbnet.de prüfen.
  */
 
@@ -189,7 +189,7 @@ export const kiWorkshopMagdeburg = {
                 },
                 {
                     title: 'Zugang',
-                    text: 'Die Räume liegen im Erdgeschoss, du musst keine Treppe steigen. Wenn du unsicher bist, schreib mir vorher, dann kläre ich es für deinen Fall.',
+                    text: 'Zu den Räumen führt eine Treppe, einen Aufzug gibt es nicht. Wenn Stufen für dich ein Problem sind, schreib mir vorher, dann finden wir eine Lösung.',
                 },
             ] satisfies IWeg[],
         },
@@ -252,7 +252,7 @@ export const kiWorkshopMagdeburg = {
             },
             {
                 frage: 'Ist der Zugang barrierefrei?',
-                antwort: 'Die Räume liegen im Erdgeschoss, du musst keine Treppe steigen. Schreib mir vorher, wenn du dir unsicher bist.',
+                antwort: 'Nein. Zu den Räumen führt eine Treppe, einen Aufzug gibt es nicht. Schreib mir vorher, wenn Stufen für dich ein Problem sind, dann finden wir eine Lösung.',
             },
             {
                 frage: 'Kann ich die Werkstatt exklusiv für meinen Betrieb buchen?',
