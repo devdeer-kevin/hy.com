@@ -1,7 +1,7 @@
 import { unstable_noStore as noStore } from 'next/cache'
 import Link from 'next/link'
 import { ArrowUpRightIcon } from '@heroicons/react/20/solid'
-import { glass } from '../theme'
+import { tile } from '../theme'
 
 /**
  * Interface for the repository data.
@@ -57,7 +57,7 @@ export default async function GitReposComponent(): Promise<React.ReactElement> {
 
     return (
         <div className="flex flex-col gap-4">
-            <div className={`flex flex-col divide-y divide-white/5 px-3 sm:px-5 ${glass}`}>
+            <div className={`flex flex-col divide-y divide-white/5 px-3 sm:px-5 ${tile}`}>
                 {repoData.map((project: string[]) => (
                     <Link key={project[2]} href={project[2]} target="_blank" className="group flex flex-row flex-wrap items-baseline gap-x-4 gap-y-1 py-5 px-2 sm:px-4">
                         <span className="font-sans font-bold text-lg text-slate-50/90 group-hover:text-slate-50 transition-colors">{getRepoName(project[0])}</span>

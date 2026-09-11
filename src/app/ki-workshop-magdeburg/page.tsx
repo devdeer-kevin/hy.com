@@ -9,7 +9,7 @@ import WerkbankComponent from '../../../components/werkbank'
 import RaumSofa from '../../../public/werkstatt-raum-sofa.jpg'
 import RaumLeuchte from '../../../public/werkstatt-raum-leuchte.jpg'
 import Profile from '../../../public/kevinheyland-profile.jpeg'
-import { glassFrame, pillButton, surface1, surface2, surface3, textBody, textData, textHeading, textMuted, textPrimary } from '../../../components/theme'
+import { buttonPrimary, pillButton, textBody, textData, textHeading, textMuted, textPrimary, tile } from '../../../components/theme'
 import { kiWorkshopMagdeburg as w } from '../../../content/ki-workshop-magdeburg'
 
 export const metadata: Metadata = {
@@ -92,17 +92,22 @@ const faqLeft = w.faq.items.slice(0, 6)
 const faqRight = w.faq.items.slice(6)
 
 /**
- * A section heading on this page.
+ * A centered section heading, product-page style.
  */
-function H2({ children, className = '' }: { children: React.ReactNode; className?: string }): ReactElement {
-    return <h2 className={`text-h2 font-bold ${textHeading} text-balance ${className}`}>{children}</h2>
+function SectionHead({ title, subtitle }: { title: string; subtitle?: string }): ReactElement {
+    return (
+        <div className="flex flex-col items-center text-center gap-3">
+            <h2 className={`text-h2 font-bold ${textHeading} text-balance`}>{title}</h2>
+            {subtitle && <p className={`text-lg ${textMuted} max-w-2xl text-balance`}>{subtitle}</p>}
+        </div>
+    )
 }
 
 /**
  * A body paragraph, capped at a readable measure.
  */
-function P({ children }: { children: React.ReactNode }): ReactElement {
-    return <p className={`text-body ${textBody} max-w-[58ch]`}>{children}</p>
+function P({ children, className = '' }: { children: React.ReactNode; className?: string }): ReactElement {
+    return <p className={`text-body ${textBody} max-w-[58ch] ${className}`}>{children}</p>
 }
 
 /**
@@ -110,21 +115,21 @@ function P({ children }: { children: React.ReactNode }): ReactElement {
  */
 function FaqItem({ frage, antwort, open }: { frage: string; antwort: string; open?: boolean }): ReactElement {
     return (
-        <details className={`group ${surface1}`} open={open}>
+        <details className={`group ${tile}`} open={open}>
             <summary
-                className={`flex flex-row items-start justify-between gap-4 cursor-pointer list-none px-5 py-4 text-lg font-bold ${textHeading} [&::-webkit-details-marker]:hidden`}>
+                className={`flex flex-row items-start justify-between gap-4 cursor-pointer list-none px-6 py-5 text-lg font-bold ${textHeading} [&::-webkit-details-marker]:hidden`}>
                 {frage}
                 <ChevronDownIcon aria-hidden className={`w-5 h-5 shrink-0 mt-1 ${textMuted} transition-transform group-open:rotate-180`} />
             </summary>
-            <p className={`px-5 pb-5 text-body ${textBody}`}>{antwort}</p>
+            <p className={`px-6 pb-6 text-body ${textBody}`}>{antwort}</p>
         </details>
     )
 }
 
 /**
- * Renders the workshop page. Every section takes the shape of its content:
- * a data sheet, a comparison, a grid, a workbench, a checklist, a price
- * table, a room, a person, a two-column FAQ, and a lit closing call.
+ * Renders the workshop page like a product page at night: centered
+ * headlines, a data sheet, a comparison, a grid, the workbench, a checklist,
+ * a price table, the room, the person, a two-column FAQ and a lit closing call.
  */
 export default function KiWorkshopMagdeburg(): ReactElement {
     return (
@@ -132,161 +137,165 @@ export default function KiWorkshopMagdeburg(): ReactElement {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <NavigationTopComponent />
-            <main className="flex flex-col py-6 pb-16 px-4 sm:px-8 max-w-7xl w-full gap-20 lg:gap-28 overflow-x-clip">
-                {/* HERO: Text links, Datenblatt rechts, Lampe dahinter */}
-                <section className="relative grid grid-cols-12 gap-6 lg:gap-8 items-center py-6 lg:py-12">
-                    <div aria-hidden className="lamp-light -top-40 -right-32 w-[44rem] h-[44rem] lg:-top-56 lg:-right-40 lg:w-[56rem] lg:h-[56rem]" />
-                    <div className="relative col-span-12 lg:col-span-7 flex flex-col gap-6">
-                        <p className={`text-body ${textMuted}`}>{w.hero.kicker}</p>
+            <main className="flex flex-col py-10 pb-20 px-4 sm:px-8 max-w-7xl w-full min-w-0 gap-24 lg:gap-32 overflow-x-clip">
+                {/* HERO: zentriert, darunter das Datenblatt und ein Raumfoto, Lampe darüber */}
+                <section className="relative flex flex-col items-center gap-10">
+                    <div className="flex flex-col items-center text-center gap-6 max-w-4xl">
+                        <p className={`text-lg ${textMuted}`}>{w.hero.kicker}</p>
                         <h1 className={`text-h1 font-bold ${textPrimary} text-balance`}>{w.hero.h1}</h1>
-                        <P>{w.hero.intro}</P>
-                        <p className={`text-body font-semibold ${textHeading}`}>{w.hero.sub}</p>
+                        <p className={`text-xl leading-relaxed ${textMuted} max-w-2xl text-balance`}>{w.hero.intro}</p>
+                        <p className={`text-xl font-semibold ${textHeading}`}>{w.hero.sub}</p>
                         <div className="pt-2">
-                            <Link className={pillButton} href={w.hero.cta.href}>
+                            <Link className={buttonPrimary} href={w.hero.cta.href}>
                                 {w.hero.cta.label}
                             </Link>
                         </div>
                     </div>
-                    <dl className={`relative col-span-12 lg:col-span-5 lg:col-start-8 flex flex-col divide-y divide-white/10 px-6 sm:px-8 py-2 ${surface3}`}>
-                        {w.hero.fakten.map((fakt) => (
-                            <div key={fakt.label} className="flex flex-row items-baseline justify-between gap-6 py-4">
-                                <dt className={`text-body ${textMuted}`}>{fakt.label}</dt>
-                                <dd className={`${textData} text-right ${textPrimary}`}>{fakt.wert}</dd>
-                            </div>
-                        ))}
-                    </dl>
-                </section>
-
-                {/* FÜR WEN: Gegenüberstellung, Anker Mitte */}
-                <section className="grid grid-cols-12 gap-6 lg:gap-8">
-                    <div className="col-span-12 lg:col-span-6 flex flex-col gap-5 lg:pr-8 lg:border-r lg:border-white/[0.08]">
-                        <H2>{w.fuerWen.title}</H2>
-                        {w.fuerWen.paragraphs.map((text) => (
-                            <P key={text}>{text}</P>
-                        ))}
-                    </div>
-                    <div className="col-span-12 lg:col-span-6 flex flex-col gap-5 lg:pl-8 lg:pt-3">
-                        <h3 className={`text-h3 font-bold ${textHeading}`}>{w.fuerWen.nicht.title}</h3>
-                        <ul className="flex flex-col divide-y divide-white/[0.08]">
-                            {w.fuerWen.nicht.items.map((item) => (
-                                <li key={item} className={`py-4 text-body ${textBody} max-w-[58ch]`}>
-                                    {item}
-                                </li>
+                    <div className="relative w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-4">
+                        <div aria-hidden className="lamp-light left-1/2 -translate-x-1/2 -top-[30rem] w-[60rem] h-[60rem]" />
+                        <dl className={`relative lg:col-span-5 flex flex-col divide-y divide-white/10 px-8 py-3 ${tile}`}>
+                            {w.hero.fakten.map((fakt) => (
+                                <div key={fakt.label} className="flex flex-col gap-1 py-5">
+                                    <dt className={`text-sm ${textMuted}`}>{fakt.label}</dt>
+                                    <dd className={`text-2xl font-semibold ${textPrimary}`}>{fakt.wert}</dd>
+                                </div>
                             ))}
-                        </ul>
+                        </dl>
+                        <div className={`relative lg:col-span-7 min-h-72 overflow-hidden ${tile}`}>
+                            <Image className="object-cover" priority alt={w.ort.fotos[1].alt} src={RaumLeuchte} sizes="(max-width: 1024px) 100vw, 60vw" fill />
+                        </div>
                     </div>
                 </section>
 
-                {/* ERGEBNIS: Raster, Anker rechts */}
-                <section className="grid grid-cols-12 gap-6">
-                    <H2 className="col-span-12 lg:col-span-10 lg:col-start-3">{w.ergebnis.title}</H2>
-                    <ol className="col-span-12 lg:col-span-10 lg:col-start-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {/* FÜR WEN: zwei Kacheln nebeneinander */}
+                <section className="flex flex-col gap-10">
+                    <SectionHead title={w.fuerWen.title} />
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div className={`flex flex-col gap-4 p-8 sm:p-10 ${tile}`}>
+                            {w.fuerWen.paragraphs.map((text) => (
+                                <P key={text}>{text}</P>
+                            ))}
+                        </div>
+                        <div className={`flex flex-col gap-4 p-8 sm:p-10 ${tile}`}>
+                            <h3 className={`text-h3 font-bold ${textHeading}`}>{w.fuerWen.nicht.title}</h3>
+                            <ul className="flex flex-col divide-y divide-white/10">
+                                {w.fuerWen.nicht.items.map((item) => (
+                                    <li key={item} className={`py-3 text-body ${textBody}`}>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ERGEBNIS: sechs Kacheln */}
+                <section className="flex flex-col gap-10">
+                    <SectionHead title={w.ergebnis.title} />
+                    <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {w.ergebnis.items.map((item) => (
-                            <li key={item} className={`p-6 text-body font-medium ${textPrimary} ${surface2}`}>
+                            <li key={item} className={`p-8 text-xl font-semibold ${textPrimary} text-balance ${tile}`}>
                                 {item}
                             </li>
                         ))}
                     </ol>
                 </section>
 
-                {/* DIE DREI TAGE: die Werkbank, ganzer Bildschirm */}
+                {/* DIE DREI TAGE: die Werkbank */}
                 <section className="flex flex-col gap-10 lg:min-h-[85svh] lg:justify-center">
-                    <H2 className="lg:text-center">{w.tage.title}</H2>
+                    <SectionHead title={w.tage.title} />
                     <WerkbankComponent stations={w.tage.items} />
                 </section>
 
                 {/* CTA 1 */}
-                <section className="grid grid-cols-12 gap-6">
-                    <div className={`col-span-12 lg:col-span-8 flex flex-col gap-4 px-7 sm:px-10 py-8 ${surface2}`}>
+                <section className="flex flex-col items-center">
+                    <div className={`w-full max-w-3xl flex flex-col items-center text-center gap-4 px-8 sm:px-12 py-10 ${tile}`}>
                         <h2 className={`text-h3 font-bold ${textHeading}`}>{w.cta.title}</h2>
-                        <P>{w.cta.text}</P>
-                        <div className="pt-1">
-                            <Link className={pillButton} href={w.cta.button.href}>
+                        <p className={`text-body ${textBody} max-w-[58ch] text-balance`}>{w.cta.text}</p>
+                        <div className="pt-2">
+                            <Link className={buttonPrimary} href={w.cta.button.href}>
                                 {w.cta.button.label}
                             </Link>
                         </div>
                     </div>
                 </section>
 
-                {/* VIBE CODING: Zahl links, Text rechts */}
-                <section className="grid grid-cols-12 gap-6 lg:gap-8">
-                    <div className="col-span-12 lg:col-span-4 flex flex-col gap-2">
-                        <p className={`${textData} text-data-xl ${textPrimary}`}>
-                            {w.vibeCoding.zahl}
-                            <span className="text-[0.5em] align-top ml-1">{w.vibeCoding.zahlEinheit}</span>
-                        </p>
-                    </div>
-                    <div className="col-span-12 lg:col-span-7 flex flex-col gap-5">
-                        <H2>{w.vibeCoding.title}</H2>
+                {/* VIBE CODING: die Zahl groß, zentriert */}
+                <section className="flex flex-col items-center text-center gap-6 max-w-3xl w-full mx-auto">
+                    <p className={`text-data-xl font-bold ${textPrimary}`}>
+                        {w.vibeCoding.zahl}
+                        <span className="text-[0.5em] align-top ml-1">{w.vibeCoding.zahlEinheit}</span>
+                    </p>
+                    <h2 className={`text-h2 font-bold ${textHeading} text-balance`}>{w.vibeCoding.title}</h2>
+                    <div className="flex flex-col gap-4">
                         {w.vibeCoding.paragraphs.map((text) => (
-                            <P key={text}>{text}</P>
+                            <p key={text} className={`text-body ${textBody} text-balance`}>
+                                {text}
+                            </p>
                         ))}
                     </div>
                 </section>
 
-                {/* MITBRINGEN: Checkliste, vier Karten */}
-                <section className="flex flex-col gap-6">
-                    <H2>{w.mitbringen.title}</H2>
+                {/* MITBRINGEN: Checkliste, vier Kacheln */}
+                <section className="flex flex-col gap-10">
+                    <SectionHead title={w.mitbringen.title} subtitle={w.mitbringen.note} />
                     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                         {w.mitbringen.items.map((item) => (
-                            <li key={item} className={`flex flex-col gap-4 p-6 ${surface2}`}>
+                            <li key={item} className={`flex flex-col gap-4 p-8 ${tile}`}>
                                 <span aria-hidden className="w-5 h-5 rounded-md border-2 border-white/30" />
                                 <span className={`text-body ${textBody}`}>{item}</span>
                             </li>
                         ))}
                     </ul>
-                    <p className={`text-body ${textMuted} max-w-[58ch]`}>{w.mitbringen.note}</p>
                 </section>
 
-                {/* PREISE: Tabelle links, Erklärung rechts */}
-                <section className="grid grid-cols-12 gap-6 lg:gap-8">
-                    <div className="col-span-12 lg:col-span-7 flex flex-col gap-6">
-                        <H2>{w.preise.title}</H2>
-                        <div className={`overflow-x-auto px-5 sm:px-8 py-4 ${surface2}`}>
-                            <table className="w-full text-body">
-                                <thead>
-                                    <tr>
-                                        <th className="sr-only">Leistung</th>
-                                        <th className={`text-right font-normal pb-2 text-sm ${textMuted}`}>{w.preise.spaltenTitel}</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-white/10">
-                                    {w.preise.zeilen.map((zeile, index) => {
-                                        const empfohlen = index === 2
-                                        return (
-                                            <tr key={zeile.label} className={empfohlen ? 'bg-white/[0.06]' : ''}>
-                                                <td className={`py-4 pr-6 pl-3 -ml-3 rounded-l-lg ${empfohlen ? `font-semibold ${textPrimary}` : textBody}`}>{zeile.label}</td>
-                                                <td className={`py-4 pr-3 text-right ${textData} whitespace-nowrap rounded-r-lg ${empfohlen ? textPrimary : textHeading}`}>
-                                                    {zeile.wert}
-                                                </td>
-                                            </tr>
-                                        )
-                                    })}
-                                </tbody>
-                            </table>
-                        </div>
+                {/* PREISE: Tabelle zentriert */}
+                <section className="flex flex-col items-center gap-10">
+                    <SectionHead title={w.preise.title} />
+                    <div className={`w-full max-w-3xl overflow-x-auto px-6 sm:px-10 py-6 ${tile}`}>
+                        <table className="w-full text-body">
+                            <thead>
+                                <tr>
+                                    <th className="sr-only">Leistung</th>
+                                    <th className={`text-right font-normal pb-2 text-sm ${textMuted}`}>{w.preise.spaltenTitel}</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-white/10">
+                                {w.preise.zeilen.map((zeile, index) => {
+                                    const empfohlen = index === 2
+                                    return (
+                                        <tr key={zeile.label} className={empfohlen ? 'bg-white/[0.06]' : ''}>
+                                            <td className={`py-4 pr-6 pl-3 rounded-l-xl ${empfohlen ? `font-semibold ${textPrimary}` : textBody}`}>{zeile.label}</td>
+                                            <td className={`py-4 pr-3 text-right ${textData} whitespace-nowrap rounded-r-xl ${empfohlen ? textPrimary : textHeading}`}>
+                                                {zeile.wert}
+                                            </td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
                     </div>
-                    <div className="col-span-12 lg:col-span-4 lg:col-start-9 flex flex-col gap-4 lg:pt-20">
-                        <P>{w.preise.enthalten}</P>
-                        <P>{w.preise.tag1}</P>
+                    <div className="flex flex-col items-center text-center gap-3 max-w-2xl">
+                        <p className={`text-body ${textMuted} text-balance`}>{w.preise.enthalten}</p>
+                        <p className={`text-body ${textMuted} text-balance`}>{w.preise.tag1}</p>
                     </div>
                 </section>
 
-                {/* ORT: Text links, Fotos groß, Anfahrt klein */}
-                <section className="flex flex-col gap-8">
-                    <div className="grid grid-cols-12 gap-6">
-                        <div className="col-span-12 lg:col-span-7 flex flex-col gap-5">
-                            <H2>{w.ort.title}</H2>
-                            {w.ort.paragraphs.map((text) => (
-                                <P key={text}>{text}</P>
-                            ))}
-                        </div>
+                {/* ORT: Text zentriert, Fotos groß, Anfahrt in drei Kacheln */}
+                <section className="flex flex-col gap-10">
+                    <div className="flex flex-col items-center text-center gap-5 max-w-3xl w-full mx-auto">
+                        <h2 className={`text-h2 font-bold ${textHeading} text-balance`}>{w.ort.title}</h2>
+                        {w.ort.paragraphs.map((text) => (
+                            <p key={text} className={`text-body ${textBody} text-balance`}>
+                                {text}
+                            </p>
+                        ))}
                     </div>
-                    <div className="grid grid-cols-12 gap-4 lg:gap-6">
+                    <div className="grid grid-cols-12 gap-4">
                         {w.ort.fotos.map((foto, index) => (
                             <div
                                 key={foto.alt}
-                                className={`relative overflow-hidden rounded-2xl h-64 sm:h-80 lg:h-[32rem] ${glassFrame} ${index === 0 ? 'col-span-12 sm:col-span-7' : 'col-span-12 sm:col-span-5'}`}>
+                                className={`relative overflow-hidden h-64 sm:h-80 lg:h-[30rem] ${tile} ${index === 0 ? 'col-span-12 sm:col-span-7' : 'col-span-12 sm:col-span-5'}`}>
                                 <Image
                                     className="object-cover"
                                     alt={foto.alt}
@@ -298,10 +307,10 @@ export default function KiWorkshopMagdeburg(): ReactElement {
                         ))}
                     </div>
                     <div className="flex flex-col gap-4">
-                        <h3 className={`text-h3 font-bold ${textHeading}`}>{w.ort.anfahrt.title}</h3>
+                        <h3 className={`text-h3 font-bold ${textHeading} text-center`}>{w.ort.anfahrt.title}</h3>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                             {w.ort.anfahrt.wege.map((weg) => (
-                                <div key={weg.title} className={`flex flex-col gap-2 p-5 ${surface1}`}>
+                                <div key={weg.title} className={`flex flex-col gap-2 p-8 ${tile}`}>
                                     <h4 className={`text-body font-semibold ${textHeading}`}>{weg.title}</h4>
                                     <p className={`text-body ${textBody}`}>{weg.text}</p>
                                 </div>
@@ -312,45 +321,45 @@ export default function KiWorkshopMagdeburg(): ReactElement {
 
                 {/* TERMINE, nur wenn welche feststehen */}
                 {w.termine.items.length > 0 && (
-                    <section className="flex flex-col gap-6">
-                        <H2>{w.termine.title}</H2>
-                        <ul className={`flex flex-col gap-2 ${textData} ${textPrimary}`}>
+                    <section className="flex flex-col items-center text-center gap-6">
+                        <SectionHead title={w.termine.title} />
+                        <ul className={`flex flex-col gap-2 text-xl font-semibold ${textPrimary}`}>
                             {w.termine.items.map((termin) => (
                                 <li key={termin.startDate}>{termin.label}</li>
                             ))}
                         </ul>
-                        <P>{w.termine.fallback}</P>
+                        <P className="text-balance">{w.termine.fallback}</P>
                     </section>
                 )}
 
-                {/* WER DAS MACHT: Text links, Porträt rechts, spiegelt den Hero */}
-                <section className="grid grid-cols-12 gap-8 items-center">
-                    <div className="col-span-12 lg:col-span-7 flex flex-col gap-5">
-                        <H2>{w.werDasMacht.title}</H2>
+                {/* WER DAS MACHT: Porträt zentriert, Text darunter */}
+                <section className="flex flex-col items-center text-center gap-6 max-w-3xl w-full mx-auto">
+                    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden">
+                        <Image className="object-cover" alt="Kevin Heyland, Profilbild" src={Profile} sizes="192px" fill />
+                    </div>
+                    <h2 className={`text-h2 font-bold ${textHeading} text-balance`}>{w.werDasMacht.title}</h2>
+                    <div className="flex flex-col gap-4">
                         {w.werDasMacht.paragraphs.map((text) => (
-                            <P key={text}>{text}</P>
+                            <p key={text} className={`text-body ${textBody} text-balance`}>
+                                {text}
+                            </p>
                         ))}
-                        <Link className={`self-start text-body font-medium ${textMuted} hover:text-slate-200 transition-colors`} href={w.werDasMacht.link.href}>
-                            {w.werDasMacht.link.label}
-                        </Link>
                     </div>
-                    <div className="col-span-12 lg:col-span-4 lg:col-start-9 flex justify-center lg:justify-end">
-                        <div className={`relative w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full ${glassFrame}`}>
-                            <Image className="rounded-full object-cover" alt="Kevin Heyland, Profilbild" src={Profile} sizes="(max-width: 640px) 192px, 288px" fill />
-                        </div>
-                    </div>
+                    <Link className={pillButton} href={w.werDasMacht.link.href}>
+                        {w.werDasMacht.link.label}
+                    </Link>
                 </section>
 
                 {/* FAQ: zwei unabhängige Spalten, native details */}
-                <section className="flex flex-col gap-8">
-                    <H2>{w.faq.title}</H2>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-start">
-                        <div className="flex flex-col gap-3">
+                <section className="flex flex-col gap-10">
+                    <SectionHead title={w.faq.title} />
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+                        <div className="flex flex-col gap-4">
                             {faqLeft.map((item, index) => (
                                 <FaqItem key={item.frage} frage={item.frage} antwort={item.antwort} open={index === 0} />
                             ))}
                         </div>
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col gap-4">
                             {faqRight.map((item, index) => (
                                 <FaqItem key={item.frage} frage={item.frage} antwort={item.antwort} open={index === 0} />
                             ))}
@@ -358,17 +367,16 @@ export default function KiWorkshopMagdeburg(): ReactElement {
                     </div>
                 </section>
 
-                {/* SCHLUSS-CTA: das zweite Licht */}
-                <section className="relative grid grid-cols-12 gap-6 py-8">
-                    <div aria-hidden className="lamp-light left-1/2 -translate-x-1/2 -bottom-48 w-[48rem] h-[48rem]" />
-                    <div className={`relative col-span-12 lg:col-span-8 lg:col-start-3 flex flex-col items-center text-center gap-5 px-7 sm:px-12 py-14 ${surface3}`}>
-                        <H2>{w.cta.title}</H2>
-                        <P>{w.cta.text}</P>
-                        <div className="pt-2">
-                            <Link className={pillButton} href={w.cta.button.href}>
-                                {w.cta.button.label}
-                            </Link>
-                        </div>
+                {/* SCHLUSS-CTA: zentriert, das zweite Licht */}
+                <section className="relative flex flex-col items-center text-center gap-6 py-10">
+                    <div aria-hidden className="lamp-light left-1/2 -translate-x-1/2 -top-40 w-[52rem] h-[52rem]" />
+                    <h2 className={`relative text-h2 font-bold ${textHeading} text-balance`}>{w.cta.title}</h2>
+                    <p className={`relative text-xl leading-relaxed ${textMuted} max-w-2xl text-balance`}>{w.cta.text}</p>
+                    <div className="relative flex flex-col items-center gap-3 pt-2">
+                        <Link className={buttonPrimary} href={w.cta.button.href}>
+                            {w.cta.button.label}
+                        </Link>
+                        <span className={`${textData} text-sm ${textMuted}`}>mail@kevinheyland.com</span>
                     </div>
                 </section>
             </main>

@@ -111,8 +111,8 @@ Jede Seite liefert über die Next Metadata API:
 
 Die visionOS-Sprache aus dem Bestand ist die Vorgabe. Die Tokens liegen in `components/theme.ts` und werden von dort wiederverwendet, nicht neu erfunden:
 - Textrollen `textPrimary`, `textHeading`, `textBody`, `textMuted`, `textMeta`, dazu `textData` (Mono, nur für Zahlen, Preise, Termine, Kapazitäten)
-- Kachel `tile` (rahmenlos, rounded-3xl) für Produktseiten-Layouts; Flächenstufen `surface1`, `surface2`, `surface3` für Datenblätter und die Werkbank
-- Bestand für die Startseite: `cardPrimary`, `cardSecondary`, `glassAccent`, `glass`, `glassCard`, `glassFrame`, `pillButton`
+- Kachel `tile` (rahmenlos, rounded-3xl, bg-white/6) für alles Flächige; die Werkbank steigert die Kachelhelligkeit je Station (4, 7, 11 Prozent). `glass` bleibt nur für Dock, Mobilmenü und die Rechtsseiten
+- Knöpfe: `buttonPrimary` (gefüllt in `ink`, einer pro Abschnitt) und `pillButton` (Glaspille, sekundär)
 - Farben und Typoskala als `@theme`-Werte in `src/app/globals.css`: `navy-950`, `navy-900`, `ink`, `ink-body`, `ink-muted`, `lamp`; Größen `text-h1`, `text-h2`, `text-h3`, `text-body`, `text-data-xl` (fluid über clamp)
 - Warmes Licht über die Klasse `.lamp-light`, höchstens zweimal pro Seite (Hero und Schluss-CTA)
 

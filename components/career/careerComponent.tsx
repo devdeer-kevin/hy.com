@@ -1,4 +1,4 @@
-import { glass } from '../theme'
+import { textBody, textHeading, textMuted, tile } from '../theme'
 import type { IChapter } from '../../content/ueber-mich'
 
 /**
@@ -13,7 +13,7 @@ function Chip({ children }: { children: React.ReactNode }): React.ReactElement {
  */
 export default function CareerComponent({ chapters }: { chapters: IChapter[] }): React.ReactElement {
     return (
-        <div className={`flex flex-col pt-10 pb-10 px-6 sm:px-10 ${glass}`}>
+        <div className={`flex flex-col py-10 px-6 sm:px-10 ${tile}`}>
             <div className="flex flex-col gap-12 relative border-l border-white/10 pl-8 ml-2">
                 {chapters.map((chapter) => (
                     <div key={chapter.title} className="flex flex-col gap-2 relative">
@@ -22,10 +22,10 @@ export default function CareerComponent({ chapters }: { chapters: IChapter[] }):
                                 chapter.current ? 'bg-teal-300/80 ring-4 ring-teal-300/15' : 'bg-slate-500/80 ring-4 ring-slate-500/15'
                             }`}
                         />
-                        <p className="font-mono text-sm text-slate-400">{chapter.era}</p>
-                        <h3 className="text-2xl font-sans font-bold text-slate-50/90">{chapter.title}</h3>
-                        <p className="text-sm font-medium text-slate-400">{chapter.role}</p>
-                        <p className="text-md leading-7 font-sans text-slate-300 max-w-3xl pt-1">{chapter.text}</p>
+                        <p className={`font-mono text-sm ${textMuted}`}>{chapter.era}</p>
+                        <h3 className={`text-h3 font-bold ${textHeading}`}>{chapter.title}</h3>
+                        <p className={`text-sm font-medium ${textMuted}`}>{chapter.role}</p>
+                        <p className={`text-body ${textBody} max-w-[58ch] pt-1`}>{chapter.text}</p>
                         <div className="flex flex-row flex-wrap gap-2 pt-2">
                             {chapter.skills.map((skill) => (
                                 <Chip key={skill}>{skill}</Chip>

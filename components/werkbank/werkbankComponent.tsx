@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { surface1, surface2, surface3, textBody, textData, textHeading, textMuted, textPrimary } from '../theme'
+import { textBody, textData, textHeading, textMuted, textPrimary } from '../theme'
 
 /**
  * A station on the workbench: one day of the workshop.
@@ -13,8 +13,8 @@ export interface IStation {
     ergebnis: string
 }
 
-/** Surface stage per station: the material gets brighter as the days progress. */
-const stages = [surface1, surface2, surface3]
+/** Tile brightness per station: the material gets brighter as the days progress. */
+const stages = ['bg-white/[0.04]', 'bg-white/[0.07]', 'bg-white/[0.11]']
 
 /**
  * The workbench: three stations progressing left to right, sharing one light
@@ -59,14 +59,14 @@ export default function WerkbankComponent({ stations }: { stations: IStation[] }
             {/* Die Werkbank: eine durchgehende Lichtkante, auf der die Ergebniszeilen sitzen. */}
             <div aria-hidden className="absolute hidden lg:block left-0 right-0 bottom-20 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
             <div aria-hidden className="absolute lg:hidden top-0 bottom-0 left-4 w-px bg-linear-to-b from-transparent via-white/25 to-transparent" />
-            <ol className="grid grid-cols-1 lg:grid-cols-3 gap-6 pl-10 lg:pl-0">
+            <ol className="grid grid-cols-1 lg:grid-cols-3 gap-4 pl-10 lg:pl-0">
                 {stations.map((station, index) => {
                     const visible = !armed || active >= index
                     const isActive = active === index
                     return (
                         <li
                             key={station.label}
-                            className={`relative flex flex-col gap-4 p-7 pb-0 transition-all duration-700 ease-out ${stages[index]} ${
+                            className={`relative flex flex-col gap-4 p-8 pb-0 rounded-3xl transition-all duration-700 ease-out ${stages[index]} ${
                                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                             }`}
                             style={{ transitionDelay: visible && armed ? `${index * 120}ms` : '0ms' }}>
