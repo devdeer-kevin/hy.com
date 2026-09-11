@@ -117,6 +117,7 @@ Die visionOS-Sprache aus dem Bestand ist die Vorgabe. Die Tokens liegen in `comp
 - Warmes Licht über die Klasse `.lamp-light`, höchstens zweimal pro Seite (Hero und Schluss-CTA)
 
 Die Sprache heißt „Kosmos": eine Apple-Produktseite bei Nacht. Ihre Zeichen:
+- **Navigation** (`components/navigationTop`): eine zentrierte, schwebende Glas-Werkzeugleiste wie in visionOS, bleibt beim Scrollen oben. Logo und Name am linken Ende, daneben die Links, aktiver Eintrag als gefüllte Pille. Unterseiten zeigen darunter eine Brotkrume
 - **Sterne** (`.stars` im Root-Layout): deterministische SVG-Kachel, fest zum Viewport, ohne Bewegung
 - **Kacheln** (`tile`): rahmenlos, `rounded-3xl`, leicht hellere Fläche. Wichtige Kacheln tragen ein Bild, nicht nur Text. Anordnung als Bento: eine große Kachel, dann zwei kleine
 - **Zentrierte Überschriften**: H1 und H2 mittig, darunter eine graue Unterzeile, Text auf `max-w-2xl`

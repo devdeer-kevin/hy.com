@@ -7,6 +7,7 @@ import Logo from '../../public/HY_LOGO218.png'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { glass } from '../theme'
 
 /**
  * Human-readable labels for the route segments.
@@ -36,9 +37,7 @@ function NavLink({ item, active, onNavigate }: { item: (typeof navItems)[number]
     return (
         <Link
             aria-current={active ? 'page' : undefined}
-            className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                active ? 'bg-white/10 text-slate-50' : 'text-slate-300 hover:text-slate-50 hover:bg-white/10'
-            }`}
+            className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-colors ${active ? 'bg-white/15 text-slate-50' : 'text-slate-300 hover:text-slate-50 hover:bg-white/10'}`}
             href={item.href}
             onClick={onNavigate}>
             {item.label}
@@ -47,9 +46,11 @@ function NavLink({ item, active, onNavigate }: { item: (typeof navItems)[number]
 }
 
 /**
- * Renders the top navigation: logo and name on the left, the navigation on
- * the right, and a quiet breadcrumb underneath on subpages. On small screens
- * the navigation collapses into a disclosure menu that only moves when asked.
+ * Renders the navigation as a centered floating glass toolbar, visionOS
+ * style: the logo and name on the left end of the pill, the links next to
+ * it. It stays at the top while scrolling. On small screens the links
+ * collapse into a disclosure menu that only moves when asked. Subpages get
+ * a quiet breadcrumb underneath.
  */
 export default function NavigationTopComponent(): React.ReactElement {
     const pathname: string = usePathname()
@@ -57,12 +58,13 @@ export default function NavigationTopComponent(): React.ReactElement {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <nav className="flex flex-col w-full z-10 py-6 sm:px-8 px-4 max-w-7xl gap-4">
-            <div className="flex flex-row w-full justify-between items-center">
-                <Link className="flex flex-row items-center gap-3" href="/">
-                    <Image className="w-10 h-10 rounded-full bg-slate-600/60" loading="eager" src={Logo} alt="HY-Logo" width={100} height={100} />
+        <nav className="sticky top-0 z-30 flex flex-col w-full max-w-7xl items-center gap-3 pt-4 pb-2 sm:px-8 px-4">
+            <div className={`flex flex-row items-center gap-1 rounded-full pl-1.5 pr-1.5 py-1.5 ${glass}`}>
+                <Link className="flex flex-row items-center gap-2.5 pr-3 rounded-full" href="/">
+                    <Image className="w-9 h-9 rounded-full bg-slate-600/60" loading="eager" src={Logo} alt="HY-Logo" width={100} height={100} />
                     <span className="font-medium text-sm text-slate-50/90">Kevin Heyland</span>
                 </Link>
+                <span className="mx-1 h-5 w-px bg-white/10 hidden sm:block" aria-hidden />
                 <div className="hidden sm:flex flex-row items-center gap-1">
                     {navItems.map((item) => (
                         <NavLink key={item.href} item={item} active={item.segment !== undefined && item.segment === segment} />
@@ -71,14 +73,14 @@ export default function NavigationTopComponent(): React.ReactElement {
                 <button
                     aria-expanded={menuOpen}
                     aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
-                    className="sm:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/10 border-t-white/20 text-slate-50/90"
+                    className="sm:hidden flex items-center justify-center w-9 h-9 rounded-full bg-white/10 text-slate-50/90"
                     onClick={() => setMenuOpen(!menuOpen)}
                     type="button">
                     {menuOpen ? <XMarkIcon className="w-5 h-5" /> : <Bars3Icon className="w-5 h-5" />}
                 </button>
             </div>
             {menuOpen && (
-                <div className="sm:hidden flex flex-col gap-1 rounded-3xl bg-slate-400/10 backdrop-blur-xl border border-white/10 border-t-white/20 p-2">
+                <div className={`sm:hidden flex flex-col gap-1 w-full p-2 ${glass}`}>
                     {navItems.map((item) => (
                         <NavLink key={item.href} item={item} active={item.segment !== undefined && item.segment === segment} onNavigate={() => setMenuOpen(false)} />
                     ))}
