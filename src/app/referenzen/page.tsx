@@ -37,8 +37,12 @@ export default function Referenzen(): ReactElement {
             <NavigationTopComponent />
             <main className="flex flex-col py-10 pb-20 px-4 sm:px-8 max-w-7xl w-full min-w-0 gap-24 lg:gap-32 overflow-x-clip">
                 <section className="flex flex-col items-center text-center gap-6 max-w-3xl w-full mx-auto">
-                    <h1 className={`text-h1 font-bold ${textPrimary} text-balance`}>{referenzen.hero.h1}</h1>
-                    <p className={`text-xl leading-relaxed ${textMuted} text-balance`}>{referenzen.hero.intro}</p>
+                    <h1 className={`reveal text-h1 font-bold ${textPrimary} text-balance`} style={{ '--i': 0 } as React.CSSProperties}>
+                        {referenzen.hero.h1}
+                    </h1>
+                    <p className={`reveal text-xl leading-relaxed ${textMuted} text-balance`} style={{ '--i': 1 } as React.CSSProperties}>
+                        {referenzen.hero.intro}
+                    </p>
                 </section>
 
                 <section className="grid lg:grid-cols-3 grid-cols-1 gap-4">

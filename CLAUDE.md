@@ -136,7 +136,14 @@ Leitlinien, wenn eine neue Fläche entsteht:
 
 **Fließtext:** maximal rund 70 Zeichen Zeilenlänge (`max-w-[58ch]`). Keine Mono-Untertitel unter Überschriften.
 
-**Bewegung:** höchstens eine orchestrierte Bewegung pro Seite. Kein Fade-and-slide-up auf jedem Abschnitt, keine Hover-Animation auf jeder Karte. Bewegung, die auf eine Handlung antwortet, ist willkommen. `prefers-reduced-motion` wird immer respektiert (steht in `globals.css`).
+**Bewegung:** Bewegung antwortet auf Scrollen und Zeigen oder passiert genau einmal. Erlaubt und eingebaut:
+- Parallax der zwei Sternebenen und der Lampe auf Scrollweg und Zeiger (`components/kosmosMotion` setzt `--scroll-y`, `--pointer-x`, `--pointer-y`)
+- Aufbau des Heros beim Laden (`.reveal`, gestaffelt über `--i`, reine CSS-Animation)
+- Neigung der einen Hero-Kachel zum Zeiger (`.tilt`), sonst keine Hover-Animation auf Karten
+- Zahlen zählen einmal hoch (`components/zahl`), ein Absatz pro Seite enthüllt sich beim Scrollen wortweise (`components/textReveal`)
+- die Werkbank baut sich einmal auf
+- Eigenständige Bewegung nur am Himmel: nahe Sterne funkeln langsam, eine Sternschnuppe alle 34 Sekunden
+Alles davon liegt hinter `prefers-reduced-motion: no-preference`; ohne JavaScript ist alles sofort sichtbar. Kein Fade-in auf jedem Abschnitt, keine Dauerbewegung im Inhalt.
 
 **Bilder:** `next/image` mit `sizes`, keine Layoutsprünge. Bildassets liegen in `public/` und werden statisch importiert.
 

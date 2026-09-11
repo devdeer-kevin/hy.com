@@ -9,6 +9,8 @@ import PacePlaner from '../../public/Pace-Planer-Mockup.png'
 import NavigationTopComponent from '../../components/navigationTop'
 import FooterComponent from '../../components/footer'
 import { buttonPrimary, pillButton, textBody, textData, textHeading, textMeta, textMuted, textPrimary, tile } from '../../components/theme'
+import ZahlComponent from '../../components/zahl'
+import TextRevealComponent from '../../components/textReveal'
 import { home } from '../../content/home'
 
 const produktImages = [Tonnentour, AIAssistant, PacePlaner]
@@ -39,9 +41,13 @@ export default function Home(): ReactElement {
                 {/* HERO: zentriert, darunter das Porträt als große Bildkachel im Lampenlicht */}
                 <section className="relative flex flex-col items-center gap-10">
                     <div className="flex flex-col items-center text-center gap-6 max-w-4xl">
-                        <h1 className={`text-h1 font-bold ${textPrimary} text-balance`}>{home.hero.h1}</h1>
-                        <p className={`text-xl leading-relaxed ${textMuted} max-w-2xl text-balance`}>{home.hero.intro}</p>
-                        <div className="flex flex-row flex-wrap items-center justify-center gap-3 pt-2">
+                        <h1 className={`reveal text-h1 font-bold ${textPrimary} text-balance`} style={{ '--i': 0 } as React.CSSProperties}>
+                            {home.hero.h1}
+                        </h1>
+                        <p className={`reveal text-xl leading-relaxed ${textMuted} max-w-2xl text-balance`} style={{ '--i': 1 } as React.CSSProperties}>
+                            {home.hero.intro}
+                        </p>
+                        <div className="reveal flex flex-row flex-wrap items-center justify-center gap-3 pt-2" style={{ '--i': 2 } as React.CSSProperties}>
                             <Link className={buttonPrimary} href={home.hero.cta.href}>
                                 {home.hero.cta.label}
                             </Link>
@@ -54,7 +60,7 @@ export default function Home(): ReactElement {
                     </div>
                     <div className="relative w-full max-w-5xl flex flex-col items-center gap-3">
                         <div aria-hidden className="lamp-light left-1/2 -translate-x-1/2 -top-[30rem] w-[60rem] h-[60rem]" />
-                        <div className={`relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden ${tile}`}>
+                        <div className={`reveal tilt relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden ${tile}`} style={{ '--i': 3 } as React.CSSProperties}>
                             <Image className="object-cover" priority alt={home.hero.portrait.alt} src={Photo} sizes="(max-width: 1024px) 100vw, 1024px" fill />
                         </div>
                         <div className="relative flex flex-row flex-wrap items-center justify-center gap-x-4 gap-y-1 text-center">
@@ -70,7 +76,7 @@ export default function Home(): ReactElement {
                 <section className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl w-full mx-auto">
                     {home.zahlen.map((zahl) => (
                         <div key={zahl.label} className="flex flex-col items-center text-center gap-2">
-                            <span className={`text-stat font-bold ${textPrimary}`}>{zahl.wert}</span>
+                            <ZahlComponent wert={zahl.wert} className={`text-stat font-bold ${textPrimary}`} />
                             <span className={`text-base ${textMuted}`}>{zahl.label}</span>
                         </div>
                     ))}
@@ -117,7 +123,7 @@ export default function Home(): ReactElement {
                 {/* PRINZIP: eine zentrierte Aussage */}
                 <section className="flex flex-col items-center text-center gap-5 max-w-3xl w-full mx-auto">
                     <h2 className={`text-h2 font-bold ${textHeading} text-balance`}>{home.prinzip.title}</h2>
-                    <p className={`text-xl leading-relaxed ${textMuted} text-balance`}>{home.prinzip.text}</p>
+                    <TextRevealComponent text={home.prinzip.text} className={`text-xl leading-relaxed ${textBody} text-balance`} />
                 </section>
 
                 {/* BELEGE */}

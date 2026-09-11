@@ -38,16 +38,20 @@ export default function UeberMich(): ReactElement {
             <main className="flex flex-col py-10 pb-20 px-4 sm:px-8 max-w-7xl w-full min-w-0 gap-24 lg:gap-32 overflow-x-clip">
                 {/* PERSON: zentriert */}
                 <section className="flex flex-col items-center text-center gap-6 max-w-3xl w-full mx-auto">
-                    <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden">
+                    <div className="reveal relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden" style={{ '--i': 0 } as React.CSSProperties}>
                         <Image className="object-cover" priority alt={ueberMich.hero.profileAlt} src={Profile} sizes="192px" fill />
                     </div>
-                    <h1 className={`text-h1 font-bold ${textPrimary} text-balance`}>{ueberMich.hero.h1}</h1>
-                    <div className="flex flex-col gap-1">
+                    <h1 className={`reveal text-h1 font-bold ${textPrimary} text-balance`} style={{ '--i': 1 } as React.CSSProperties}>
+                        {ueberMich.hero.h1}
+                    </h1>
+                    <div className="reveal flex flex-col gap-1" style={{ '--i': 2 } as React.CSSProperties}>
                         <p className={`text-xl font-semibold ${textHeading}`}>{ueberMich.hero.roleLine}</p>
                         <p className={`text-lg ${textMuted}`}>{ueberMich.hero.credentialsLine}</p>
                         <p className={`text-lg ${textMuted}`}>{ueberMich.hero.placeLine}</p>
                     </div>
-                    <p className={`text-body ${textBody} text-balance`}>{ueberMich.hero.intro}</p>
+                    <p className={`reveal text-body ${textBody} text-balance`} style={{ '--i': 3 } as React.CSSProperties}>
+                        {ueberMich.hero.intro}
+                    </p>
                 </section>
 
                 {/* WERDEGANG */}

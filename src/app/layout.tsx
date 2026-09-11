@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import KosmosMotionComponent from '../../components/kosmosMotion'
 import { home } from '../../content/home'
 import './globals.css'
 
@@ -57,7 +58,10 @@ export default function RootLayout({
             <body className="flex flex-col justify-center w-full items-center">
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
                 <div aria-hidden className="stars" />
+                <div aria-hidden className="stars-near" />
+                <span aria-hidden className="sternschnuppe" />
                 <div aria-hidden className="ambient" />
+                <KosmosMotionComponent />
                 {children}
             </body>
         </html>

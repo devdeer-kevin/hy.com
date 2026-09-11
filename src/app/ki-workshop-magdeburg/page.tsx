@@ -10,6 +10,8 @@ import RaumSofa from '../../../public/werkstatt-raum-sofa.jpg'
 import RaumLeuchte from '../../../public/werkstatt-raum-leuchte.jpg'
 import Profile from '../../../public/kevinheyland-profile.jpeg'
 import { buttonPrimary, pillButton, textBody, textData, textHeading, textMuted, textPrimary, tile } from '../../../components/theme'
+import ZahlComponent from '../../../components/zahl'
+import TextRevealComponent from '../../../components/textReveal'
 import { kiWorkshopMagdeburg as w } from '../../../content/ki-workshop-magdeburg'
 
 export const metadata: Metadata = {
@@ -141,11 +143,19 @@ export default function KiWorkshopMagdeburg(): ReactElement {
                 {/* HERO: zentriert, darunter das Datenblatt und ein Raumfoto, Lampe darüber */}
                 <section className="relative flex flex-col items-center gap-10">
                     <div className="flex flex-col items-center text-center gap-6 max-w-4xl">
-                        <p className={`text-lg ${textMuted}`}>{w.hero.kicker}</p>
-                        <h1 className={`text-h1 font-bold ${textPrimary} text-balance`}>{w.hero.h1}</h1>
-                        <p className={`text-xl leading-relaxed ${textMuted} max-w-2xl text-balance`}>{w.hero.intro}</p>
-                        <p className={`text-xl font-semibold ${textHeading}`}>{w.hero.sub}</p>
-                        <div className="pt-2">
+                        <p className={`reveal text-lg ${textMuted}`} style={{ '--i': 0 } as React.CSSProperties}>
+                            {w.hero.kicker}
+                        </p>
+                        <h1 className={`reveal text-h1 font-bold ${textPrimary} text-balance`} style={{ '--i': 1 } as React.CSSProperties}>
+                            {w.hero.h1}
+                        </h1>
+                        <p className={`reveal text-xl leading-relaxed ${textMuted} max-w-2xl text-balance`} style={{ '--i': 2 } as React.CSSProperties}>
+                            {w.hero.intro}
+                        </p>
+                        <p className={`reveal text-xl font-semibold ${textHeading}`} style={{ '--i': 3 } as React.CSSProperties}>
+                            {w.hero.sub}
+                        </p>
+                        <div className="reveal pt-2" style={{ '--i': 4 } as React.CSSProperties}>
                             <Link className={buttonPrimary} href={w.hero.cta.href}>
                                 {w.hero.cta.label}
                             </Link>
@@ -153,7 +163,7 @@ export default function KiWorkshopMagdeburg(): ReactElement {
                     </div>
                     <div className="relative w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-4">
                         <div aria-hidden className="lamp-light left-1/2 -translate-x-1/2 -top-[30rem] w-[60rem] h-[60rem]" />
-                        <dl className={`relative lg:col-span-5 flex flex-col divide-y divide-white/10 px-8 py-3 ${tile}`}>
+                        <dl className={`reveal relative lg:col-span-5 flex flex-col divide-y divide-white/10 px-8 py-3 ${tile}`} style={{ '--i': 5 } as React.CSSProperties}>
                             {w.hero.fakten.map((fakt) => (
                                 <div key={fakt.label} className="flex flex-col gap-1 py-5">
                                     <dt className={`text-sm ${textMuted}`}>{fakt.label}</dt>
@@ -161,7 +171,7 @@ export default function KiWorkshopMagdeburg(): ReactElement {
                                 </div>
                             ))}
                         </dl>
-                        <div className={`relative lg:col-span-7 min-h-72 overflow-hidden ${tile}`}>
+                        <div className={`reveal tilt relative lg:col-span-7 min-h-72 overflow-hidden ${tile}`} style={{ '--i': 6 } as React.CSSProperties}>
                             <Image className="object-cover" priority alt={w.ort.fotos[1].alt} src={RaumLeuchte} sizes="(max-width: 1024px) 100vw, 60vw" fill />
                         </div>
                     </div>
@@ -223,16 +233,20 @@ export default function KiWorkshopMagdeburg(): ReactElement {
                 {/* VIBE CODING: die Zahl groß, zentriert */}
                 <section className="flex flex-col items-center text-center gap-6 max-w-3xl w-full mx-auto">
                     <p className={`text-data-xl font-bold ${textPrimary}`}>
-                        {w.vibeCoding.zahl}
+                        <ZahlComponent wert={w.vibeCoding.zahl} />
                         <span className="text-[0.5em] align-top ml-1">{w.vibeCoding.zahlEinheit}</span>
                     </p>
                     <h2 className={`text-h2 font-bold ${textHeading} text-balance`}>{w.vibeCoding.title}</h2>
                     <div className="flex flex-col gap-4">
-                        {w.vibeCoding.paragraphs.map((text) => (
-                            <p key={text} className={`text-body ${textBody} text-balance`}>
-                                {text}
-                            </p>
-                        ))}
+                        {w.vibeCoding.paragraphs.map((text, index) =>
+                            index === 0 ? (
+                                <TextRevealComponent key={text} text={text} className={`text-xl leading-relaxed ${textBody} text-balance`} />
+                            ) : (
+                                <p key={text} className={`text-body ${textBody} text-balance`}>
+                                    {text}
+                                </p>
+                            ),
+                        )}
                     </div>
                 </section>
 
