@@ -1,20 +1,17 @@
 import type { MetadataRoute } from 'next'
+import { siteUrl } from './seo'
 
-/** All indexable routes of the site. The sitemap is generated, not maintained. */
-const routes: { path: string; changeFrequency: 'monthly' | 'yearly'; priority: number }[] = [
-    { path: '', changeFrequency: 'monthly', priority: 1 },
-    { path: '/ki-workshop-magdeburg', changeFrequency: 'monthly', priority: 0.9 },
-    { path: '/ueber-mich', changeFrequency: 'monthly', priority: 0.7 },
-    { path: '/referenzen', changeFrequency: 'monthly', priority: 0.7 },
-    { path: '/impressum', changeFrequency: 'yearly', priority: 0.1 },
-    { path: '/datenschutz', changeFrequency: 'yearly', priority: 0.1 },
-]
+/**
+ * Alle indexierbaren Routen. Die Sitemap wird generiert, nicht gepflegt.
+ *
+ * Ohne `priority` und `changeFrequency`: Google wertet beides nicht aus.
+ * Ohne `lastModified`: das Feld wird ausgewertet, aber nur wenn es stimmt, und
+ * ein Build-Zeitstempel stimmt nie. Lieber keine Angabe als eine falsche.
+ */
+const routes = ['', '/ki-workshop-magdeburg', '/ueber-mich', '/referenzen', '/impressum', '/datenschutz']
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    return routes.map((route) => ({
-        url: `https://kevinheyland.com${route.path}`,
-        lastModified: new Date(),
-        changeFrequency: route.changeFrequency,
-        priority: route.priority,
+    return routes.map((path) => ({
+        url: `${siteUrl}${path}`,
     }))
 }

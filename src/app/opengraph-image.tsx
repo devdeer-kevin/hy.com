@@ -1,8 +1,9 @@
 import { ImageResponse } from 'next/og'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import { ogImageAlt } from './seo'
 
-export const alt = 'Kevin Heyland, KI-Beratung und Schulung in Magdeburg'
+export const alt = ogImageAlt
 export const size = {
     width: 1200,
     height: 630,

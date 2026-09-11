@@ -9,22 +9,13 @@ import AIAssistant from '../../../public/KI-Assistant-Ausfuellhilfe.png'
 import PacePlaner from '../../../public/Pace-Planer-Mockup.png'
 import { buttonPrimary, pillButton, textBody, textData, textHeading, textMuted, textPrimary, tile } from '../../../components/theme'
 import { referenzen } from '../../../content/referenzen'
+import { pageMetadata } from '../seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: referenzen.metadata.title,
     description: referenzen.metadata.description,
-    alternates: {
-        canonical: '/referenzen',
-    },
-    openGraph: {
-        title: referenzen.metadata.title,
-        description: referenzen.metadata.description,
-        url: 'https://kevinheyland.com/referenzen',
-        siteName: 'Kevin Heyland',
-        type: 'website',
-        locale: 'de_DE',
-    },
-}
+    path: '/referenzen',
+})
 
 const images = [Tonnentour, AIAssistant, PacePlaner]
 

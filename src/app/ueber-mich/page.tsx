@@ -9,22 +9,14 @@ import ValueCardComponent from '../../../components/valueCard'
 import Profile from '../../../public/kevinheyland-profile.jpeg'
 import { textBody, textHeading, textMuted, textPrimary } from '../../../components/theme'
 import { ueberMich } from '../../../content/ueber-mich'
+import { pageMetadata } from '../seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: ueberMich.metadata.title,
     description: ueberMich.metadata.description,
-    alternates: {
-        canonical: '/ueber-mich',
-    },
-    openGraph: {
-        title: ueberMich.metadata.title,
-        description: ueberMich.metadata.description,
-        url: 'https://kevinheyland.com/ueber-mich',
-        siteName: 'Kevin Heyland',
-        type: 'profile',
-        locale: 'de_DE',
-    },
-}
+    path: '/ueber-mich',
+    type: 'profile',
+})
 
 /**
  * Renders the about page: the person centered, then the career timeline,

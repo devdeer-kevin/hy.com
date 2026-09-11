@@ -3,22 +3,13 @@ import { ArrowLeftIcon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
 import { glass } from '../../../components/theme'
 import { datenschutz } from '../../../content/datenschutz'
+import { pageMetadata } from '../seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: datenschutz.metadata.title,
     description: datenschutz.metadata.description,
-    alternates: {
-        canonical: '/datenschutz',
-    },
-    openGraph: {
-        title: datenschutz.metadata.title,
-        description: datenschutz.metadata.description,
-        url: 'https://kevinheyland.com/datenschutz',
-        siteName: 'Kevin Heyland',
-        type: 'website',
-        locale: 'de_DE',
-    },
-}
+    path: '/datenschutz',
+})
 
 export default function Datenschutz(): React.ReactElement {
     return (

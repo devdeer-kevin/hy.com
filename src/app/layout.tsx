@@ -3,24 +3,17 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import KosmosMotionComponent from '../../components/kosmosMotion'
 import { home } from '../../content/home'
+import { pageMetadata, siteUrl } from './seo'
 import './globals.css'
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://kevinheyland.com'),
-    title: home.metadata.title,
-    description: home.metadata.description,
+    metadataBase: new URL(siteUrl),
     robots: 'index, follow',
-    alternates: {
-        canonical: '/',
-    },
-    openGraph: {
+    ...pageMetadata({
         title: home.metadata.title,
         description: home.metadata.description,
-        url: 'https://kevinheyland.com',
-        siteName: 'Kevin Heyland',
-        type: 'website',
-        locale: 'de_DE',
-    },
+        path: '/',
+    }),
 }
 
 /**
@@ -31,8 +24,9 @@ const personJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Kevin Heyland',
-    url: 'https://kevinheyland.com',
-    image: 'https://kevinheyland.com/opengraph-image',
+    url: siteUrl,
+    // Ein echtes Foto, nicht die Open-Graph-Textkarte: Google erwartet hier die Person.
+    image: `${siteUrl}/kevinheyland-profile.jpeg`,
     jobTitle: 'Partner & Head of Operations',
     worksFor: {
         '@type': 'Organization',

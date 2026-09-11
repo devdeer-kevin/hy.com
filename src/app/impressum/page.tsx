@@ -2,22 +2,13 @@ import type { Metadata } from 'next'
 import { ArrowLeftIcon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
 import { impressum } from '../../../content/impressum'
+import { pageMetadata } from '../seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: impressum.metadata.title,
     description: impressum.metadata.description,
-    alternates: {
-        canonical: '/impressum',
-    },
-    openGraph: {
-        title: impressum.metadata.title,
-        description: impressum.metadata.description,
-        url: 'https://kevinheyland.com/impressum',
-        siteName: 'Kevin Heyland',
-        type: 'website',
-        locale: 'de_DE',
-    },
-}
+    path: '/impressum',
+})
 
 export default function Impressum(): React.ReactElement {
     return (

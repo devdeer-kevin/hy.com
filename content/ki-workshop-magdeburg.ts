@@ -283,7 +283,9 @@ export const kiWorkshopMagdeburg = {
         teaches: ['KI-gestützte Softwareentwicklung', 'Git und Deployment', 'Datenschutz im Betrieb', 'Anwendungssicherheit', 'Betriebskosten von KI-Anwendungen'],
         workload: 'P3D',
         capacity: 6,
-        price: '1590',
+        // Spanne pro Person wie in `preise.zeilen`: Tag 1 einzeln bis alle drei Tage.
+        priceFrom: '690',
+        priceTo: '1590',
         location: {
             name: 'DEVDEER GmbH',
             streetAddress: 'Herderstraße 31',

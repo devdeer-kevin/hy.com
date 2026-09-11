@@ -12,26 +12,20 @@ import Profile from '../../../public/kevinheyland-profile.jpeg'
 import { buttonPrimary, pillButton, textBody, textData, textHeading, textMuted, textPrimary, tile } from '../../../components/theme'
 import TextRevealComponent from '../../../components/textReveal'
 import { kiWorkshopMagdeburg as w } from '../../../content/ki-workshop-magdeburg'
+import { pageMetadata } from '../seo'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
     title: w.metadata.title,
     description: w.metadata.description,
-    alternates: {
-        canonical: '/ki-workshop-magdeburg',
-    },
-    openGraph: {
-        title: w.metadata.title,
-        description: w.metadata.description,
-        url: w.course.url,
-        siteName: 'Kevin Heyland',
-        type: 'website',
-        locale: 'de_DE',
-    },
-}
+    path: '/ki-workshop-magdeburg',
+})
 
 const raumFotos = [RaumSofa, RaumLeuchte]
 
-/** Course with CourseInstance. Dates are added only once they exist. */
+/** True as soon as a date exists. Gates everything that must not be claimed without one. */
+const hatTermin = w.termine.items.length > 0
+
+/** Course with CourseInstance. Dates and availability are added only once they exist. */
 const courseJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -51,7 +45,7 @@ const courseJsonLd = {
         courseMode: 'onsite',
         courseWorkload: w.course.workload,
         maximumAttendeeCapacity: w.course.capacity,
-        ...(w.termine.items.length > 0 ? { startDate: w.termine.items[0].startDate, endDate: w.termine.items[0].endDate } : {}),
+        ...(hatTermin ? { startDate: w.termine.items[0].startDate, endDate: w.termine.items[0].endDate } : {}),
         location: {
             '@type': 'Place',
             name: w.course.location.name,
@@ -64,12 +58,14 @@ const courseJsonLd = {
             },
         },
         offers: {
-            '@type': 'Offer',
-            price: w.course.price,
+            '@type': 'AggregateOffer',
+            lowPrice: w.course.priceFrom,
+            highPrice: w.course.priceTo,
             priceCurrency: 'EUR',
             valueAddedTaxIncluded: false,
-            availability: 'https://schema.org/InStock',
             url: w.course.url,
+            // Ohne Termin wird keine Verfügbarkeit behauptet, die Seite nennt "auf Anfrage".
+            ...(hatTermin ? { availability: 'https://schema.org/InStock' } : {}),
         },
     },
 }
