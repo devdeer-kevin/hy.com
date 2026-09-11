@@ -29,9 +29,17 @@ export default function KosmosMotionComponent(): null {
             pointer = { x: (event.clientX / window.innerWidth) * 2 - 1, y: (event.clientY / window.innerHeight) * 2 - 1 }
             if (pointerQueued) return
             pointerQueued = true
+            const { clientX, clientY } = event
             window.requestAnimationFrame(() => {
                 root.style.setProperty('--pointer-x', pointer.x.toFixed(3))
                 root.style.setProperty('--pointer-y', pointer.y.toFixed(3))
+                // Der Zeiger als Lichtquelle: jede Kachel bekommt seine Position in eigenen Koordinaten.
+                document.querySelectorAll<HTMLElement>('.sheen').forEach((tile) => {
+                    const rect = tile.getBoundingClientRect()
+                    if (clientY < rect.top - 400 || clientY > rect.bottom + 400) return
+                    tile.style.setProperty('--mx', `${Math.round(clientX - rect.left)}px`)
+                    tile.style.setProperty('--my', `${Math.round(clientY - rect.top)}px`)
+                })
                 pointerQueued = false
             })
         }

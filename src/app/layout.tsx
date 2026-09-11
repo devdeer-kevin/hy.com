@@ -59,6 +59,7 @@ export default function RootLayout({
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
                 <div aria-hidden className="stars" />
                 <div aria-hidden className="stars-near" />
+                <div aria-hidden className="galaxie" />
                 <span aria-hidden className="sternschnuppe" />
                 <div aria-hidden className="ambient" />
                 <KosmosMotionComponent />

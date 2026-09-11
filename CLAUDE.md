@@ -64,7 +64,7 @@ Der bestehende One-Pager wurde im September 2026 zerlegt.
 | Career-Timeline 2006 bis heute | `/ueber-mich`, Markup unverändert, Text nach `content/` und ins Deutsche | erledigt |
 | Drei Prinzipien | eines auf `/` (Verstehen kommt vor Bauen), zwei nach `/ueber-mich` | erledigt |
 | Produktkarten | gekürzt auf `/`, ausführlich auf `/referenzen` | erledigt |
-| Open-Source-Feed | `/ueber-mich` (Entscheidung `/ki-tools-bauen` steht noch aus, siehe §11) | erledigt |
+| Open-Source-Feed | entfernt (2026-09-11), samt API-Route und GitHub-Abfrage | erledigt |
 | Portrait und Bildassets | bleiben unverändert | erledigt |
 
 **Redirects:** `/imprint` → `/impressum`, `/privacy` → `/datenschutz`, jeweils 301 in `next.config.mjs`. Bestand: `/blog` → `/` bleibt.
@@ -111,15 +111,15 @@ Jede Seite liefert über die Next Metadata API:
 
 Die visionOS-Sprache aus dem Bestand ist die Vorgabe. Die Tokens liegen in `components/theme.ts` und werden von dort wiederverwendet, nicht neu erfunden:
 - Textrollen `textPrimary`, `textHeading`, `textBody`, `textMuted`, `textMeta`, dazu `textData` (Mono, nur für Zahlen, Preise, Termine, Kapazitäten)
-- Kachel `tile` (rahmenlos, rounded-3xl, bg-white/6) für alles Flächige; die Werkbank steigert die Kachelhelligkeit je Station (4, 7, 11 Prozent). `glass` bleibt nur für Dock, Mobilmenü und die Rechtsseiten
+- Kachel `tile` (rahmenlos, rounded-3xl, navy-900 zu 75 Prozent, damit Himmel und Galaxie nur schwach durchscheinen) für alles Flächige; die Werkbank steigert die Kachelhelligkeit je Station (4, 7, 11 Prozent). `glass` bleibt nur für Dock, Mobilmenü und die Rechtsseiten
 - Knöpfe: `buttonPrimary` (gefüllt in `ink`, einer pro Abschnitt) und `pillButton` (Glaspille, sekundär)
 - Farben und Typoskala als `@theme`-Werte in `src/app/globals.css`: `navy-950`, `navy-900`, `ink`, `ink-body`, `ink-muted`, `lamp`; Größen `text-h1`, `text-h2`, `text-h3`, `text-body`, `text-data-xl` (fluid über clamp)
 - Warmes Licht über die Klasse `.lamp-light`, höchstens zweimal pro Seite (Hero und Schluss-CTA)
 
 Die Sprache heißt „Kosmos": eine Apple-Produktseite bei Nacht. Ihre Zeichen:
 - **Navigation** (`components/navigationTop`): eine zentrierte, schwebende Glas-Werkzeugleiste wie in visionOS, bleibt beim Scrollen oben. Logo und Name am linken Ende, daneben die Links, aktiver Eintrag als gefüllte Pille. Unterseiten zeigen darunter eine Brotkrume
-- **Sterne** (`.stars` im Root-Layout): deterministische SVG-Kachel, fest zum Viewport, ohne Bewegung
-- **Kacheln** (`tile`): rahmenlos, `rounded-3xl`, leicht hellere Fläche. Wichtige Kacheln tragen ein Bild, nicht nur Text. Anordnung als Bento: eine große Kachel, dann zwei kleine
+- **Himmel** (Root-Layout): zwei Sternebenen `.stars` und `.stars-near` als deterministische SVG-Kacheln in Sternfarben (weiß, blauweiß, warmes Gelb, Orange), nahe Sterne mit Halo und vereinzelt Beugungsspitzen; dazu `.galaxie`, eine schwache Spiralgalaxie oben rechts, und `.sternschnuppe`
+- **Kacheln** (`tile`): rahmenlos, `rounded-3xl`, fast deckende Fläche in navy-900. Wichtige Kacheln tragen ein Bild, nicht nur Text. Anordnung als Bento: eine große Kachel, dann zwei kleine
 - **Zentrierte Überschriften**: H1 und H2 mittig, darunter eine graue Unterzeile, Text auf `max-w-2xl`
 - **Zahlen groß in der Display-Schrift** (`text-stat`), nur belegte Zahlen. Mono (`textData`) bleibt für Tabellen und Datenblätter
 - **Ein Knopf** (`buttonPrimary`, gefüllt in `ink`), daneben höchstens ein zweiter als Pille
@@ -140,9 +140,10 @@ Leitlinien, wenn eine neue Fläche entsteht:
 - Parallax der zwei Sternebenen und der Lampe auf Scrollweg und Zeiger (`components/kosmosMotion` setzt `--scroll-y`, `--pointer-x`, `--pointer-y`)
 - Aufbau des Heros beim Laden (`.reveal`, gestaffelt über `--i`, reine CSS-Animation)
 - Neigung der einen Hero-Kachel zum Zeiger (`.tilt`), sonst keine Hover-Animation auf Karten
-- Zahlen zählen einmal hoch (`components/zahl`), ein Absatz pro Seite enthüllt sich beim Scrollen wortweise (`components/textReveal`)
+- ein Absatz pro Seite enthüllt sich beim Scrollen wortweise (`components/textReveal`); Zahlen stehen still, kein Hochzählen
+- der Zeiger ist eine warme Lichtquelle: Kacheln (`.sheen`, Teil von `tile`) zeigen einen weichen Schein an der Zeigerposition
 - die Werkbank baut sich einmal auf
-- Eigenständige Bewegung nur am Himmel: nahe Sterne funkeln langsam, eine Sternschnuppe alle 34 Sekunden
+- Eigenständige Bewegung nur am Himmel: nahe Sterne funkeln langsam, die Galaxie dreht sich einmal in vier Minuten, eine Sternschnuppe alle 34 Sekunden
 Alles davon liegt hinter `prefers-reduced-motion: no-preference`; ohne JavaScript ist alles sofort sichtbar. Kein Fade-in auf jedem Abschnitt, keine Dauerbewegung im Inhalt.
 
 **Bilder:** `next/image` mit `sizes`, keine Layoutsprünge. Bildassets liegen in `public/` und werden statisch importiert.
@@ -195,7 +196,7 @@ Alles davon liegt hinter `prefers-reduced-motion: no-preference`; ohne JavaScrip
 
 1. Preise der KI-Werkstatt final (aktuell Vorschlag: 690 / 1.190 / 1.590 Euro netto, exklusiv 7.900 Euro)
 2. Steht Herderstraße 31 öffentlich auf der Seite oder erst in der Terminbestätigung? Impressum bleibt davon unberührt
-3. Was passiert mit dem Open-Source-Feed (aktuell auf `/ueber-mich`, Alternative `/ki-tools-bauen`)
+3. Open-Source-Feed: entschieden, entfernt (2026-09-11)
 4. Kontaktformular oder dauerhaft nur Mail
 
 ---
@@ -206,7 +207,7 @@ Erledigt am 2026-09-03. Ergebnis:
 
 - **Router:** App Router unter `src/app/`, Next.js 16, React 19, TypeScript strict
 - **Tailwind:** Version 4 (CSS-first, `@theme` in `src/app/globals.css`). Design-Tokens existieren in `components/theme.ts`
-- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `busySpinner`, `career`, `footer`, `gitRepos`, `navigationTop`, `sectionHeader`, `valueCard`, `werkbank`
+- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `busySpinner`, `career`, `footer`, `kosmosMotion`, `navigationTop`, `sectionHeader`, `textReveal`, `valueCard`, `werkbank`
 - **Bildassets:** in `public/`, statisch importiert über `next/image`
 - **Deployment:** Serverprofis GmbH (laut Datenschutzerklärung), Node-Server. Redirects in `next.config.mjs` greifen dort (der `/blog`-Redirect lief bereits so); nach jedem Deployment einmal `/imprint` und `/privacy` prüfen
 - **MDX:** kein Setup vorhanden. Content liegt als typisierte TS-Objekte unter `content/`

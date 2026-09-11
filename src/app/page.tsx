@@ -9,7 +9,6 @@ import PacePlaner from '../../public/Pace-Planer-Mockup.png'
 import NavigationTopComponent from '../../components/navigationTop'
 import FooterComponent from '../../components/footer'
 import { buttonPrimary, pillButton, textBody, textData, textHeading, textMeta, textMuted, textPrimary, tile } from '../../components/theme'
-import ZahlComponent from '../../components/zahl'
 import TextRevealComponent from '../../components/textReveal'
 import { home } from '../../content/home'
 
@@ -76,7 +75,7 @@ export default function Home(): ReactElement {
                 <section className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl w-full mx-auto">
                     {home.zahlen.map((zahl) => (
                         <div key={zahl.label} className="flex flex-col items-center text-center gap-2">
-                            <ZahlComponent wert={zahl.wert} className={`text-stat font-bold ${textPrimary}`} />
+                            <span className={`text-stat font-bold ${textPrimary}`}>{zahl.wert}</span>
                             <span className={`text-base ${textMuted}`}>{zahl.label}</span>
                         </div>
                     ))}

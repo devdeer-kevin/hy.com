@@ -10,7 +10,6 @@ import RaumSofa from '../../../public/werkstatt-raum-sofa.jpg'
 import RaumLeuchte from '../../../public/werkstatt-raum-leuchte.jpg'
 import Profile from '../../../public/kevinheyland-profile.jpeg'
 import { buttonPrimary, pillButton, textBody, textData, textHeading, textMuted, textPrimary, tile } from '../../../components/theme'
-import ZahlComponent from '../../../components/zahl'
 import TextRevealComponent from '../../../components/textReveal'
 import { kiWorkshopMagdeburg as w } from '../../../content/ki-workshop-magdeburg'
 
@@ -233,7 +232,7 @@ export default function KiWorkshopMagdeburg(): ReactElement {
                 {/* VIBE CODING: die Zahl groß, zentriert */}
                 <section className="flex flex-col items-center text-center gap-6 max-w-3xl w-full mx-auto">
                     <p className={`text-data-xl font-bold ${textPrimary}`}>
-                        <ZahlComponent wert={w.vibeCoding.zahl} />
+                        {w.vibeCoding.zahl}
                         <span className="text-[0.5em] align-top ml-1">{w.vibeCoding.zahlEinheit}</span>
                     </p>
                     <h2 className={`text-h2 font-bold ${textHeading} text-balance`}>{w.vibeCoding.title}</h2>

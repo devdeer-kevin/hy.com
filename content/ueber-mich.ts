@@ -2,8 +2,6 @@
  * Gesamter Text der Seite /ueber-mich. Layout und Komposition liegen in
  * `src/app/ueber-mich/page.tsx`, hier steht ausschließlich Inhalt.
  */
-import type { ComponentType, SVGProps } from 'react'
-import { UserGroupIcon, CheckBadgeIcon } from '@heroicons/react/24/outline'
 
 /** Ein Kapitel der Karriere-Timeline. */
 export interface IChapter {
@@ -15,9 +13,8 @@ export interface IChapter {
     current?: boolean
 }
 
-/** Ein Prinzip mit Icon und kurzer Erklärung. */
+/** Ein Prinzip mit kurzer Erklärung. */
 export interface IValue {
-    icon: ComponentType<SVGProps<SVGSVGElement>>
     title: string
     text: string
 }
@@ -87,19 +84,13 @@ export const ueberMich = {
         subtitle: 'Was meine Arbeit trägt',
         values: [
             {
-                icon: UserGroupIcon,
                 title: 'Wir lernen voneinander, füreinander',
                 text: 'Das DEVDEER-Motto und der rote Faden durch meine eigene Geschichte. Jedes Kapitel meines Werdegangs wurde von Menschen beschleunigt, die geteilt haben, was sie wissen. Das weiterzugeben gehört zur Stellenbeschreibung, die ich mir selbst schreibe.',
             },
             {
-                icon: CheckBadgeIcon,
                 title: 'Substanz statt Symbolik',
                 text: 'Ergebnisse, die man messen kann, schlagen Folien, die man bewundern kann. Dieser Maßstab gilt für Cloud-Architekturen, für interne Prozesse und für die kleinen kostenlosen Werkzeuge, die ich für diese Stadt baue.',
             },
         ] satisfies IValue[],
-    },
-    openSource: {
-        title: 'Open Source',
-        subtitle: 'Aktuelle GitHub-Aktivität',
     },
 }

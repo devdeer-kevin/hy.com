@@ -37,7 +37,7 @@ export const pillButton =
  * Tile: the Apple product-page surface. No border, a slightly lighter fill,
  * one soft radius. Content and imagery carry the contrast.
  */
-export const tile = 'rounded-3xl bg-white/[0.06]'
+export const tile = 'rounded-3xl bg-navy-900/75 sheen'
 
 /** Primary button: filled in ink, like the one action on a product page. */
 export const buttonPrimary = 'inline-flex items-center rounded-full bg-ink text-navy-950 px-5 py-2.5 text-sm font-semibold hover:bg-white transition-colors'

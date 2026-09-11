@@ -29,7 +29,7 @@ export const datenschutz = {
         },
         {
             title: 'Externe Inhalte',
-            text: 'Die angezeigten GitHub-Repositories werden serverseitig abgerufen. Dein Browser stellt dabei keine Verbindung zu GitHub her. Links zu externen Websites (z. B. GitHub, LinkedIn, DEVDEER) führen zu Angeboten Dritter, für deren Datenverarbeitung deren jeweilige Datenschutzerklärung gilt.',
+            text: 'Links zu externen Websites (z. B. GitHub, LinkedIn, DEVDEER) führen zu Angeboten Dritter, für deren Datenverarbeitung deren jeweilige Datenschutzerklärung gilt.',
         },
         {
             title: 'Deine Rechte',

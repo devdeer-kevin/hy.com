@@ -6,7 +6,6 @@ import FooterComponent from '../../../components/footer'
 import SectionHeaderComponent from '../../../components/sectionHeader'
 import CareerComponent from '../../../components/career'
 import ValueCardComponent from '../../../components/valueCard'
-import GitReposComponent from '../../../components/gitRepos'
 import Profile from '../../../public/kevinheyland-profile.jpeg'
 import { textBody, textHeading, textMuted, textPrimary } from '../../../components/theme'
 import { ueberMich } from '../../../content/ueber-mich'
@@ -68,12 +67,6 @@ export default function UeberMich(): ReactElement {
                             <ValueCardComponent key={value.title} value={value} />
                         ))}
                     </div>
-                </section>
-
-                {/* OPEN SOURCE */}
-                <section className="flex flex-col gap-10">
-                    <SectionHeaderComponent title={ueberMich.openSource.title} subtitle={ueberMich.openSource.subtitle} />
-                    <GitReposComponent />
                 </section>
             </main>
             <FooterComponent />
