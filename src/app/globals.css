@@ -30,6 +30,42 @@
     --text-data-xl--letter-spacing: -0.04em;
 }
 
+/* Schild: das Abschnittswort als Werkstattschild, riesig, leise, angeschnitten. Rein dekorativ. */
+.schild {
+    display: block;
+    font-weight: 900;
+    font-size: clamp(5rem, 13vw, 11rem);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    text-transform: lowercase;
+    color: rgb(248 250 252 / 0.07);
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    margin-left: -0.05em;
+    margin-bottom: -0.3em;
+}
+
+/* Stempel: dreht sich nur, wenn jemand ihn anfasst. */
+@keyframes stempel-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.stempel-spin {
+    transform-origin: center;
+    animation: stempel-spin 14s linear infinite;
+    animation-play-state: paused;
+}
+
+.group:hover .stempel-spin,
+.group:focus-visible .stempel-spin {
+    animation-play-state: running;
+}
+
 /* Eine Lampe, kein Farbklecks: heller Kern, weiter Abfall. Genau zweimal pro Seite. */
 .lamp-light {
     position: absolute;

@@ -23,7 +23,7 @@ Wenn eine Änderung diesem Zweck nicht dient, ist sie falsch, auch wenn sie tech
 | Thema | Regel |
 |---|---|
 | Stack | Next.js und Tailwind. Kein Framework-Wechsel, keine zusätzliche UI-Bibliothek ohne Rückfrage |
-| Design | visionOS-Sprache aus dem Bestand. Kein Redesign, keine neue Schrift. Palette bleibt kalt (Marineblau, Slate), ein warmer Lichtton `lamp` #ef9a41 kommt hinzu, gemessen aus den Kugellampen der Raumfotos. Er wird nur als Licht und als aktiver Zustand eingesetzt, nie als Fläche, Button, Rahmen oder Überschrift |
+| Design | visionOS-Sprache aus dem Bestand. Kein Redesign, keine neue Schrift. Palette bleibt kalt (Marineblau, Slate), ein warmer Lichtton `lamp` #ef9a41 kommt hinzu, gemessen aus den Kugellampen der Raumfotos. Er wird als Licht (`.lamp-light`, zweimal pro Seite), als aktiver Zustand und genau einmal pro Seite als feste Form eingesetzt: der runde Stempel mit der Handlungsaufforderung (`components/stempel`). Nie als Kartenfläche, Rahmen oder Überschrift |
 | Tracking | keine Analytics, keine Cookies, keine Drittanbieter-Skripte. Steht so im Footer und bleibt so |
 | Sprache | Deutsch, `lang="de"`, `og:locale: de_DE`. Keine englische Parallelfassung |
 | Ansprache | Du, durchgängig, auch in Formularen, Fehlermeldungen und Buttons |
@@ -116,6 +116,13 @@ Die visionOS-Sprache aus dem Bestand ist die Vorgabe. Die Tokens liegen in `comp
 - Farben und Typoskala als `@theme`-Werte in `src/app/globals.css`: `navy-950`, `navy-900`, `ink`, `ink-body`, `ink-muted`, `lamp`; Größen `text-h1`, `text-h2`, `text-h3`, `text-body`, `text-data-xl` (fluid über clamp)
 - Warmes Licht über die Klasse `.lamp-light`, höchstens zweimal pro Seite (Hero und Schluss-CTA)
 
+Die Sprache heißt „Werkstattlicht": ein dunkler Raum, eine warme Lampe, echte Dinge auf dem Tisch, große Schilder an der Wand. Ihre Zeichen:
+- **Stempel** (`components/stempel`): runder Lampenton-Badge mit Laufschrift, die eine feste Form der Lampe pro Seite. Dreht sich nur bei Hover oder Fokus
+- **Schild** (`components/schild`, Klasse `.schild`): das Abschnittswort in Kleinbuchstaben, riesig, 7 % Deckung, angeschnitten, rein dekorativ. Nur für Wörter, die als Überschrift bereits im Inhalt stehen
+- **Passermarken** (`components/passermarken`): kleine Fadenkreuze an den vier Ecken eines Blocks mit belegten Zahlen oder Preisen. Nirgends sonst
+- **Papierrahmen** (`papierrahmen` in theme.ts): Fotos sind eckig mit dünner, versetzter Kontur. Glas ist rund, Papier ist eckig
+- **Zahlen als Schilder**: belegte Zahlen groß in Mono (`textData`), nie erfundene
+
 Leitlinien, wenn eine neue Fläche entsteht:
 - Tiefe entsteht durch Ebenen, Unschärfe und Helligkeit, nicht durch Schlagschatten und Rahmen
 - Große weiche Radien, aber nicht derselbe Radius auf jedem Element. Radius kodiert Hierarchie
@@ -189,7 +196,7 @@ Erledigt am 2026-09-03. Ergebnis:
 
 - **Router:** App Router unter `src/app/`, Next.js 16, React 19, TypeScript strict
 - **Tailwind:** Version 4 (CSS-first, `@theme` in `src/app/globals.css`). Design-Tokens existieren in `components/theme.ts`
-- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `busySpinner`, `career`, `footer`, `gitRepos`, `navigationTop`, `sectionHeader`, `valueCard`, `werkbank`
+- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `busySpinner`, `career`, `footer`, `gitRepos`, `navigationTop`, `passermarken`, `schild`, `sectionHeader`, `stempel`, `valueCard`, `werkbank`
 - **Bildassets:** in `public/`, statisch importiert über `next/image`
 - **Deployment:** Serverprofis GmbH (laut Datenschutzerklärung), Node-Server. Redirects in `next.config.mjs` greifen dort (der `/blog`-Redirect lief bereits so); nach jedem Deployment einmal `/imprint` und `/privacy` prüfen
 - **MDX:** kein Setup vorhanden. Content liegt als typisierte TS-Objekte unter `content/`

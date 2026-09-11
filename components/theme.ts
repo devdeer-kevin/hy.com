@@ -61,4 +61,10 @@ export const pillButton =
 export const sectionLabel = `text-md ${textMuted}`
 
 /** Large section title with vibrancy. */
-export const sectionTitle = `text-5xl pb-2 font-bold ${textHeading}`
+export const sectionTitle = `text-h2 font-bold ${textHeading}`
+
+/**
+ * Paper frame for photographs: square corners and a thin offset outline
+ * behind the picture. Glass is round, paper is square.
+ */
+export const papierrahmen = 'border border-white/25 translate-x-3 translate-y-3'
