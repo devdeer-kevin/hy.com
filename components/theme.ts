@@ -64,7 +64,10 @@ export const sectionLabel = `text-md ${textMuted}`
 export const sectionTitle = `text-h2 font-bold ${textHeading}`
 
 /**
- * Paper frame for photographs: square corners and a thin offset outline
- * behind the picture. Glass is round, paper is square.
+ * Tile: the Apple product-page surface. No border, a slightly lighter fill,
+ * one soft radius. Content and imagery carry the contrast.
  */
-export const papierrahmen = 'border border-white/25 translate-x-3 translate-y-3'
+export const tile = 'rounded-3xl bg-white/[0.06]'
+
+/** Primary button: filled in ink, like the one action on a product page. */
+export const buttonPrimary = 'inline-flex items-center rounded-full bg-ink text-navy-950 px-5 py-2.5 text-sm font-semibold hover:bg-white transition-colors'

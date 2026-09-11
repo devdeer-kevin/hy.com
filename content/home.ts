@@ -50,7 +50,6 @@ export const home = {
         { wert: '20', label: 'Jahre Berufsweg' },
     ],
     angebote: {
-        schild: 'angebote',
         title: 'Angebote',
         subtitle: 'Drei Wege, ins Arbeiten zu kommen',
         items: [
@@ -78,7 +77,6 @@ export const home = {
         text: 'Wirtschaftspädagogik hat mich erklären gelehrt, UX-Design hat mich zuhören gelehrt. Beides kommt vor der ersten Zeile Technik: Wenn du ein Werkzeug nicht verstehst, ist das Werkzeug nicht fertig.',
     },
     belege: {
-        schild: 'belege',
         title: 'Belege',
         subtitle: 'Woran du mich messen kannst',
         devdeer: {

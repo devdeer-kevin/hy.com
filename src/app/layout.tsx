@@ -54,8 +54,9 @@ export default function RootLayout({
 }>): React.ReactElement {
     return (
         <html lang="de" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-            <body className="flex flex-col justify-center w-full items-center bg-linear-to-br from-slate-950 via-slate-950 to-indigo-950">
+            <body className="flex flex-col justify-center w-full items-center">
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+                <div aria-hidden className="stars" />
                 <div aria-hidden className="ambient" />
                 {children}
             </body>

@@ -23,7 +23,7 @@ Wenn eine Änderung diesem Zweck nicht dient, ist sie falsch, auch wenn sie tech
 | Thema | Regel |
 |---|---|
 | Stack | Next.js und Tailwind. Kein Framework-Wechsel, keine zusätzliche UI-Bibliothek ohne Rückfrage |
-| Design | visionOS-Sprache aus dem Bestand. Kein Redesign, keine neue Schrift. Palette bleibt kalt (Marineblau, Slate), ein warmer Lichtton `lamp` #ef9a41 kommt hinzu, gemessen aus den Kugellampen der Raumfotos. Er wird als Licht (`.lamp-light`, zweimal pro Seite), als aktiver Zustand und genau einmal pro Seite als feste Form eingesetzt: der runde Stempel mit der Handlungsaufforderung (`components/stempel`). Nie als Kartenfläche, Rahmen oder Überschrift |
+| Design | Apple-Produktseiten-Grammatik auf visionOS-Material: dunkler Kosmos (Marineblau, Sterne), zentrierte Überschriften, rahmenlose Kacheln, große Bilder, viel Luft. Kein Redesign, keine neue Schrift. Palette bleibt kalt, ein warmer Lichtton `lamp` #ef9a41 (gemessen aus den Kugellampen der Raumfotos) kommt nur als Licht hinzu, nie als Fläche, Button, Rahmen oder Überschrift |
 | Tracking | keine Analytics, keine Cookies, keine Drittanbieter-Skripte. Steht so im Footer und bleibt so |
 | Sprache | Deutsch, `lang="de"`, `og:locale: de_DE`. Keine englische Parallelfassung |
 | Ansprache | Du, durchgängig, auch in Formularen, Fehlermeldungen und Buttons |
@@ -111,17 +111,19 @@ Jede Seite liefert über die Next Metadata API:
 
 Die visionOS-Sprache aus dem Bestand ist die Vorgabe. Die Tokens liegen in `components/theme.ts` und werden von dort wiederverwendet, nicht neu erfunden:
 - Textrollen `textPrimary`, `textHeading`, `textBody`, `textMuted`, `textMeta`, dazu `textData` (Mono, nur für Zahlen, Preise, Termine, Kapazitäten)
-- Flächenstufen `surface1` (angedeutet, rounded-xl), `surface2` (Karte, rounded-2xl), `surface3` (Glas mit Licht, rounded-3xl); Radius kodiert die Stufe
+- Kachel `tile` (rahmenlos, rounded-3xl) für Produktseiten-Layouts; Flächenstufen `surface1`, `surface2`, `surface3` für Datenblätter und die Werkbank
 - Bestand für die Startseite: `cardPrimary`, `cardSecondary`, `glassAccent`, `glass`, `glassCard`, `glassFrame`, `pillButton`
 - Farben und Typoskala als `@theme`-Werte in `src/app/globals.css`: `navy-950`, `navy-900`, `ink`, `ink-body`, `ink-muted`, `lamp`; Größen `text-h1`, `text-h2`, `text-h3`, `text-body`, `text-data-xl` (fluid über clamp)
 - Warmes Licht über die Klasse `.lamp-light`, höchstens zweimal pro Seite (Hero und Schluss-CTA)
 
-Die Sprache heißt „Werkstattlicht": ein dunkler Raum, eine warme Lampe, echte Dinge auf dem Tisch, große Schilder an der Wand. Ihre Zeichen:
-- **Stempel** (`components/stempel`): runder Lampenton-Badge mit Laufschrift, die eine feste Form der Lampe pro Seite. Dreht sich nur bei Hover oder Fokus
-- **Schild** (`components/schild`, Klasse `.schild`): das Abschnittswort in Kleinbuchstaben, riesig, 7 % Deckung, angeschnitten, rein dekorativ. Nur für Wörter, die als Überschrift bereits im Inhalt stehen
-- **Passermarken** (`components/passermarken`): kleine Fadenkreuze an den vier Ecken eines Blocks mit belegten Zahlen oder Preisen. Nirgends sonst
-- **Papierrahmen** (`papierrahmen` in theme.ts): Fotos sind eckig mit dünner, versetzter Kontur. Glas ist rund, Papier ist eckig
-- **Zahlen als Schilder**: belegte Zahlen groß in Mono (`textData`), nie erfundene
+Die Sprache heißt „Kosmos": eine Apple-Produktseite bei Nacht. Ihre Zeichen:
+- **Sterne** (`.stars` im Root-Layout): deterministische SVG-Kachel, fest zum Viewport, ohne Bewegung
+- **Kacheln** (`tile`): rahmenlos, `rounded-3xl`, leicht hellere Fläche. Wichtige Kacheln tragen ein Bild, nicht nur Text. Anordnung als Bento: eine große Kachel, dann zwei kleine
+- **Zentrierte Überschriften**: H1 und H2 mittig, darunter eine graue Unterzeile, Text auf `max-w-2xl`
+- **Zahlen groß in der Display-Schrift** (`text-stat`), nur belegte Zahlen. Mono (`textData`) bleibt für Tabellen und Datenblätter
+- **Ein Knopf** (`buttonPrimary`, gefüllt in `ink`), daneben höchstens ein zweiter als Pille
+- **Substantive werden großgeschrieben.** Keine dekorativen Wörter in Kleinschreibung, keine Versalien
+- Kein Stempel, keine Passermarken, keine versetzten Rahmen: das war ein Versuch und ist verworfen
 
 Leitlinien, wenn eine neue Fläche entsteht:
 - Tiefe entsteht durch Ebenen, Unschärfe und Helligkeit, nicht durch Schlagschatten und Rahmen
@@ -196,7 +198,7 @@ Erledigt am 2026-09-03. Ergebnis:
 
 - **Router:** App Router unter `src/app/`, Next.js 16, React 19, TypeScript strict
 - **Tailwind:** Version 4 (CSS-first, `@theme` in `src/app/globals.css`). Design-Tokens existieren in `components/theme.ts`
-- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `busySpinner`, `career`, `footer`, `gitRepos`, `navigationTop`, `passermarken`, `schild`, `sectionHeader`, `stempel`, `valueCard`, `werkbank`
+- **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `busySpinner`, `career`, `footer`, `gitRepos`, `navigationTop`, `sectionHeader`, `valueCard`, `werkbank`
 - **Bildassets:** in `public/`, statisch importiert über `next/image`
 - **Deployment:** Serverprofis GmbH (laut Datenschutzerklärung), Node-Server. Redirects in `next.config.mjs` greifen dort (der `/blog`-Redirect lief bereits so); nach jedem Deployment einmal `/imprint` und `/privacy` prüfen
 - **MDX:** kein Setup vorhanden. Content liegt als typisierte TS-Objekte unter `content/`
