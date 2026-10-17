@@ -8,13 +8,14 @@ import FooterComponent from '../../components/footer'
 import SectionHeaderComponent from '../../components/sectionHeader'
 import CareerComponent from '../../components/career'
 import ValueCardComponent from '../../components/valueCard'
+import TextRevealComponent from '../../components/textReveal'
 import { buttonPrimary, pillButton, textBody, textData, textHeading, textMeta, textMuted, textPrimary, tile } from '../../components/theme'
 import { home } from '../../content/home'
 
 /**
  * Renders the start page about the person: centered name and portrait in
- * the lamp light, then the career timeline, the principles, a pointer to
- * today's offers and the contact.
+ * the lamp light, then why the story lives here and the career timeline,
+ * the principles, a pointer to today's offers and the contact.
  */
 export default function Home(): ReactElement {
     return (
@@ -55,15 +56,17 @@ export default function Home(): ReactElement {
                     </div>
                 </section>
 
-                {/* WERDEGANG */}
+                {/* WERDEGANG: warum die Geschichte hier steht, dann die Timeline */}
                 <section className="flex flex-col gap-10">
                     <SectionHeaderComponent title={home.career.title} subtitle={home.career.subtitle} />
+                    <TextRevealComponent text={home.career.intro} className={`text-xl leading-relaxed ${textBody} max-w-[58ch] mx-auto text-center text-balance`} />
                     <CareerComponent chapters={home.career.chapters} />
                 </section>
 
                 {/* PRINZIPIEN */}
                 <section className="flex flex-col gap-10">
                     <SectionHeaderComponent title={home.prinzipien.title} subtitle={home.prinzipien.subtitle} />
+                    <p className={`text-xl leading-relaxed ${textBody} max-w-[58ch] mx-auto text-center text-balance`}>{home.prinzipien.intro}</p>
                     <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
                         {home.prinzipien.values.map((value) => (
                             <ValueCardComponent key={value.title} value={value} />

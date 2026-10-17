@@ -45,7 +45,8 @@ export const home = {
     },
     career: {
         title: 'Werdegang',
-        subtitle: 'Lernen, Wachstum und Weggefährten',
+        subtitle: 'Lernen, Wachstum, Weggefährtinnen und Weggefährten',
+        intro: 'LinkedIn war für mich früher einmal der Ort, an dem ich mitbekommen konnte, wie es bei ehemaligen Weggefährtinnen und Weggefährten aus Ausbildung, Studium und Beruf weitergeht, auch wenn wir uns nicht mehr jeden Tag sahen. Heute zeigt mir die Plattform vor allem Fremde, die ihr Privatleben, ihre Familie und ihre Schicksalsschläge zu Reichweite machen. Dabei mache ich nicht mit. Mein Profil dient dort nur noch der Kontaktaufnahme. Wenn du mit mir arbeiten willst, sollst du trotzdem wissen, mit wem du es zu tun hast. Deshalb steht meine Geschichte hier.',
         chapters: [
             {
                 era: '2006 – 2010',
@@ -88,6 +89,7 @@ export const home = {
     prinzipien: {
         title: 'Prinzipien',
         subtitle: 'Was meine Arbeit trägt',
+        intro: 'Ich bin im Herzen Designer, in UX und Print, digital wie analog. Ich bin Sachsen-Anhalter und liebe das Bauhaus und alles, was daraus geworden ist, von Mies van der Rohe über Dieter Rams bis Jony Ive. Wie diese Seite gestaltet ist, sagt deshalb genauso viel über mich wie das, was darauf steht.',
         values: [
             {
                 title: 'Wir lernen voneinander, füreinander',
