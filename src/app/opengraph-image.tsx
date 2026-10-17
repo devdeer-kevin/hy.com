@@ -11,15 +11,18 @@ export const size = {
 export const contentType = 'image/png'
 
 /**
- * Renders the Open Graph image: a floating glass card on a soft ambient gradient.
+ * Renders the Open Graph image: the mark next to the name on a floating
+ * glass card over a soft ambient gradient.
  */
 export default async function Image() {
     const fontDir = join(process.cwd(), 'node_modules', 'geist', 'dist', 'fonts')
-    const [geistBold, geistRegular, geistMonoRegular] = await Promise.all([
+    const [geistBold, geistRegular, geistMonoRegular, logo] = await Promise.all([
         readFile(join(fontDir, 'geist-sans', 'Geist-Bold.ttf')),
         readFile(join(fontDir, 'geist-sans', 'Geist-Regular.ttf')),
         readFile(join(fontDir, 'geist-mono', 'GeistMono-Regular.ttf')),
+        readFile(join(process.cwd(), 'public', 'hy-logo.png')),
     ])
+    const logoSrc = `data:image/png;base64,${logo.toString('base64')}`
 
     return new ImageResponse(
         <div
@@ -45,8 +48,9 @@ export default async function Image() {
             <div
                 style={{
                     display: 'flex',
-                    flexDirection: 'column',
-                    gap: 18,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: 56,
                     padding: '64px 80px',
                     borderRadius: 48,
                     background: 'rgba(148, 163, 184, 0.08)',
@@ -54,11 +58,14 @@ export default async function Image() {
                     borderTop: '1px solid rgba(255, 255, 255, 0.25)',
                     boxShadow: '0 40px 80px rgba(2, 6, 23, 0.6)',
                 }}>
-                <div style={{ fontFamily: 'Geist', fontSize: 92, fontWeight: 700, color: 'rgba(248, 250, 252, 0.92)', letterSpacing: -3 }}>Kevin Heyland</div>
-                <div style={{ fontFamily: 'GeistRegular', fontSize: 32, color: '#cbd5e1', maxWidth: 900 }}>
-                    KI-Beratung, Schulung und Werkstatt für kleine Betriebe und Institutionen in Magdeburg und Sachsen-Anhalt.
+                <img src={logoSrc} width={109} height={150} alt="" />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+                    <div style={{ fontFamily: 'Geist', fontSize: 92, fontWeight: 700, color: 'rgba(248, 250, 252, 0.92)', letterSpacing: -3 }}>Kevin Heyland</div>
+                    <div style={{ fontFamily: 'GeistRegular', fontSize: 32, color: '#cbd5e1', maxWidth: 760 }}>
+                        KI-Beratung, Schulung und Werkstatt für kleine Betriebe und Institutionen in Magdeburg und Sachsen-Anhalt.
+                    </div>
+                    <div style={{ fontFamily: 'GeistMono', fontSize: 22, color: 'rgba(148, 163, 184, 0.7)', marginTop: 12 }}>kevinheyland.com</div>
                 </div>
-                <div style={{ fontFamily: 'GeistMono', fontSize: 22, color: 'rgba(148, 163, 184, 0.7)', marginTop: 12 }}>kevinheyland.com</div>
             </div>
         </div>,
         {

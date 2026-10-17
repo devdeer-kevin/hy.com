@@ -27,8 +27,9 @@ export const home = {
     },
     hero: {
         h1: 'Kevin Heyland',
-        intro: 'Vom Einzelhandel über die eigene Agentur bis zur Cloud-Beratung. Ich verbinde agiles Projektmanagement, Pädagogik und Softwareentwicklung.',
-        roleLine: 'Partner & Head of Operations bei DEVDEER, Magdeburg',
+        intro: 'Agile Methodik aus den Zertifizierungen der Scrum Alliance, ein Bachelor of Science in Wirtschaftspädagogik und Stationen vom Einzelhandel, Performance Marketing bis zur Cloud-Beratung: Ich verbinde breite akademische und berufliche Erfahrung mit Spezialisierung auf agiles Projektmanagement und Full-Stack-Softwareentwicklung.',
+        roleLine: 'Partner bei DEVDEER, Magdeburg',
+        credentialsLine: 'BSc Wirtschaftspädagogik, Advanced Certified Scrum Product Owner',
         cta: {
             label: 'E-Mail schreiben',
             href: 'mailto:mail@kevinheyland.com',

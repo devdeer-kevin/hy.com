@@ -23,16 +23,17 @@ export default function Home(): ReactElement {
         <>
             <NavigationTopComponent />
             <main className="flex flex-col py-10 pb-20 px-4 sm:px-8 max-w-7xl w-full min-w-0 gap-24 lg:gap-32 overflow-x-clip">
-                {/* HERO: Name, eine Zeile Rolle, zwei Zeilen Intro, darunter das Porträt als große Bildkachel im Lampenlicht */}
+                {/* HERO: Name, Rolle und Abschlüsse, das Intro, darunter das Porträt als große Bildkachel im Lampenlicht */}
                 <section className="relative flex flex-col items-center gap-10">
                     <div className="flex flex-col items-center text-center gap-6 max-w-4xl">
                         <h1 className={`reveal text-h1 font-bold ${textPrimary} text-balance`} style={{ '--i': 0 } as React.CSSProperties}>
                             {home.hero.h1}
                         </h1>
-                        <p className={`reveal text-xl font-semibold ${textHeading} text-balance`} style={{ '--i': 1 } as React.CSSProperties}>
-                            {home.hero.roleLine}
-                        </p>
-                        <p className={`reveal text-xl leading-relaxed ${textMuted} max-w-2xl text-balance`} style={{ '--i': 2 } as React.CSSProperties}>
+                        <div className="reveal flex flex-col gap-1" style={{ '--i': 1 } as React.CSSProperties}>
+                            <p className={`text-xl font-semibold ${textHeading} text-balance`}>{home.hero.roleLine}</p>
+                            <p className={`text-lg ${textMuted} text-balance`}>{home.hero.credentialsLine}</p>
+                        </div>
+                        <p className={`reveal text-lg sm:text-xl leading-relaxed ${textMuted} max-w-2xl text-balance`} style={{ '--i': 2 } as React.CSSProperties}>
                             {home.hero.intro}
                         </p>
                         <div className="reveal flex flex-row flex-wrap items-center justify-center gap-3 pt-2" style={{ '--i': 3 } as React.CSSProperties}>

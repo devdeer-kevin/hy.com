@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import Logo from '../../public/hy-logo.png'
 import { ArrowUpRightIcon } from '@heroicons/react/16/solid'
 import { textMeta } from '../theme'
 
@@ -18,11 +20,13 @@ function DockLink({ href, label, external }: { href: string; label: string; exte
 }
 
 /**
- * The footer: a floating glass dock with navigation and a quiet colophon.
+ * The footer: the mark as a signature, a floating glass dock with navigation
+ * and a quiet colophon.
  */
 export default function FooterComponent(): React.ReactElement {
     return (
         <footer className="flex flex-col w-full max-w-7xl items-center justify-center py-8 sm:px-8 px-4 gap-6">
+            <Image className="h-10 w-auto" src={Logo} alt="" width={41} height={56} />
             <div className="flex flex-row flex-wrap items-center justify-center gap-1 rounded-3xl lg:rounded-full bg-slate-400/10 backdrop-blur-xl border border-white/10 border-t-white/20 shadow-xl shadow-slate-950/40 px-3 sm:px-2 py-2 sm:py-1.5">
                 <DockLink href="/ki-beratung" label="Angebote" />
                 <DockLink href="/ki-workshop-magdeburg" label="KI-Werkstatt" />
