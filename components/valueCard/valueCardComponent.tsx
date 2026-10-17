@@ -1,5 +1,5 @@
 import { textBody, textHeading, tile } from '../theme'
-import type { IValue } from '../../content/ueber-mich'
+import type { IValue } from '../../content/home'
 
 /**
  * A guiding value: icon, title and a short explanation on a tile.

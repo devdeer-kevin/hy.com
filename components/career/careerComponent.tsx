@@ -1,5 +1,5 @@
 import { textBody, textHeading, textMuted, tile } from '../theme'
-import type { IChapter } from '../../content/ueber-mich'
+import type { IChapter } from '../../content/home'
 
 /**
  * A small pill-shaped skill tag.

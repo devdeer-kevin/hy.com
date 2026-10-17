@@ -1,41 +1,40 @@
 /**
- * Gesamter Text der Startseite. Layout und Komposition liegen in
- * `src/app/page.tsx`, hier steht ausschließlich Inhalt.
+ * Gesamter Text der Startseite: wer ich bin, woher ich komme, was mich trägt.
+ * Layout und Komposition liegen in `src/app/page.tsx`, hier steht
+ * ausschließlich Inhalt. Die Angebote stehen unter `content/ki-beratung.ts`.
  */
 
-export interface IAngebot {
+/** Ein Kapitel der Karriere-Timeline. */
+export interface IChapter {
+    era: string
     title: string
+    role: string
     text: string
-    badge?: string
-    link?: {
-        label: string
-        href: string
-    }
+    skills: string[]
+    current?: boolean
 }
 
-export interface IProduktKurz {
+/** Ein Prinzip mit kurzer Erklärung. */
+export interface IValue {
     title: string
     text: string
-    imageAlt: string
-    cta: {
-        label: string
-        href: string
-    }
 }
 
 export const home = {
     metadata: {
-        title: 'Kevin Heyland · KI-Beratung und Schulung in Magdeburg',
-        description: 'KI-Beratung, Schulung und Werkstatt für kleine Betriebe und Institutionen in Magdeburg und Sachsen-Anhalt. Verständlich, praktisch und ohne Umwege.',
+        title: 'Kevin Heyland · KI-Beratung und Operations aus Magdeburg',
+        description: 'Kevin Heyland aus Magdeburg: Partner bei DEVDEER, Wirtschaftspädagoge und Product Owner. Werdegang, Prinzipien und KI-Beratung für kleine Betriebe.',
     },
     hero: {
-        h1: 'KI, die in deinem Betrieb ankommt',
-        intro: 'Beratung, Schulung und Werkstatt für kleine Betriebe und Institutionen in Magdeburg, Sachsen-Anhalt und dem deutschsprachigen Raum. Du bekommst Standards aus Enterprise-Projekten, zugeschnitten auf deine Größe und dein Budget.',
+        h1: 'Kevin Heyland',
+        intro: 'Agile Methodik aus den Zertifizierungen der Scrum Alliance, ein Bachelor of Science in Wirtschaftspädagogik und Stationen vom Einzelhandel bis zur Cloud-Beratung: Ich verbinde breite akademische und berufliche Erfahrung mit Spezialisierung auf agiles Projektmanagement und Full-Stack-Softwareentwicklung.',
+        roleLine: 'Partner & Head of Operations, DEVDEER',
+        credentialsLine: 'BSc Wirtschaftspädagogik, Advanced Certified Scrum Product Owner',
+        placeLine: 'Magdeburg, Deutschland',
         cta: {
             label: 'E-Mail schreiben',
             href: 'mailto:mail@kevinheyland.com',
         },
-        beleg: 'Partner & Head of Operations, DEVDEER GmbH, Magdeburg.',
         portrait: {
             alt: 'Kevin Heyland, Schwarz-Weiß-Porträt',
             credit: {
@@ -44,87 +43,74 @@ export const home = {
             },
         },
     },
-    zahlen: [
-        { wert: '3', label: 'Tage Werkstatt' },
-        { wert: '6', label: 'Plätze' },
-        { wert: '20', label: 'Jahre Berufsweg' },
-    ],
+    career: {
+        title: 'Werdegang',
+        subtitle: 'Lernen, Wachstum und Weggefährten',
+        chapters: [
+            {
+                era: '2006 – 2010',
+                title: 'Vom Aushilfsjob zum Marketing Manager',
+                role: 'Jack & Jones, Vero Moda · Region Hannover-Braunschweig',
+                text: 'Direkt nach der Schule als Aushilfe im Einzelhandel gestartet und innerhalb von vier Jahren und sieben Monaten Marketing Manager geworden. Geprägt haben diese Jahre Mentoren, die früh in mich investiert haben. Sie haben ein Muster gesetzt, dem ich seitdem folge: Am schnellsten wächst man neben Menschen, die teilen, was sie wissen.',
+                skills: ['Einzelhandel', 'Marketing', 'Führung'],
+            },
+            {
+                era: '2010 – 2016',
+                title: 'Triebfeder Marketing',
+                role: 'Gründer & Inhaber · Magdeburg',
+                text: 'Meine eigene Marketingagentur gegründet und sechs Jahre geführt. Wer Kampagnen baut, baut auch die Landingpages dahinter, deshalb sind digitales Marketing und praktische Entwicklung bei mir von Anfang an zusammengewachsen. Nutzerwege auf Seiten zu analysieren, die ich selbst gebaut hatte, wurde später meine Brücke ins UX-Design.',
+                skills: ['Unternehmertum', 'Digitales Marketing', 'Full-Stack-Entwicklung'],
+            },
+            {
+                era: '2013 – 2019',
+                title: 'Die parallelen Jahre',
+                role: 'Senior Digital Marketing Engineer, i2solutions GmbH (Aachen) · CMO, RenderThat (2014 – 2016)',
+                text: 'Sechs Jahre in einer IT-Beratung, die digitale Transformation in IT- und OT-Architektur und Sicherheit begleitet. Parallel dazu: die eigene Agentur, ein Bachelor in Wirtschaftspädagogik in Magdeburg und knapp zwei Jahre als Chief Marketing Officer von RenderThat, einem Startup für computergenerierte Produktbilder. Was die Universität erklärte, haben die Jobs angewendet, täglich.',
+                skills: ['Digitales Marketing', 'IT- & OT-Beratung', 'Wirtschaftspädagogik', 'Startup-Führung'],
+            },
+            {
+                era: '2018 – 2021',
+                title: 'DEVDEER GmbH: von UX zur Produktverantwortung',
+                role: 'Senior UX Designer, dann Product Owner & Team Lead',
+                text: 'Bei DEVDEER als Senior UX Designer angefangen, mit einer einfachen Überzeugung: Unternehmenssoftware hat für die meisten ihrer Nutzerinnen und Nutzer keine Alternative, ihre Qualität ist deshalb Pflicht und kein Luxus. Ab Ende 2019 habe ich als zertifizierter Scrum Product Owner interdisziplinäre Teams geführt, mit Backlogs, die alle verstehen und mit denen alle gern arbeiten. Seit 2020 bin ich außerdem eine von drei Stimmen von Code Revue, einem selbst produzierten Podcast über agile Softwareentwicklung.',
+                skills: ['UX-Design', 'Product Ownership', 'Scrum', 'Teamführung'],
+            },
+            {
+                era: '2021 – heute',
+                title: 'DEVDEER GmbH: Partner & Head of Operations',
+                role: 'Magdeburg · hybrid',
+                text: 'Heute verantworte ich den Betrieb einer Azure-Beratung und bleibe bewusst nah am Entwicklungsteam. Mit einem starken Interesse an KI, agiler Arbeit, Vielfalt und Nachhaltigkeit verbinde ich operative Exzellenz mit technischer Innovation. Die Mitarbeiterbefragungen, die ich eingeführt habe, gehören dazu: Ein agiles Unternehmen sollte nach innen genauso sorgfältig zuhören wie seinen Kunden. Advanced Certified Scrum Product Owner (Scrum Alliance).',
+                skills: ['Operations', 'Microsoft Azure', 'Managed Services', 'KI', 'Agile Führung'],
+                current: true,
+            },
+        ] satisfies IChapter[],
+    },
+    prinzipien: {
+        title: 'Prinzipien',
+        subtitle: 'Was meine Arbeit trägt',
+        values: [
+            {
+                title: 'Wir lernen voneinander, füreinander',
+                text: 'Das DEVDEER-Motto und der rote Faden durch meine eigene Geschichte. Jedes Kapitel meines Werdegangs wurde von Menschen beschleunigt, die geteilt haben, was sie wissen. Das weiterzugeben gehört zur Stellenbeschreibung, die ich mir selbst schreibe.',
+            },
+            {
+                title: 'Substanz statt Symbolik',
+                text: 'Ergebnisse, die man messen kann, schlagen Folien, die man bewundern kann. Dieser Maßstab gilt für Cloud-Architekturen, für interne Prozesse und für die kleinen kostenlosen Werkzeuge, die ich für diese Stadt baue.',
+            },
+        ] satisfies IValue[],
+    },
     angebote: {
-        title: 'Angebote',
-        subtitle: 'Drei Wege, ins Arbeiten zu kommen',
-        items: [
-            {
-                title: 'KI-Werkstatt in Magdeburg',
-                badge: 'Drei Tage, sechs Plätze',
-                text: 'Du bringst eine echte Aufgabe aus deinem Alltag mit und arbeitest direkt daran, mit mir an deiner Seite. Keine Folienschlacht, sondern Handarbeit an deinem eigenen Fall.',
-                link: {
-                    label: 'Zur Werkstatt',
-                    href: '/ki-workshop-magdeburg',
-                },
-            },
-            {
-                title: 'Inhouse-Schulung',
-                text: 'Ich komme zu dir in den Betrieb und schule dein Team an euren eigenen Abläufen und Dokumenten. Nicht an Beispielen aus dem Internet, sondern an dem, was bei euch auf dem Tisch liegt.',
-            },
-            {
-                title: 'KI-Beratung 1:1',
-                text: 'Begleitung über einzelne Termine hinaus: wiederkehrende Abläufe automatisieren und Wissen aus Ordnern und Köpfen nutzbar machen. Dein Handbuch beantwortet Fragen, statt im Regal zu stehen.',
-            },
-        ] satisfies IAngebot[],
-    },
-    prinzip: {
-        title: 'Verstehen kommt vor Bauen',
-        text: 'Wirtschaftspädagogik hat mich erklären gelehrt, UX-Design hat mich zuhören gelehrt. Beides kommt vor der ersten Zeile Technik: Wenn du ein Werkzeug nicht verstehst, ist das Werkzeug nicht fertig.',
-    },
-    belege: {
-        title: 'Belege',
-        subtitle: 'Woran du mich messen kannst',
-        devdeer: {
-            title: 'DEVDEER im Hintergrund',
-            text: 'Ich bin Partner und Head of Operations der DEVDEER GmbH, einer Azure-Beratung aus Magdeburg. Für dich heißt das: Hinter jedem Projekt steht die Kapazität eines eingespielten Teams, und ich bin dein Ansprechpartner und stehe dafür gerade.',
-            link: {
-                label: 'devdeer.com',
-                href: 'https://devdeer.com',
-            },
-        },
-        produkteIntro: 'Drei Werkzeuge, die ich gebaut habe und die öffentlich laufen:',
-        produkte: [
-            {
-                title: 'Tonnentour',
-                text: 'Abfuhrtermine für Magdeburg und das Jerichower Land. Straße eingeben, Termine für jede Tonne sehen.',
-                imageAlt: 'Die Tonnentour-App auf einem Smartphone',
-                cta: {
-                    label: 'Termine finden',
-                    href: 'https://tonnentour.de',
-                },
-            },
-            {
-                title: 'Ausfüllhilfe',
-                text: 'Beantwortet Fragen zur Schulanmeldung aus dem offiziellen Leitfaden des Stadtelternrats Magdeburg.',
-                imageAlt: 'Die Ausfüllhilfe des Stadtelternrats auf einem Smartphone',
-                cta: {
-                    label: 'Assistent ausprobieren',
-                    href: 'https://ausfuellhilfe.stadtelternrat-magdeburg.de',
-                },
-            },
-            {
-                title: 'Pace Planer',
-                text: 'Ein bewusst einfacher Pace-Rechner für den Wettkampftag.',
-                imageAlt: 'Der Pace Planer auf einem Smartphone',
-                cta: {
-                    label: 'Rennen planen',
-                    href: 'https://pace-planer.de',
-                },
-            },
-        ] satisfies IProduktKurz[],
-        links: {
-            referenzen: { label: 'Zu den Referenzen', href: '/referenzen' },
-            ueberMich: { label: 'Mehr über mich', href: '/ueber-mich' },
-        },
+        title: 'Was ich heute anbiete',
+        subtitle: 'KI für kleine Betriebe und Institutionen',
+        text: 'Aus zwanzig Jahren zwischen Handel, Marketing, Pädagogik und Softwareentwicklung ist ein Angebot geworden: Ich bringe KI in kleine Betriebe, Schulen und Vereine in Magdeburg und Sachsen-Anhalt. Als Werkstatt, als Schulung in deinem Team oder als Begleitung über einzelne Termine hinaus.',
+        imageAlt: 'Besprechungsecke in den DEVDEER-Räumen mit grünem Sofa, zwei Sesseln und Holztisch',
+        link: { label: 'Zu den Angeboten', href: '/ki-beratung' },
+        werkstatt: { label: 'Zur KI-Werkstatt', href: '/ki-workshop-magdeburg' },
+        referenzen: { label: 'Zu den Referenzen', href: '/referenzen' },
     },
     kontakt: {
-        title: 'Der nächste Schritt',
-        text: 'Schreib mir eine E-Mail an mail@kevinheyland.com und schilder kurz, worum es geht. Du bekommst eine ehrliche Einschätzung, ob und wie ich helfen kann. Auch dann, wenn die Antwort lautet, dass du dafür keine KI brauchst.',
+        title: 'Schreib mir',
+        text: 'Ob Werkstatt, Schulung oder eine Frage zu KI in deinem Betrieb: Schreib mir eine E-Mail an mail@kevinheyland.com und schilder kurz, worum es geht.',
         cta: {
             label: 'E-Mail schreiben',
             href: 'mailto:mail@kevinheyland.com',

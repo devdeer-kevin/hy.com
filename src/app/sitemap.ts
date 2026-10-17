@@ -8,7 +8,7 @@ import { siteUrl } from './seo'
  * Ohne `lastModified`: das Feld wird ausgewertet, aber nur wenn es stimmt, und
  * ein Build-Zeitstempel stimmt nie. Lieber keine Angabe als eine falsche.
  */
-const routes = ['', '/ki-workshop-magdeburg', '/ueber-mich', '/referenzen', '/impressum', '/datenschutz']
+const routes = ['', '/ki-beratung', '/ki-workshop-magdeburg', '/referenzen', '/impressum', '/datenschutz']
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return routes.map((path) => ({

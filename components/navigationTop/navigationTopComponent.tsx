@@ -13,21 +13,20 @@ import { glass } from '../theme'
  * Human-readable labels for the route segments.
  */
 const segmentLabels: Record<string, { label: string; parent?: { label: string; href: string } }> = {
-    'ueber-mich': { label: 'Über mich' },
+    'ki-beratung': { label: 'Angebote' },
     referenzen: { label: 'Referenzen' },
     impressum: { label: 'Impressum' },
     datenschutz: { label: 'Datenschutz' },
-    'ki-workshop-magdeburg': { label: 'KI-Werkstatt', parent: { label: 'Angebote', href: '/#angebote' } },
+    'ki-workshop-magdeburg': { label: 'KI-Werkstatt', parent: { label: 'Angebote', href: '/ki-beratung' } },
 }
 
 /**
- * The header navigation. "Angebote" has no own route yet and links to the
- * anchor section on the start page instead of a dead route.
+ * The header navigation. The start page is about the person and is reached
+ * through the logo; the offers live under /ki-beratung.
  */
 const navItems: { label: string; href: string; segment?: string }[] = [
-    { label: 'Angebote', href: '/#angebote' },
+    { label: 'Angebote', href: '/ki-beratung', segment: 'ki-beratung' },
     { label: 'Referenzen', href: '/referenzen', segment: 'referenzen' },
-    { label: 'Über mich', href: '/ueber-mich', segment: 'ueber-mich' },
 ]
 
 /**

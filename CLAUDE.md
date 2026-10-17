@@ -34,22 +34,24 @@ Wenn eine Änderung diesem Zweck nicht dient, ist sie falsch, auch wenn sie tech
 
 | Route | Zweck | Status |
 |---|---|---|
-| `/` | Positionierung, Angebote, Belege, ein CTA | umgebaut (2026-09) |
+| `/` | Über mich: Person, Werdegang, Prinzipien, Verweis auf die Angebote, ein CTA | umgebaut (2026-10), vorher Angebotsseite |
 | `/ki-workshop-magdeburg` | KI-Werkstatt, dreitägig, sechs Plätze | gebaut (2026-09); Livegang wartet auf Termine, Gehminuten, Stufenfreiheit, Fotofreigabe |
 | `/ki-schulung` | Inhouse-Schulung beim Kunden | offen |
 | `/foerderung` | Förderlandschaft erklären, Interessenten sammeln | offen |
-| `/ki-beratung` | 1:1 Begleitung, Automatisierung, Wissensmanagement | offen |
+| `/ki-beratung` | Übersicht der Angebote: Positionierung, Werkstatt, Schulung, 1:1-Beratung, Belege, ein CTA. Nav-Eintrag „Angebote" | live (2026-10), Inhalt der bisherigen Startseite |
 | `/chatgpt-im-unternehmen` | Türöffner, Datenschutz, was erlaubt ist | offen |
 | `/ki-tools-bauen` | Beleg der Bauerfahrung, Peer-Publikum | offen |
 | `/institutionen` | Schulen, Kitas, Vereine | offen |
 | `/referenzen` | Tonnentour, Ausfüllhilfe, Pace Planer, je Unterseite | Übersicht live, Unterseiten offen |
-| `/ueber-mich` | Werdegang, Prinzipien, E-E-A-T | live, aus Bestand |
+| `/ueber-mich` | 301 auf `/`, der Inhalt steht seit 2026-10 auf der Startseite | Redirect |
 | `/notizen` | Longtail-Artikel, Zitierbarkeit für Sprachmodelle | offen |
 | `/impressum`, `/datenschutz` | Pflicht | live, deutsche Fassung |
 
 **Slug-Regeln:** kleingeschrieben, Bindestrich als Trenner, keine Umlaute und kein ß (`foerderung`, `ueber-mich`). Ein Slug wird nach Livegang nicht mehr geändert.
 
 **Reserviert:** `/ki-werkstatt` als 301 auf `/ki-workshop-magdeburg`. Der Slug wird gesucht, der Name bleibt hängen. Der Redirect ist in `next.config.mjs` gesetzt.
+
+**Oktober 2026:** Die Startseite zeigt wieder die Person (Werdegang, Prinzipien), die Angebote sind nach `/ki-beratung` gezogen. `/ueber-mich` leitet per 301 auf `/`. Inhalt: `content/home.ts` (Person) und `content/ki-beratung.ts` (Angebote).
 
 ---
 
@@ -67,7 +69,7 @@ Der bestehende One-Pager wurde im September 2026 zerlegt.
 | Open-Source-Feed | entfernt (2026-09-11), samt API-Route und GitHub-Abfrage | erledigt |
 | Portrait und Bildassets | bleiben unverändert | erledigt |
 
-**Redirects:** `/imprint` → `/impressum`, `/privacy` → `/datenschutz`, jeweils 301 in `next.config.mjs`. Bestand: `/blog` → `/` bleibt.
+**Redirects:** `/imprint` → `/impressum`, `/privacy` → `/datenschutz`, `/ueber-mich` → `/`, jeweils 301 in `next.config.mjs`. Bestand: `/blog` → `/` bleibt.
 
 **Anker:** `#about`, `#career`, `#products`, `#opensource` lassen sich serverseitig nicht umleiten, weil Fragmente nicht gesendet werden. Interne Links sind auf die neuen Routen umgestellt, externe Aufrufe landen weiterhin auf `/`. Kein Handlungsbedarf darüber hinaus.
 
@@ -209,6 +211,6 @@ Erledigt am 2026-09-03. Ergebnis:
 - **Tailwind:** Version 4 (CSS-first, `@theme` in `src/app/globals.css`). Design-Tokens existieren in `components/theme.ts`
 - **Komponenten:** liegen im Repository-Root unter `components/<name>/<name>Component.tsx` mit `index.ts`-Re-Export. Bestand: `busySpinner`, `career`, `footer`, `kosmosMotion`, `navigationTop`, `sectionHeader`, `textReveal`, `valueCard`, `werkbank`
 - **Bildassets:** in `public/`, statisch importiert über `next/image`
-- **Deployment:** Serverprofis GmbH (laut Datenschutzerklärung), Node-Server. Redirects in `next.config.mjs` greifen dort (der `/blog`-Redirect lief bereits so); nach jedem Deployment einmal `/imprint` und `/privacy` prüfen
+- **Deployment:** Serverprofis GmbH (laut Datenschutzerklärung), Node-Server. Redirects in `next.config.mjs` greifen dort (der `/blog`-Redirect lief bereits so); nach jedem Deployment einmal `/imprint`, `/privacy` und `/ueber-mich` prüfen
 - **MDX:** kein Setup vorhanden. Content liegt als typisierte TS-Objekte unter `content/`
 - **Paketmanager:** Yarn 1 (`yarn.lock`), Formatierung über Prettier (4 Spaces, keine Semikolons, `printWidth` 180)

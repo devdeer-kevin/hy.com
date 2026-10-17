@@ -23,6 +23,11 @@ const nextConfig = {
                 statusCode: 301,
             },
             {
+                source: '/ueber-mich',
+                destination: '/',
+                statusCode: 301,
+            },
+            {
                 source: '/ki-werkstatt',
                 destination: '/ki-workshop-magdeburg',
                 statusCode: 301,
