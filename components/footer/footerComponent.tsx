@@ -39,10 +39,6 @@ export default function FooterComponent(): React.ReactElement {
                 <Link className="underline hover:text-slate-300 transition-colors" href="https://github.com/devdeer-kevin/hy.com" target="_blank">
                     Quellcode auf GitHub
                 </Link>
-                . Porträt von{' '}
-                <Link className="underline hover:text-slate-300 transition-colors" href="https://www.giovannagahrns.com" target="_blank">
-                    Giovanna Veronica Gahrns
-                </Link>
                 . Keine Cookies, kein Tracking.
             </p>
         </footer>

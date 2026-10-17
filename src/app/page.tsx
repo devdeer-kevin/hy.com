@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Photo from '../../public/kevinheyland_bw.jpg'
+import RaumLeuchte from '../../public/werkstatt-raum-leuchte.jpg'
 import RaumSofa from '../../public/werkstatt-raum-sofa.jpg'
 import NavigationTopComponent from '../../components/navigationTop'
 import FooterComponent from '../../components/footer'
@@ -22,18 +23,16 @@ export default function Home(): ReactElement {
         <>
             <NavigationTopComponent />
             <main className="flex flex-col py-10 pb-20 px-4 sm:px-8 max-w-7xl w-full min-w-0 gap-24 lg:gap-32 overflow-x-clip">
-                {/* HERO: zentriert, darunter das Porträt als große Bildkachel im Lampenlicht */}
+                {/* HERO: Name, eine Zeile Rolle, zwei Zeilen Intro, darunter das Porträt als große Bildkachel im Lampenlicht */}
                 <section className="relative flex flex-col items-center gap-10">
                     <div className="flex flex-col items-center text-center gap-6 max-w-4xl">
                         <h1 className={`reveal text-h1 font-bold ${textPrimary} text-balance`} style={{ '--i': 0 } as React.CSSProperties}>
                             {home.hero.h1}
                         </h1>
-                        <div className="reveal flex flex-col gap-1" style={{ '--i': 1 } as React.CSSProperties}>
-                            <p className={`text-xl font-semibold ${textHeading}`}>{home.hero.roleLine}</p>
-                            <p className={`text-lg ${textMuted}`}>{home.hero.credentialsLine}</p>
-                            <p className={`text-lg ${textMuted}`}>{home.hero.placeLine}</p>
-                        </div>
-                        <p className={`reveal text-body ${textBody} max-w-2xl text-balance`} style={{ '--i': 2 } as React.CSSProperties}>
+                        <p className={`reveal text-xl font-semibold ${textHeading} text-balance`} style={{ '--i': 1 } as React.CSSProperties}>
+                            {home.hero.roleLine}
+                        </p>
+                        <p className={`reveal text-xl leading-relaxed ${textMuted} max-w-2xl text-balance`} style={{ '--i': 2 } as React.CSSProperties}>
                             {home.hero.intro}
                         </p>
                         <div className="reveal flex flex-row flex-wrap items-center justify-center gap-3 pt-2" style={{ '--i': 3 } as React.CSSProperties}>
@@ -56,49 +55,53 @@ export default function Home(): ReactElement {
                     </div>
                 </section>
 
-                {/* WERDEGANG: warum die Geschichte hier steht, dann die Timeline */}
+                {/* WERDEGANG: warum die Geschichte hier steht, dann die Timeline. Längere Absätze stehen linksbündig in der Lesespalte. */}
                 <section className="flex flex-col gap-10">
                     <SectionHeaderComponent title={home.career.title} subtitle={home.career.subtitle} />
-                    <TextRevealComponent text={home.career.intro} className={`text-xl leading-relaxed ${textBody} max-w-[58ch] mx-auto text-center text-balance`} />
+                    <TextRevealComponent text={home.career.intro} className={`text-xl leading-relaxed ${textBody} max-w-[58ch] mx-auto`} />
                     <CareerComponent chapters={home.career.chapters} />
                 </section>
 
-                {/* PRINZIPIEN */}
+                {/* PRINZIPIEN als Bento: die große Kachel trägt das Lampenfoto und die Haltung, darunter zwei kleine mit je einem Prinzip */}
                 <section className="flex flex-col gap-10">
                     <SectionHeaderComponent title={home.prinzipien.title} subtitle={home.prinzipien.subtitle} />
-                    <p className={`text-xl leading-relaxed ${textBody} max-w-[58ch] mx-auto text-center text-balance`}>{home.prinzipien.intro}</p>
-                    <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div className={`lg:col-span-2 grid grid-cols-1 lg:grid-cols-2 overflow-hidden ${tile}`}>
+                            <div className="relative min-h-72 lg:min-h-96">
+                                <Image className="object-cover object-[50%_15%]" alt={home.prinzipien.imageAlt} src={RaumLeuchte} sizes="(max-width: 1024px) 100vw, 50vw" fill />
+                            </div>
+                            <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-12">
+                                <p className={`text-xl leading-relaxed ${textBody} max-w-[52ch]`}>{home.prinzipien.intro}</p>
+                            </div>
+                        </div>
                         {home.prinzipien.values.map((value) => (
                             <ValueCardComponent key={value.title} value={value} />
                         ))}
                     </div>
                 </section>
 
-                {/* ANGEBOTE: eine große Bildkachel, die auf /ki-beratung führt */}
+                {/* ANGEBOTE: eine große Bildkachel, die auf /ki-beratung führt. Das Bild kommt zuerst, ab lg steht es rechts. */}
                 <section className="flex flex-col gap-10">
                     <SectionHeaderComponent title={home.angebote.title} subtitle={home.angebote.subtitle} />
                     <div className={`grid grid-cols-1 lg:grid-cols-2 overflow-hidden ${tile}`}>
+                        <div className="relative min-h-72 lg:min-h-96 lg:order-last">
+                            <Image className="object-cover" alt={home.angebote.imageAlt} src={RaumSofa} sizes="(max-width: 1024px) 100vw, 50vw" fill />
+                        </div>
                         <div className="flex flex-col gap-6 p-8 sm:p-10 lg:p-12 justify-center">
                             <p className={`text-body ${textBody} max-w-[52ch]`}>{home.angebote.text}</p>
                             <div className="flex flex-row flex-wrap items-center gap-3">
-                                <Link className={pillButton} href={home.angebote.link.href}>
+                                <Link className={buttonPrimary} href={home.angebote.link.href}>
                                     {home.angebote.link.label}
                                 </Link>
-                                <Link className={`text-sm font-medium ${textMuted} hover:text-slate-200 transition-colors px-2`} href={home.angebote.werkstatt.href}>
+                                <Link className={pillButton} href={home.angebote.werkstatt.href}>
                                     {home.angebote.werkstatt.label}
                                 </Link>
-                                <Link className={`text-sm font-medium ${textMuted} hover:text-slate-200 transition-colors px-2`} href={home.angebote.referenzen.href}>
-                                    {home.angebote.referenzen.label}
-                                </Link>
                             </div>
-                        </div>
-                        <div className="relative min-h-72 lg:min-h-96">
-                            <Image className="object-cover" alt={home.angebote.imageAlt} src={RaumSofa} sizes="(max-width: 1024px) 100vw, 50vw" fill />
                         </div>
                     </div>
                 </section>
 
-                {/* KONTAKT: zentriert, das zweite Licht */}
+                {/* KONTAKT: zentriert, das zweite Licht. Die Adresse steht einmal, als kopierbare Zeile unter dem Knopf. */}
                 <section className="relative flex flex-col items-center text-center gap-6 py-10">
                     <div aria-hidden className="lamp-light left-1/2 -translate-x-1/2 -top-40 w-[52rem] h-[52rem]" />
                     <h2 className={`relative text-h2 font-bold ${textHeading} text-balance`}>{home.kontakt.title}</h2>

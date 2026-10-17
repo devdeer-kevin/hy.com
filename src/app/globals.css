@@ -3,8 +3,8 @@
 @source "../../components/**/*.{js,ts,jsx,tsx,mdx}";
 
 @theme {
-    --font-family-sans: var(--font-geist-sans);
-    --font-family-mono: var(--font-geist-mono);
+    --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 
     /* Farbe: kalte Basis aus dem Bestand, ein warmer Lichtton aus den Raumfotos. */
     --color-navy-950: #020617;
@@ -77,6 +77,17 @@
     background-size: 100% 100%;
     transform: translate3d(calc(var(--pointer-x) * -22px), calc(var(--scroll-y) * -0.08px + var(--pointer-y) * -14px), 0);
     will-change: transform;
+}
+
+/* Auf Telefonen sitzt die Galaxie kleiner und weiter in der Ecke, damit sie nicht hinter der H1 liegt. */
+@media (max-width: 40rem) {
+    .galaxie {
+        top: -62vmin;
+        right: -40vmin;
+        width: 100vmin;
+        height: 100vmin;
+        opacity: 0.18;
+    }
 }
 
 @keyframes galaxie-drehung {
@@ -220,7 +231,7 @@
 /* Der Kosmos liegt auf dem Wurzelelement, damit Sterne und Licht (negativer z-index) darüber liegen können. */
 :root {
     background-color: #020617;
-    background-image: linear-gradient(to bottom right, #020617 0%, #020617 55%, #1e1b4b 100%);
+    background-image: linear-gradient(to bottom right, #020617 0%, #020617 55%, #0f172a 100%);
     background-attachment: fixed;
 }
 
@@ -234,42 +245,9 @@ body {
     }
 }
 
-/* Soft ambient light behind the glass, fixed to the viewport. */
-.ambient {
-    position: fixed;
-    inset: 0;
-    z-index: -10;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.ambient::before,
-.ambient::after {
-    content: '';
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(120px);
-}
-
-.ambient::before {
-    width: 60vw;
-    height: 60vw;
-    top: -20vw;
-    right: -15vw;
-    background: radial-gradient(closest-side, rgba(99, 102, 241, 0.18), transparent);
-}
-
-.ambient::after {
-    width: 50vw;
-    height: 50vw;
-    bottom: -20vw;
-    left: -10vw;
-    background: radial-gradient(closest-side, rgba(45, 212, 191, 0.08), transparent);
-}
-
-/* Visible focus for keyboard navigation, matching the accent. */
+/* Sichtbarer Tastaturfokus in ink: kein zweiter Akzent neben der Lampe. */
 :focus-visible {
-    outline: 2px solid rgb(94 234 212 / 0.7);
+    outline: 2px solid rgb(248 250 252 / 0.8);
     outline-offset: 2px;
 }
 

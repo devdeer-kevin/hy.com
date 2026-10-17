@@ -27,10 +27,8 @@ export const home = {
     },
     hero: {
         h1: 'Kevin Heyland',
-        intro: 'Agile Methodik aus den Zertifizierungen der Scrum Alliance, ein Bachelor of Science in Wirtschaftspädagogik und Stationen vom Einzelhandel bis zur Cloud-Beratung: Ich verbinde breite akademische und berufliche Erfahrung mit Spezialisierung auf agiles Projektmanagement und Full-Stack-Softwareentwicklung.',
-        roleLine: 'Partner & Head of Operations, DEVDEER',
-        credentialsLine: 'BSc Wirtschaftspädagogik, Advanced Certified Scrum Product Owner',
-        placeLine: 'Magdeburg, Deutschland',
+        intro: 'Vom Einzelhandel über die eigene Agentur bis zur Cloud-Beratung. Ich verbinde agiles Projektmanagement, Pädagogik und Softwareentwicklung.',
+        roleLine: 'Partner & Head of Operations bei DEVDEER, Magdeburg',
         cta: {
             label: 'E-Mail schreiben',
             href: 'mailto:mail@kevinheyland.com',
@@ -90,6 +88,7 @@ export const home = {
         title: 'Prinzipien',
         subtitle: 'Was meine Arbeit trägt',
         intro: 'Ich bin im Herzen Designer, in UX und Print, digital wie analog. Ich bin Sachsen-Anhalter und liebe das Bauhaus und alles, was daraus geworden ist, von Mies van der Rohe über Dieter Rams bis Jony Ive. Wie diese Seite gestaltet ist, sagt deshalb genauso viel über mich wie das, was darauf steht.',
+        imageAlt: 'Kugellampe aus Holzlamellen über einem Sessel in den DEVDEER-Räumen',
         values: [
             {
                 title: 'Wir lernen voneinander, füreinander',
@@ -108,11 +107,10 @@ export const home = {
         imageAlt: 'Besprechungsecke in den DEVDEER-Räumen mit grünem Sofa, zwei Sesseln und Holztisch',
         link: { label: 'Zu den Angeboten', href: '/ki-beratung' },
         werkstatt: { label: 'Zur KI-Werkstatt', href: '/ki-workshop-magdeburg' },
-        referenzen: { label: 'Zu den Referenzen', href: '/referenzen' },
     },
     kontakt: {
         title: 'Schreib mir',
-        text: 'Ob Werkstatt, Schulung oder eine Frage zu KI in deinem Betrieb: Schreib mir eine E-Mail an mail@kevinheyland.com und schilder kurz, worum es geht.',
+        text: 'Ob Werkstatt, Schulung oder eine Frage zu KI in deinem Betrieb: Schreib mir kurz, worum es geht.',
         cta: {
             label: 'E-Mail schreiben',
             href: 'mailto:mail@kevinheyland.com',

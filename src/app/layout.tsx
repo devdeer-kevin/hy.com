@@ -55,7 +55,6 @@ export default function RootLayout({
                 <div aria-hidden className="stars-near" />
                 <div aria-hidden className="galaxie" />
                 <span aria-hidden className="sternschnuppe" />
-                <div aria-hidden className="ambient" />
                 <KosmosMotionComponent />
                 {children}
             </body>
